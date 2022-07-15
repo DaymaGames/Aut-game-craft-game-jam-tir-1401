@@ -64,7 +64,12 @@ public class HackerInventory : MonoBehaviour
     public bool CollectBullet(int amount)
     {
         ClampBulletsInMag();
+        if(currentBulletsInGun ==0 || currentBulletsInGun == maxGunMagSize)
+        {
+            return false;
+        }
 
+        return true;
     }
 
     private int ClampBulletsInMag()
