@@ -10,11 +10,13 @@ public class HackerController : MonoBehaviour
     private HackerInventory inventory;
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
+
     private void Awake()
     {
         movement = GetComponent<CharacterMovement>();
         inventory = GetComponent<HackerInventory>();
     }
+
     private void Update()
     {
         float h = Input.GetAxisRaw(HORIZONTAL);
@@ -36,18 +38,11 @@ public class HackerController : MonoBehaviour
 
     private void Reload()
     {
-        print("reload success :" + inventory.Reload());
+        print("reload");
     }
 
     private void Shoot()
     {
-        if(inventory.CanShoot() == false)
-        {
-            Debug.Log("<color=red>Cant Shoot</color>");
-            return;
-        }
-
         print("shoot!");
-        inventory.DoShootLogic();
     }
 }
