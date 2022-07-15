@@ -12,11 +12,21 @@ public class HackerInventory : MonoBehaviour
     [Header("Back Pack Bullet Numbers")]
     [SerializeField] private int bulletSaveSize = 30;
     public int bulletsSaved = 0;
+
+    [Header("UI")]
+    [SerializeField] private TMPro.TextMeshProUGUI bulletsLeftText;
+    [SerializeField] private TMPro.TextMeshProUGUI bulletsSavedText;
+
+    private void Update()
+    {
+        bulletsLeftText.SetText("Bullets : " + bulletsInMag);
+        bulletsSavedText.SetText("Saved Bullets : " + bulletsSaved);
+    }
+
     private int Clamp(int num, int min, int max)
     {
         return Mathf.Clamp(num, min, max);
     }
-
 
     #region Shooting Logic
     public bool CanShoot()
