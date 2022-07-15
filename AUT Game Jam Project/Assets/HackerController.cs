@@ -36,16 +36,18 @@ public class HackerController : MonoBehaviour
 
     private void Reload()
     {
-        
+        print("reload success :" + inventory.Reload());
     }
 
     private void Shoot()
     {
         if(inventory.CanShoot() == false)
         {
-            Debug.Log("<color=red>Cant Shoot</color>")
+            Debug.Log("<color=red>Cant Shoot</color>");
             return;
         }
+
         print("shoot!");
+        inventory.DoShootLogic();
     }
 }

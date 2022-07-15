@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(HackerController))]
 public class HackerInventory : MonoBehaviour
 {
-    [Header("Bullet Nnumbers")]
+    [Header("Bullet Numbers")]
     [SerializeField] private int maxSavedBullets = 30;
     [SerializeField] private int maxGunMagSize = 10;
     [SerializeField] private int currentBulletsInGun;
@@ -14,19 +14,20 @@ public class HackerInventory : MonoBehaviour
     [SerializeField] private float reloadTime = 1;
     public bool reloading = false;
 
-    public void Reload()
+    public bool Reload()
     {
         if(currentBulletsInGun == maxGunMagSize)
         {
             Debug.Log("mag is <color=green>full!</color>");
-            return;
+            return false;
         }
         else if(reloading == true)
         {
             Debug.Log("<color=blue>currently reloading</color>");
-            return;
+            return false;
         }
         StartCoroutine(RelaodWithDelay(reloadTime));
+        return true;
     }
 
     IEnumerator RelaodWithDelay(float delay)
@@ -52,10 +53,16 @@ public class HackerInventory : MonoBehaviour
     public void DoShootLogic()
     {
         currentBulletsInGun--;
+        currentBulletsInGun = Mathf.Clamp(currentBulletsInGun, 0, maxGunMagSize);
     }
 
     public bool CanShoot()
     {
         return (currentBulletsInGun > 0 && !reloading);
+    }
+
+    public bool CollectBullet(int amount)
+    {
+
     }
 }
