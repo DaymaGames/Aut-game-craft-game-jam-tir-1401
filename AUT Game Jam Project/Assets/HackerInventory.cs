@@ -53,7 +53,7 @@ public class HackerInventory : MonoBehaviour
     public void DoShootLogic()
     {
         currentBulletsInGun--;
-        currentBulletsInGun = Mathf.Clamp(currentBulletsInGun, 0, maxGunMagSize);
+        ClampBulletsInMag();
     }
 
     public bool CanShoot()
@@ -63,6 +63,13 @@ public class HackerInventory : MonoBehaviour
 
     public bool CollectBullet(int amount)
     {
+        ClampBulletsInMag();
 
+    }
+
+    private int ClampBulletsInMag()
+    {
+        currentBulletsInGun = Mathf.Clamp(currentBulletsInGun, 0, maxGunMagSize);
+        return currentBulletsInGun;
     }
 }
