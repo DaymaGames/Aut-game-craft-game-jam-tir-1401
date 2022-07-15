@@ -485,6 +485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSavedBullets: 30
   maxGunMagSize: 10
-  currentBulletsInGun: 0
+  currentBulletsInGun: 10
   reloadTime: 1
   reloading: 0
