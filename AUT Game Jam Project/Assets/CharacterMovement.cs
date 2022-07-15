@@ -6,8 +6,13 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed = 2f;
 
+    [Header("Facing Direction")]
+    [SerializeField] private Transform targetFlip;
+
+
+    [HideInInspector] public bool facingRight = true;
 
     private Rigidbody2D rb;
     private Vector2 velocity;
@@ -24,9 +29,34 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
         rb.velocity = velocity;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     public void SetVelocity(Vector2 velocity)
     {
         this.velocity = velocity.normalized * moveSpeed;
+    }
+    public void HandleFacingDirection()
+    {
+        Vector2 velocity = this.velocity;
+        
+        if(velocity.x > 0.1f)
+        {
+            if(facingRight == false)
+            {
+                Flip();
+            }
+        }
+        else if(velocity.x < -0.1f)
+        {
+            if(facingRight == true)
+            {
+                Flip();
+            }
+        }
+    }
+    private void Flip()
+    {
+        targetFlip.Rotate(Vector3.up * 180f);
+        facingRight = !facingRight;
     }
 }
