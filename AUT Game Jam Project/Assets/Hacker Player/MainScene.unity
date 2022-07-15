@@ -483,8 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1b34adc8b19f34d91e5b81b363a161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSavedBullets: 30
-  maxGunMagSize: 10
-  currentBulletsInGun: 10
-  reloadTime: 1
-  reloading: 0
+  magSize: 10
+  bulletsInMag: 10
+  bulletSaveSize: 30
+  bulletsSaved: 30

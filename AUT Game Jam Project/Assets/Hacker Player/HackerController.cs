@@ -38,11 +38,23 @@ public class HackerController : MonoBehaviour
 
     private void Reload()
     {
-        print("reload");
+        if(inventory.CanReload() == false)
+        {
+            return;
+        }
+
+        inventory.Reload();
     }
 
     private void Shoot()
     {
-        print("shoot!");
+        if(inventory.CanShoot() == false)
+        {
+            return;
+        }
+
+        inventory.DecreaseBulletsInMag();
+
+        print("Shoot");
     }
 }
