@@ -61,8 +61,8 @@ public class AICustomScript : MonoBehaviour
         Vector3 force = direction * speed * Time.deltaTime;
         rigidbody.AddForce(force);
 
-        SetFacing(force);
-
+        SetFacing();
+        
         float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
 
         if (distance <= nextWayPointDistance)
@@ -74,16 +74,22 @@ public class AICustomScript : MonoBehaviour
 
     }
 
-    void SetFacing(Vector3 facingVector)
+    void SetFacing()
     {
-        if (facingVector.x >= 0.01f)
-        {
-            GFX.transform.localScale = new Vector3(1, 1, 1);
-        }
-       else if (facingVector.x <= -0.01f)
-        {
-            GFX.transform.localScale = new Vector3(-1, 1, 1);
-        }
+        
+        if (gameObject.transform.position.x - target.position.x > 0) { GFX.transform.localScale = new Vector3(-1, 1, 1); }
+        else if (gameObject.transform.position.x - target.position.x < 0) { GFX.transform.localScale = new Vector3(1, 1, 1); }
+
+        ////BRACKEY'S way
+        //if (force.x > 0)
+        //{
+        //    GFX.transform.localScale = new Vector3(1, 1, 1);
+        //}
+        //else if (force.x <= -0.01f && facingVector.x < 0)
+        //{
+        //    GFX.transform.localScale = new Vector3(-1, 1, 1);
+        //}
+
     }
     void UpdatePath()
     {
