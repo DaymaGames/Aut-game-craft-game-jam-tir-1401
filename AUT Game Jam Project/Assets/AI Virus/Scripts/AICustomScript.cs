@@ -76,10 +76,11 @@ public class AICustomScript : MonoBehaviour
 
     void SetFacing()
     {
-        
-        if (gameObject.transform.position.x - target.position.x > 0) { GFX.transform.localScale = new Vector3(-1, 1, 1); }
-        else if (gameObject.transform.position.x - target.position.x < 0) { GFX.transform.localScale = new Vector3(1, 1, 1); }
-
+        if (target != null)
+        {
+            if (gameObject.transform.position.x - target.position.x > 0) { GFX.transform.localScale = new Vector3(-1, 1, 1); }
+            else if (gameObject.transform.position.x - target.position.x < 0) { GFX.transform.localScale = new Vector3(1, 1, 1); }
+        }
         ////BRACKEY'S way
         //if (force.x > 0)
         //{
