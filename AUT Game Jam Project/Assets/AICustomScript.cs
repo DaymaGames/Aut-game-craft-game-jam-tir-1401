@@ -32,10 +32,31 @@ public class AICustomScript : MonoBehaviour
             currentWayPoint = 0;
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        
         if (path == null)
             return;
+        //check for if there is a path
+        if (currentWayPoint >= path.vectorPath.Count)
+        {
+            reachedEndofPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndofPath = false;
+        }
 
+        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized ;
+        Vector3 force = direction * speed * Time.deltaTime;
+        rigidbody.AddForce(force);
+        float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
+
+        if (distance <= nextWayPointDistance)
+        {
+            currentWayPoint++;
+        }
+        
     }
 }
