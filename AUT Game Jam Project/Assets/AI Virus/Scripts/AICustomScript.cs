@@ -85,7 +85,7 @@ public class AICustomScript : MonoBehaviour
         //{
         //    GFX.transform.localScale = new Vector3(1, 1, 1);
         //}
-        //else if (force.x <= -0.01f && facingVector.x < 0)
+        //else if (force.x <= -0.01f )
         //{
         //    GFX.transform.localScale = new Vector3(-1, 1, 1);
         //}
