@@ -34,4 +34,8 @@ public class AICustomScript : MonoBehaviour
             currentWayPoint = 0;
         }
     }
+    private void Update()
+    {
+        print(path.vectorPath.Count);
+    }
 }
