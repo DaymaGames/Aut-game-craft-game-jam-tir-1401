@@ -5,16 +5,20 @@ public class AICustomScript : MonoBehaviour
 {
     public Transform target;
 
-    [SerializeField] float speed;
-    float nextWayPointDistance = 3;
+    public MovementType movementType;
+
+    public float speed = 200;
+
+    public float nextWayPointDistance = 3;
+
+    public bool reachedEndofPath;
 
     Path path;
     int currentWayPoint;
-    bool reachedEndofPath;
 
     Seeker seeker;
 
-    Rigidbody2D rigidbody;
+    new Rigidbody2D rigidbody;
 
     private void Awake()
     {
@@ -22,10 +26,11 @@ public class AICustomScript : MonoBehaviour
         {
             Debug.LogError("Speed Value Is zero");
         }
+
         seeker = GetComponent<Seeker>();
         rigidbody = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0, 0.5f);
+        InvokeRepeating(nameof(UpdatePath), 0, 0.5f);
 
 
     }
@@ -40,13 +45,17 @@ public class AICustomScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+        //check if is there any path
         if (path == null)
             return;
-        //check for if there is a path
+
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndofPath = true;
+
+            if (movementType == MovementType.Velocity)
+                rigidbody.velocity = Vector2.zero;
+            
             return;
         }
         else
@@ -54,10 +63,21 @@ public class AICustomScript : MonoBehaviour
             reachedEndofPath = false;
         }
 
-        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized ;
-        Vector3 force = direction * speed * Time.deltaTime;
-        rigidbody.AddForce(force);
-        float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
+        Vector3 relative = path.vectorPath[currentWayPoint] - transform.position;
+        
+        if(movementType == MovementType.Force)
+        {
+            Vector3 force = speed * Time.fixedDeltaTime * relative.normalized;
+
+            rigidbody.AddForce(force);
+        }
+        else if(movementType == MovementType.Velocity)
+        {
+            Vector2 velocity = relative.normalized * speed;
+            rigidbody.velocity = velocity;
+        }
+
+        float distance = Vector2.Distance(path.vectorPath[currentWayPoint], transform.position);
 
         if (distance <= nextWayPointDistance)
         {
@@ -68,5 +88,10 @@ public class AICustomScript : MonoBehaviour
     void UpdatePath()
     {
         seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
+    }
+
+    public enum MovementType
+    {
+        Force,Velocity
     }
 }
