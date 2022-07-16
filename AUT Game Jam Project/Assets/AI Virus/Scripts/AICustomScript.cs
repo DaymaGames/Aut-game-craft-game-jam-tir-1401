@@ -5,32 +5,29 @@ public class AICustomScript : MonoBehaviour
 {
     public Transform target;
 
-    public MovementType movementType;
-
-    public float speed = 200;
-
-    public float nextWayPointDistance = 3;
-
-    public bool reachedEndofPath;
+    [SerializeField] float speed;
+    float nextWayPointDistance = 3;
 
     Path path;
     int currentWayPoint;
+    bool reachedEndofPath;
 
     Seeker seeker;
 
-    new Rigidbody2D rigidbody;
+    Rigidbody2D rigidbody;
 
+    GameObject GFX;
     private void Awake()
     {
+        GFX = transform.GetChild(0).gameObject;
         if (speed == 0)
         {
             Debug.LogError("Speed Value Is zero");
         }
-
         seeker = GetComponent<Seeker>();
         rigidbody = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating(nameof(UpdatePath), 0, 0.5f);
+        InvokeRepeating("UpdatePath", 0, 0.5f);
 
 
     }
@@ -45,54 +42,59 @@ public class AICustomScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //check if is there any path
+
         if (path == null)
             return;
-
+        //check for if there is a path
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndofPath = true;
-
-            if (movementType == MovementType.Velocity)
-                rigidbody.velocity = Vector2.zero;
-            
             return;
         }
         else
         {
             reachedEndofPath = false;
         }
-
-        Vector3 relative = path.vectorPath[currentWayPoint] - transform.position;
         
-        if(movementType == MovementType.Force)
-        {
-            Vector3 force = speed * Time.fixedDeltaTime * relative.normalized;
 
-            rigidbody.AddForce(force);
-        }
-        else if(movementType == MovementType.Velocity)
-        {
-            Vector2 velocity = relative.normalized * speed;
-            rigidbody.velocity = velocity;
-        }
+        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized;
+        Vector3 force = direction * speed * Time.deltaTime;
+        rigidbody.AddForce(force);
 
-        float distance = Vector2.Distance(path.vectorPath[currentWayPoint], transform.position);
+        SetFacing();
+        
+        float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
 
         if (distance <= nextWayPointDistance)
         {
             currentWayPoint++;
         }
+
         
+
+    }
+
+    void SetFacing()
+    {
+        if (target != null)
+        {
+            if (gameObject.transform.position.x - target.position.x > 0) { GFX.transform.localScale = new Vector3(-1, 1, 1); }
+            else if (gameObject.transform.position.x - target.position.x < 0) { GFX.transform.localScale = new Vector3(1, 1, 1); }
+        }
+        ////BRACKEY'S way
+        //if (force.x > 0)
+        //{
+        //    GFX.transform.localScale = new Vector3(1, 1, 1);
+        //}
+        //else if (force.x <= -0.01f )
+        //{
+        //    GFX.transform.localScale = new Vector3(-1, 1, 1);
+        //}
+
     }
     void UpdatePath()
     {
-        if(seeker.IsDone())
-        seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
-    }
-
-    public enum MovementType
-    {
-        Force,Velocity
+        if (seeker.IsDone())
+            seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
     }
 }
