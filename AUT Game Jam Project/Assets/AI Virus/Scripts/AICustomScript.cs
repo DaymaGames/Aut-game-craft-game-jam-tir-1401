@@ -7,7 +7,7 @@ public class AICustomScript : MonoBehaviour
 
     [SerializeField] float speed;
     float nextWayPointDistance = 3;
-    
+
     Path path;
     int currentWayPoint;
     bool reachedEndofPath;
@@ -42,7 +42,7 @@ public class AICustomScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+
         if (path == null)
             return;
         //check for if there is a path
@@ -55,8 +55,9 @@ public class AICustomScript : MonoBehaviour
         {
             reachedEndofPath = false;
         }
+        SetFacing();
 
-        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized ;
+        Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized;
         Vector3 force = direction * speed * Time.deltaTime;
         rigidbody.AddForce(force);
         float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
@@ -66,18 +67,24 @@ public class AICustomScript : MonoBehaviour
             currentWayPoint++;
         }
 
-        if (rigidbody.velocity.x > 0) {
-            GFX.transform.localScale = new Vector3(1, 1,1);
+        
+
+    }
+
+    void SetFacing()
+    {
+        if (rigidbody.velocity.x > 0)
+        {
+            GFX.transform.localScale = new Vector3(1, 1, 1);
         }
         if (rigidbody.velocity.x < 0)
         {
-            GFX.transform.localScale = new Vector3(-1, 1,1);
+            GFX.transform.localScale = new Vector3(-1, 1, 1);
         }
-
     }
     void UpdatePath()
     {
-        if(seeker.IsDone())
-        seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
+        if (seeker.IsDone())
+            seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
     }
 }

@@ -963,7 +963,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 888629623}
-  movementType: 0
   speed: 500
   nextWayPointDistance: 3
-  reachedEndofPath: 0
