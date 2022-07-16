@@ -10,11 +10,11 @@ public class AICustomScript : MonoBehaviour
 
     Path path;
     int currentWayPoint;
-    bool reachedEndofPath;
+    [HideInInspector] public bool reachedEndofPath;
 
     Seeker seeker;
 
-    Rigidbody2D rigidbody;
+    new Rigidbody2D rigidbody;
 
     GameObject GFX;
     private void Awake()
