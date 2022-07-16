@@ -87,6 +87,7 @@ public class AICustomScript : MonoBehaviour
     }
     void UpdatePath()
     {
+        if(seeker.IsDone())
         seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
     }
 
