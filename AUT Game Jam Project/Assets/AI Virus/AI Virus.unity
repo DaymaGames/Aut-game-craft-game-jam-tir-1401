@@ -322,7 +322,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!1 &265192033
 GameObject:
   m_ObjectHideFlags: 0
