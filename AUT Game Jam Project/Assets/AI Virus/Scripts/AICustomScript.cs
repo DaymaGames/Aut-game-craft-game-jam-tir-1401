@@ -55,11 +55,14 @@ public class AICustomScript : MonoBehaviour
         {
             reachedEndofPath = false;
         }
-        SetFacing();
+        
 
         Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized;
         Vector3 force = direction * speed * Time.deltaTime;
         rigidbody.AddForce(force);
+
+        SetFacing(force);
+
         float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
 
         if (distance <= nextWayPointDistance)
@@ -71,13 +74,13 @@ public class AICustomScript : MonoBehaviour
 
     }
 
-    void SetFacing()
+    void SetFacing(Vector3 facingVector)
     {
-        if (rigidbody.velocity.x > 0)
+        if (facingVector.x >= 0.01f)
         {
             GFX.transform.localScale = new Vector3(1, 1, 1);
         }
-        if (rigidbody.velocity.x < 0)
+       else if (facingVector.x <= -0.01f)
         {
             GFX.transform.localScale = new Vector3(-1, 1, 1);
         }

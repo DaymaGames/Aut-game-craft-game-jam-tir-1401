@@ -963,5 +963,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 888629623}
-  speed: 500
-  nextWayPointDistance: 3
+  speed: 400
