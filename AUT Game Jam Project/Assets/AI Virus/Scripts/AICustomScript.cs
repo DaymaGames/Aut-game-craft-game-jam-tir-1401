@@ -18,12 +18,18 @@ public class AICustomScript : MonoBehaviour
 
     private void Awake()
     {
+        if (speed == 0)
+        {
+            Debug.LogError("Speed Value Is zero");
+        }
         seeker = GetComponent<Seeker>();
         rigidbody = GetComponent<Rigidbody2D>();
 
-        seeker.StartPath(transform.position, target.position, onPathCompleted);
+        InvokeRepeating("UpdatePath", 0, 0.5f);
+
+
     }
-    void onPathCompleted(Path generatedPath)
+    void OnPathCompleted(Path generatedPath)
     {
         if (!generatedPath.error)
         {
@@ -58,5 +64,9 @@ public class AICustomScript : MonoBehaviour
             currentWayPoint++;
         }
         
+    }
+    void UpdatePath()
+    {
+        seeker.StartPath(transform.position, target.transform.position, OnPathCompleted);
     }
 }
