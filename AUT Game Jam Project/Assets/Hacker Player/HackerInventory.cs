@@ -83,7 +83,7 @@ public class HackerInventory : MonoBehaviour
     public bool CanReload()
     {
         ClampBulletsSaved();
-        if(bulletsSaved == 0)
+        if(bulletsSaved == 0 || bulletsInMag == magSize)
         {
             return false;
         }

@@ -102,19 +102,11 @@ public class HackerController : MonoBehaviour
             return;
         }
 
-        inventory.DecreaseBulletsInMag();
-        SpawnBullet();
-    }
-
-    private void SpawnBullet()
-    {
-        //getting mouse pos in the world
-        Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+        Vector2 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
 
         if (movement.facingRight)
         {
-            if(mousePos.x <= transform.position.x)
+            if (mousePos.x <= transform.position.x)
             {
                 return;
             }
@@ -127,11 +119,17 @@ public class HackerController : MonoBehaviour
             }
         }
 
+        inventory.DecreaseBulletsInMag();
+        SpawnBullet(mousePos);
+    }
+
+    private void SpawnBullet(Vector2 pos)
+    {
         //instantiating
         Rigidbody2D rb = Instantiate(bulletPrefab, shootTransform.position, Quaternion.identity);
         
         //adding the force to the bullet
-        Vector3 relative = mousePos - shootTransform.position;
+        Vector3 relative = pos - (Vector2)shootTransform.position;
         rb.velocity = relative.normalized * shootSpeed;
 
         //looking at the target

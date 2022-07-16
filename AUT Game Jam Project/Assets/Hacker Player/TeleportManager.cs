@@ -70,7 +70,7 @@ public class TeleportManager : MonoBehaviour
         controller.bypass = true;
         GetComponent<CharacterMovement>().SetVelocity(Vector2.zero);
         teleportCircle.gameObject.SetActive(true);
-        teleportCircle.localScale = Vector3.one * maxTeleportRange;
+        teleportCircle.localScale = Vector3.one * maxTeleportRange / transform.localScale.x;
         Time.timeScale = slowMotionScale;
     }
 
