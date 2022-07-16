@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterMovement))]
@@ -11,11 +12,14 @@ public class HackerController : MonoBehaviour
     [SerializeField] private new Camera camera;
     [SerializeField] private Rigidbody2D bulletPrefab;
     [SerializeField] private float shootSpeed = 10;
+    [SerializeField] private string ignoreShootTag = "enter";
 
     [Header("Reload")]
     [SerializeField] private float reloadTime = 1;
     [SerializeField] private bool reloading = false;
-    [SerializeField] private Slider reloadSlider;
+    [SerializeField] private Image reloadImage;
+
+    [HideInInspector] public bool bypass = false;
 
     private CharacterMovement movement;
     private HackerInventory inventory;
@@ -26,11 +30,16 @@ public class HackerController : MonoBehaviour
     {
         movement = GetComponent<CharacterMovement>();
         inventory = GetComponent<HackerInventory>();
-        reloadSlider.gameObject.SetActive(false);
+        reloadImage.gameObject.SetActive(false);
     }
 
     private void Update()
     {
+        if (bypass)
+        {
+            return;
+        }
+
         float h = Input.GetAxisRaw(HORIZONTAL);
         float v = Input.GetAxisRaw(VERTICAL);
         Vector2 input = new Vector2(h, v);
@@ -38,7 +47,7 @@ public class HackerController : MonoBehaviour
 
         movement.HandleFacingDirection();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
         {
             Shoot();
         }
@@ -64,14 +73,14 @@ public class HackerController : MonoBehaviour
     {
         reloading = true;
         float t = 0;
-        reloadSlider.gameObject.SetActive(true);
+        reloadImage.gameObject.SetActive(true);
         while (t < 1)
         {
             t += Time.deltaTime / duration;
-            reloadSlider.value = t;
+            reloadImage.fillAmount = 1 - t;
             yield return null;
         }
-        reloadSlider.gameObject.SetActive(false);
+        reloadImage.gameObject.SetActive(false);
         inventory.Reload();
         reloading = false;
     }
@@ -81,7 +90,7 @@ public class HackerController : MonoBehaviour
         if(reloading == true)
         {
             StopCoroutine(DelayReload(reloadTime));
-            reloadSlider.gameObject.SetActive(false);
+            reloadImage.gameObject.SetActive(false);
             reloading = false;
         }
     }
@@ -95,8 +104,6 @@ public class HackerController : MonoBehaviour
 
         inventory.DecreaseBulletsInMag();
         SpawnBullet();
-
-        print("Shoot");
     }
 
     private void SpawnBullet()
@@ -104,7 +111,22 @@ public class HackerController : MonoBehaviour
         //getting mouse pos in the world
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        
+
+        if (movement.facingRight)
+        {
+            if(mousePos.x <= transform.position.x)
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (mousePos.x >= transform.position.x)
+            {
+                return;
+            }
+        }
+
         //instantiating
         Rigidbody2D rb = Instantiate(bulletPrefab, shootTransform.position, Quaternion.identity);
         
@@ -117,5 +139,7 @@ public class HackerController : MonoBehaviour
         var angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
         bT.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bT.Rotate(Vector3.forward * -90);
+
+        rb.GetComponent<HackerBullet>().ignoreTag = ignoreShootTag;
     }
 }

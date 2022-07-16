@@ -7,6 +7,8 @@ public class HackerBullet : MonoBehaviour
     [SerializeField] private int damage = 20;
     [SerializeField] private float killTimer = 10;
 
+    public string ignoreTag;
+
     private void Start()
     {
         StartCoroutine(start());
@@ -23,9 +25,13 @@ public class HackerBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Collider2D c = collision.collider;
+        Collider2D c = collider;
+
+        if (c.CompareTag(ignoreTag))
+            return;
+
         if(c.TryGetComponent(out Health health))
         {
             health.TakeDamage(damage);
