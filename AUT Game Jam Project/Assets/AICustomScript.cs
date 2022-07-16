@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Pathfinding;
+using UnityEngine;
 
 public class AICustomScript : MonoBehaviour
 {
@@ -29,13 +27,15 @@ public class AICustomScript : MonoBehaviour
     {
         if (!generatedPath.error)
         {
-            
+
             path = generatedPath;
             currentWayPoint = 0;
         }
     }
     private void Update()
     {
-        print(path.vectorPath.Count);
+        if (path == null)
+            return;
+
     }
 }
