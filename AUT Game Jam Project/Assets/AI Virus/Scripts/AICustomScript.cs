@@ -7,7 +7,7 @@ public class AICustomScript : MonoBehaviour
 
     [SerializeField] float speed;
     float nextWayPointDistance = 3;
-
+    
     Path path;
     int currentWayPoint;
     bool reachedEndofPath;
@@ -16,8 +16,10 @@ public class AICustomScript : MonoBehaviour
 
     Rigidbody2D rigidbody;
 
+    GameObject GFX;
     private void Awake()
     {
+        GFX = transform.GetChild(0).gameObject;
         if (speed == 0)
         {
             Debug.LogError("Speed Value Is zero");
@@ -63,7 +65,15 @@ public class AICustomScript : MonoBehaviour
         {
             currentWayPoint++;
         }
-        
+
+        if (rigidbody.velocity.x > 0) {
+            GFX.transform.localScale = new Vector3(1, 1,1);
+        }
+        if (rigidbody.velocity.x < 0)
+        {
+            GFX.transform.localScale = new Vector3(-1, 1,1);
+        }
+
     }
     void UpdatePath()
     {
