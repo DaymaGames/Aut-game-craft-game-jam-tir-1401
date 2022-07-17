@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class VirusStateReferences
+public class AIStateReferences
 {
-    public VirusController controller;
+    public AIController controller;
     public AIParentClass ai;
     public Rigidbody2D rb;
 
     [Header("Moving To Target")]
     public float maxDistanceToTarget = 2;
     public float getBackRange = 1;
+    public float getBackForce = 160;
 
     [Header("Attacking")]
     public int damage = 10;
     public float attackRate = 0.5f;
 }
 
-public abstract class VirusState
+public abstract class AIState
 {
     bool startCalled = false;
-    public VirusStateReferences references;
+    public AIStateReferences references;
 
-    public VirusState Tick()
+    public AIState Tick()
     {
         if (startCalled == false)
         {
@@ -31,9 +32,9 @@ public abstract class VirusState
             startCalled = true;
         }
 
-        VirusState toR = Update();
+        AIState toR = Update();
         toR.references = references;
-
+        toR.OnAttack = OnAttack;
         if (toR != this)
         {
             StateExit(toR);
@@ -44,23 +45,25 @@ public abstract class VirusState
 
     protected virtual void Start() { }
 
-    protected virtual void StateExit(VirusState nextState) { }
+    protected virtual void StateExit(AIState nextState) { }
 
     public virtual void OnDrawGizmos() { }
 
-    protected abstract VirusState Update();
+    protected abstract AIState Update();
 
     protected void print(object message)
     {
         Debug.Log(message);
     }
+
+    public delegate void OnAttackDel(Transform target);
+    public OnAttackDel OnAttack;
 }
 
-public class MoveToTargetState : VirusState
+public class MoveToTargetState : AIState
 {
     Transform target;
     AIParentClass ai;
-    float getBackForce = 200;
     Rigidbody2D rb;
 
     protected override void Start()
@@ -73,7 +76,7 @@ public class MoveToTargetState : VirusState
 
     bool facingRight = true;
 
-    protected override VirusState Update()
+    protected override AIState Update()
     {
         if (!target)
         {
@@ -122,12 +125,13 @@ public class MoveToTargetState : VirusState
 
     private void Attack()
     {
-        target.GetComponent<Health>().TakeDamage(references.damage);
+        OnAttack?.Invoke(target);
+        //target.GetComponent<Health>().TakeDamage(references.damage);
     }
 
     private void GetBack(Vector2 relative)
     {
-        rb.AddForce(-relative * getBackForce * Time.deltaTime);
+        rb.AddForce(-relative * references.getBackForce * Time.deltaTime);
     }
 
     private void HandleFlipping(Vector2 relative)
@@ -161,10 +165,12 @@ public class MoveToTargetState : VirusState
 
     public override void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(rb.position, references.maxDistanceToTarget);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(rb.position, references.getBackRange);
+        if (rb)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(rb.position, references.maxDistanceToTarget);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(rb.position, references.getBackRange);
+        }
     }
 }

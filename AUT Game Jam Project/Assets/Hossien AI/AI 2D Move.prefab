@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6972093353094162903}
   - component: {fileID: 6972093353094162900}
   - component: {fileID: 6972093353094162904}
-  - component: {fileID: 6972093353094162899}
+  - component: {fileID: 8588270163826502936}
   - component: {fileID: 383949062427253589}
   m_Layer: 0
   m_Name: AI 2D Move
@@ -114,12 +114,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30798b6b26341a04d867e3f6ad21097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
   faceVelocity: 1
+  facingRight: 1
+  speed: 200
   nextWaypointDistance: 3
   reachedEndOfPath: 0
   updateInterval: 0.3
---- !u!114 &6972093353094162899
+--- !u!114 &8588270163826502936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,18 +129,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6972093353094162905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00fa7ca042702a4283e1dd3605cf64d, type: 3}
+  m_Script: {fileID: 11500000, guid: d5220ec77d5076c459a97a5f47d8d295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemyTag: AntiVirus
-  virusReferences:
-    controller: {fileID: 6972093353094162899}
+  enemyTags: []
+  aIReferences:
+    controller: {fileID: 8588270163826502936}
     ai: {fileID: 6972093353094162904}
     rb: {fileID: 6972093353094162903}
     maxDistanceToTarget: 2
     getBackRange: 1
-    damage: 50
+    damage: 10
     attackRate: 0.5
 --- !u!114 &383949062427253589
 MonoBehaviour:
@@ -157,6 +158,7 @@ MonoBehaviour:
   currentHealth: 100
   fullHealthOnAwake: 1
   isDead: 0
+  damageForce: 50
   OnDieEvent:
     m_PersistentCalls:
       m_Calls:

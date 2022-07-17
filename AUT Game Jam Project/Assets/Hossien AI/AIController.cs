@@ -2,27 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AIParentClass))]
-public class VirusController : MonoBehaviour
+[RequireComponent(typeof(AIParentClass),typeof(Rigidbody2D))]
+public class AIController : MonoBehaviour
 {
     public Transform target;
     public List<string> enemyTags;
     
     [Space]
-    public VirusStateReferences virusReferences;
+    public AIStateReferences aIReferences;
 
-    private VirusState state;
+    private AIState state;
 
     private void Awake()
     {
         state = new MoveToTargetState
         {
-            references = virusReferences
+            references = aIReferences
         };
+
+        state.OnAttack += OnAttack;
     }
 
     public Transform FindClosestEnemy()
     {
+        if (enemyTags.Count == 0)
+            return null;
+
         List<GameObject> hasTags = new List<GameObject>();
 
         foreach (var tag in enemyTags)
@@ -65,4 +70,7 @@ public class VirusController : MonoBehaviour
         state.OnDrawGizmos();
     }
 
+    public virtual void OnAttack(Transform target)
+    {
+    }
 }

@@ -138,6 +138,7 @@ MonoBehaviour:
   currentHealth: 100
   fullHealthOnAwake: 1
   isDead: 0
+  damageForce: 50
   OnDieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -162,12 +163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2704432291686427954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00fa7ca042702a4283e1dd3605cf64d, type: 3}
+  m_Script: {fileID: 11500000, guid: d5220ec77d5076c459a97a5f47d8d295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemyTag: Virus
-  virusReferences:
+  enemyTags: []
+  aIReferences:
     controller: {fileID: 2704432291686427952}
     ai: {fileID: 2704432291686427956}
     rb: {fileID: 2704432291686427963}

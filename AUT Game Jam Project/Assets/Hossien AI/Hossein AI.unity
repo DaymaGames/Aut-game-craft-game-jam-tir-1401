@@ -157,6 +157,7 @@ MonoBehaviour:
   currentHealth: 100
   fullHealthOnAwake: 1
   isDead: 0
+  damageForce: 50
   OnDieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -647,6 +648,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1367704340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2704432291686427954, guid: 1228a704adca6124bbe9125761024175, type: 3}
+  m_PrefabInstance: {fileID: 2704432291686091795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1367704341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367704340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5220ec77d5076c459a97a5f47d8d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemyTags:
+  - Virus
+  aIReferences:
+    controller: {fileID: 0}
+    ai: {fileID: 0}
+    rb: {fileID: 0}
+    maxDistanceToTarget: 2
+    getBackRange: 1
+    damage: 10
+    attackRate: 0.5
 --- !u!1 &1637031831
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +930,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Without AI
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2704432291686427952, guid: 1228a704adca6124bbe9125761024175, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1228a704adca6124bbe9125761024175, type: 3}
 --- !u!1001 &6972093354302583583
 PrefabInstance:
@@ -973,6 +1003,14 @@ PrefabInstance:
     - target: {fileID: 6972093353094162905, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
       propertyPath: m_Name
       value: AI 2D Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588270163826502936, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
+      propertyPath: enemyTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588270163826502936, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
+      propertyPath: enemyTags.Array.data[0]
+      value: AntiVirus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
