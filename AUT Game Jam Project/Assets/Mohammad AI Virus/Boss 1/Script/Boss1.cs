@@ -6,26 +6,34 @@ public class Boss1 : MonoBehaviour
 {
     enum BossState {ShootAttack,CicleAttack,Rest,Standby }
     [SerializeField]BossState bossState;
-    [SerializeField] GameObject bullet;
+    [SerializeField]Transform player;
 
     [Header("Scirpts")]
     [SerializeField]BulletSpawner bulletSpawnerScript;
+
+    [Header("Delay Between Shooting")]
+    [SerializeField]float shootDelay=1.5f;
+
+    [Header("Cicrle Attack Damage Range")]
+    [SerializeField] float damageRange = 3;
+
     private void Start()
     {
         
     }
     private void Update()
     {
+        
         switch (bossState)
         {
             case BossState.ShootAttack:
                 //first shoot bullet for 10 sec
                 //after that switch to circle attack
-                ShootAttack();
+                StartCoroutine("Shoot");
                 bossState = BossState.Standby;
                 break;
             case BossState.CicleAttack:
-                //circle attack 
+                //two circle attack 
                 //switch to rest 
                 break;
             case BossState.Rest:
@@ -35,6 +43,7 @@ public class Boss1 : MonoBehaviour
                 
 
         }
+        SetFacing();
     }
 
     void ShootAttack()
@@ -43,15 +52,42 @@ public class Boss1 : MonoBehaviour
     }
     void CircleAttack()
     {
+        print((player.transform.position - transform.position).magnitude);
+        if ((player.transform.position - transform.position).magnitude <= damageRange)
+        {
+            //Damage Player
+        }
 
     }
-    
-    void SwitchToRest()
+
+
+
+
+    IEnumerator Shoot()
     {
-        bossState = BossState.Rest;
+        
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(1);
+        bossState = BossState.CicleAttack;
     }
-    void StateSwitcher(BossState givenValue,BossState goalValue)
+    void SetFacing()
     {
-        givenValue = goalValue;
+        if (transform.position.x - player.position.x < 0)
+        {
+            transform.localScale=new Vector3(1, 1, 1);
+        }
+        if(transform.position.x - player.position.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }
