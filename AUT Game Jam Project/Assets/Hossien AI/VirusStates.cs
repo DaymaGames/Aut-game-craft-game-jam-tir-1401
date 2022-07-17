@@ -17,6 +17,7 @@ public class AIStateReferences
     [Header("Attacking")]
     public int damage = 10;
     public float attackRate = 0.5f;
+    public bool bypassAttacking = false;
 }
 
 public abstract class AIState
@@ -125,13 +126,15 @@ public class MoveToTargetState : AIState
 
     private void Attack()
     {
+        if (references.bypassAttacking)
+            return;
         OnAttack?.Invoke(target);
         //target.GetComponent<Health>().TakeDamage(references.damage);
     }
 
     private void GetBack(Vector2 relative)
     {
-        rb.AddForce(-relative * references.getBackForce * Time.deltaTime);
+        rb.AddForce(references.getBackForce * Time.deltaTime * -relative);
     }
 
     private void HandleFlipping(Vector2 relative)
@@ -161,16 +164,5 @@ public class MoveToTargetState : AIState
     void MoveToTarget()
     {
         ai.SetDestination(target.position);
-    }
-
-    public override void OnDrawGizmos()
-    {
-        if (rb)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(rb.position, references.maxDistanceToTarget);
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(rb.position, references.getBackRange);
-        }
     }
 }

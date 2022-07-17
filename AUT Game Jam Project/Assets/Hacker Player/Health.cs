@@ -38,10 +38,11 @@ public class Health : MonoBehaviour
     {
         if (TakeDamage(damage) == false)
             return;
+
         if (TryGetComponent(out Rigidbody2D rb))
         {
             Vector2 relative = transform.position - damager.position;
-            rb.AddForce(damageForce * Time.deltaTime * relative.normalized);
+            rb.AddForce(damageForce * relative.normalized);
         }
         else
         {

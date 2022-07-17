@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackerBullet : MonoBehaviour
+public class GeneralBullet : MonoBehaviour
 {
     [SerializeField] private int damage = 20;
     [SerializeField] private float killTimer = 10;
@@ -16,12 +16,8 @@ public class HackerBullet : MonoBehaviour
 
     private IEnumerator start()
     {
-        float t = 0;
-        while (t < 1)
-        {
-            t += Time.deltaTime / killTimer;
-            yield return null;
-        }
+        yield return new WaitForSeconds(killTimer);
+
         Destroy(gameObject);
     }
 
@@ -34,7 +30,7 @@ public class HackerBullet : MonoBehaviour
 
         if(c.TryGetComponent(out Health health))
         {
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, transform);
         }
         StopAllCoroutines();
         Destroy(gameObject);

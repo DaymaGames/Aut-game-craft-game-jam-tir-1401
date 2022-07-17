@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossAbilityManager : MonoBehaviour
 {
     public HackerBoss hackerBossPrefab;
     public Transform bossSpawnPoint;
+
+    public List<ErrorMatch> wrongMatches = new List<ErrorMatch>();
+
+    public Button spawnButton;
+
+    public BossAbility[] allAbilities;
+
+    [Space]
+
+    public ErrorMatch matchToAdd;
 
     Transform parent;
 
@@ -42,6 +53,26 @@ public class BossAbilityManager : MonoBehaviour
                 OpenMenu();
             }
         }
+
+        foreach (var ab in allAbilities)
+        {
+            ab.GiveTypeToManager();
+        }
+
+        Abilities.SizeMode size = abilities.sizeMode;
+        Abilities.AttackMode attack = abilities.attackMode;
+        Abilities.MoveMode move = abilities.moveMode;
+
+        foreach (var match in wrongMatches)
+        {
+            if (match.IsMatch(size, attack, move))
+            {
+                spawnButton.interactable = false;
+                //print(size.ToString() + " " + attack.ToString() + " " + move.ToString());
+                return;
+            }
+        }
+        spawnButton.interactable = true;
     }
 
     void OpenMenu()
@@ -56,8 +87,7 @@ public class BossAbilityManager : MonoBehaviour
 
     public void SpawnBoss()
     {
-        BossAbility[] abs = FindObjectsOfType<BossAbility>();
-        foreach (var ab in abs)
+        foreach (var ab in allAbilities)
         {
             ab.GiveTypeToManager();
         }
@@ -66,5 +96,43 @@ public class BossAbilityManager : MonoBehaviour
             Instantiate(hackerBossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
 
         hackerBoss.SetAbilities(abilities);
+    }
+}
+[System.Serializable]
+public class ErrorMatch
+{
+    public bool bypassSize = false;
+    public bool bypassAttack = false;
+    public bool bypassMove = false;
+    [Space]
+    public Abilities.SizeMode sizeMode;
+    public Abilities.AttackMode attackMode;
+    public Abilities.MoveMode moveMode;
+
+    public bool IsMatch(Abilities.SizeMode size, Abilities.AttackMode attack, Abilities.MoveMode move)
+    {
+        if(bypassAttack == false && bypassMove == false && bypassSize == false)
+        {
+            if (size == sizeMode && attack == attackMode && move == moveMode)
+                return true;
+
+        }
+        else if(bypassAttack == false && bypassMove == false)
+        {
+            if (attack == attackMode && move == moveMode)
+                return true;
+        }
+        else if(bypassAttack == false & bypassSize == true)
+        {
+            if (attack == attackMode && size == sizeMode)
+                return true;
+        }
+        else if (bypassMove == false && bypassSize == false)
+        {
+            if (move == moveMode && size == sizeMode)
+                return true;
+        }
+
+        return false;
     }
 }

@@ -107,7 +107,7 @@ public class HackerBoss : MonoBehaviour
 
     void Attack()
     {
-        target.GetComponent<Health>().TakeDamage(damage);
+        target.GetComponent<Health>().TakeDamage(damage, transform);
     }
 
     public void SetAbilities(Abilities abilities)

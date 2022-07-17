@@ -138,6 +138,6 @@ public class HackerController : MonoBehaviour
         bT.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bT.Rotate(Vector3.forward * -90);
 
-        rb.GetComponent<HackerBullet>().ignoreTag = ignoreShootTag;
+        rb.GetComponent<GeneralBullet>().ignoreTag = ignoreShootTag;
     }
 }

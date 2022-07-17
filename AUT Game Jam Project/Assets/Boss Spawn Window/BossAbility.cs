@@ -8,7 +8,6 @@ public class BossAbility : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     [Multiline]
     public List<string> tooltipTextsOrderSensitive = new List<string>();
-    public TMP_Dropdown dropdown;
     public BossAbilityManager abilityManager;
     public AbilityType type;
     int currentOption = 0;

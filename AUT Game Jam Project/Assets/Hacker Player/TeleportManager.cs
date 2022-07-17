@@ -104,7 +104,7 @@ public class TeleportManager : MonoBehaviour
 
             if(hit.collider.TryGetComponent(out Health health))
             {
-                health.TakeDamage(damage);
+                health.TakeDamage(damage, transform);
             }
         }
 

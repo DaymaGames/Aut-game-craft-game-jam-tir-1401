@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Virus
   - AntiVirus
+  - Blocker
   layers:
   - Default
   - TransparentFX

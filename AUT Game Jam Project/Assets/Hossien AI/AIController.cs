@@ -7,12 +7,14 @@ public class AIController : MonoBehaviour
 {
     public Transform target;
     public List<string> enemyTags;
+    public bool autoAttack = true;
     
     [Space]
     public AIStateReferences aIReferences;
 
     private AIState state;
 
+    public System.Action OnAttackAction;
     private void Awake()
     {
         state = new MoveToTargetState
@@ -62,15 +64,23 @@ public class AIController : MonoBehaviour
         state = state.Tick();
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        if (state == null)
-            return;
-
-        state.OnDrawGizmos();
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, aIReferences.maxDistanceToTarget);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aIReferences.getBackRange);
     }
 
     public virtual void OnAttack(Transform target)
     {
+        OnAttackAction?.Invoke();
+        if (autoAttack)
+        {
+            if(target.TryGetComponent(out Health health))
+            {
+                health.TakeDamage(aIReferences.damage, transform);
+            }
+        }
     }
 }
