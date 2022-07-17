@@ -14,6 +14,8 @@ public class Boss1 : MonoBehaviour
     [Header("Delay Between Shooting")]
     [SerializeField]float shootDelay=1.5f;
 
+    [Header("Cicrle Attack Damage Range")]
+    [SerializeField] float damageRange = 3;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class Boss1 : MonoBehaviour
     }
     private void Update()
     {
+        
         switch (bossState)
         {
             case BossState.ShootAttack:
@@ -30,7 +33,7 @@ public class Boss1 : MonoBehaviour
                 bossState = BossState.Standby;
                 break;
             case BossState.CicleAttack:
-                //circle attack 
+                //two circle attack 
                 //switch to rest 
                 break;
             case BossState.Rest:
@@ -49,11 +52,16 @@ public class Boss1 : MonoBehaviour
     }
     void CircleAttack()
     {
+        print((player.transform.position - transform.position).magnitude);
+        if ((player.transform.position - transform.position).magnitude <= damageRange)
+        {
+            //Damage Player
+        }
 
     }
-    
-  
-  
+
+
+
 
     IEnumerator Shoot()
     {
