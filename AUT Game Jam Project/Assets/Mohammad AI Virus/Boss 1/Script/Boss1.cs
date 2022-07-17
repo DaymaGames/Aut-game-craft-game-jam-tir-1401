@@ -22,6 +22,7 @@ public class Boss1 : MonoBehaviour
                 //first shoot bullet for 10 sec
                 //after that switch to circle attack
                 ShootAttack();
+                bossState = BossState.Standby;
                 break;
             case BossState.CicleAttack:
                 //circle attack 
