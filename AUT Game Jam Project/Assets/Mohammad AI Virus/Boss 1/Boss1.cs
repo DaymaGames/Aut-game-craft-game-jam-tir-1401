@@ -7,7 +7,10 @@ public class Boss1 : MonoBehaviour
     enum BossState {ShootAttack,CicleAttack,Rest,Standby }
     [SerializeField]BossState bossState;
     [SerializeField] GameObject bullet;
-
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         switch (bossState)
@@ -31,7 +34,7 @@ public class Boss1 : MonoBehaviour
 
     void ShootAttack()
     {
-
+       // Instantiate();
     }
     void CircleAttack()
     {
