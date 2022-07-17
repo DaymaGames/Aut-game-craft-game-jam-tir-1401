@@ -10,6 +10,9 @@ public class Boss1 : MonoBehaviour
 
     [Header("Scirpts")]
     [SerializeField]BulletSpawner bulletSpawnerScript;
+
+    [Header("Delay Between Shooting")]
+    [SerializeField]float shootDelay=1.5f;
     private void Start()
     {
         
@@ -21,7 +24,7 @@ public class Boss1 : MonoBehaviour
             case BossState.ShootAttack:
                 //first shoot bullet for 10 sec
                 //after that switch to circle attack
-                ShootAttack();
+                StartCoroutine("Shoot");
                 bossState = BossState.Standby;
                 break;
             case BossState.CicleAttack:
@@ -53,5 +56,22 @@ public class Boss1 : MonoBehaviour
     void StateSwitcher(BossState givenValue,BossState goalValue)
     {
         givenValue = goalValue;
+    }
+
+    IEnumerator Shoot()
+    {
+        
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
+        yield return new WaitForSeconds(1);
+        bossState = BossState.CicleAttack;
     }
 }
