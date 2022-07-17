@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public int currentHealth = 100;
     public bool fullHealthOnAwake = true;
     public bool isDead = false;
+    public float damageForce = 50f;
     [Space]
     public UnityEvent OnDieEvent;
     private void Awake()
@@ -19,16 +20,32 @@ public class Health : MonoBehaviour
 
     public event System.Action OnDie;
 
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
         if (isDead)
-            return;
+            return false;
 
         currentHealth -= damage;
         ClampHealth();
         if (currentHealth == 0)
         {
             Die();
+        }
+        return true;
+    }
+
+    public void TakeDamage(int damage, Transform damager)
+    {
+        if (TakeDamage(damage) == false)
+            return;
+        if (TryGetComponent(out Rigidbody2D rb))
+        {
+            Vector2 relative = transform.position - damager.position;
+            rb.AddForce(damageForce * Time.deltaTime * relative.normalized);
+        }
+        else
+        {
+            Debug.LogWarning("No Rigidbody Detected");
         }
     }
 
@@ -52,5 +69,10 @@ public class Health : MonoBehaviour
     public void DestroyGameObject()
     {
         Destroy(gameObject);
+    }
+
+    public void Print(string message)
+    {
+        Debug.Log(message);
     }
 }

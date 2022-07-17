@@ -919,6 +919,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6972093353094162899, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
+      propertyPath: virusReferences.damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972093353094162899, guid: f110ae2c4fbaac344b2041fa18806ca8, type: 3}
       propertyPath: enemyTags.Array.data[0]
       value: AntiVirus
       objectReference: {fileID: 0}
