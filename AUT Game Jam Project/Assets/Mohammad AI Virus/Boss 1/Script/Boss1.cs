@@ -49,14 +49,8 @@ public class Boss1 : MonoBehaviour
 
     }
     
-    void SwitchToRest()
-    {
-        bossState = BossState.Rest;
-    }
-    void StateSwitcher(BossState givenValue,BossState goalValue)
-    {
-        givenValue = goalValue;
-    }
+  
+  
 
     IEnumerator Shoot()
     {
