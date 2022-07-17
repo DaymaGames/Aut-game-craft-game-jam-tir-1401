@@ -21,6 +21,7 @@ public class Boss1 : MonoBehaviour
             case BossState.ShootAttack:
                 //first shoot bullet for 10 sec
                 //after that switch to circle attack
+                ShootAttack();
                 break;
             case BossState.CicleAttack:
                 //circle attack 
@@ -37,7 +38,7 @@ public class Boss1 : MonoBehaviour
 
     void ShootAttack()
     {
-        bulletSpawnerScript.BossShoot();
+        bulletSpawnerScript.Shoot();
     }
     void CircleAttack()
     {

@@ -11,7 +11,7 @@ public class BulletSpawner : MonoBehaviour
 
     
 
-   public void BossShoot()
+   public void ShootAttack()
     {
         StartCoroutine("MakeBulletRings");
     }
