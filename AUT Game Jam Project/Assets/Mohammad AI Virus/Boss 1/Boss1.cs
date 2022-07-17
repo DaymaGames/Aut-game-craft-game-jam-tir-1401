@@ -31,7 +31,11 @@ public class Boss1 : MonoBehaviour
 
         }
     }
-     
+
+    void ShootAttack()
+    {
+
+    }
     void SwitchToRest()
     {
         bossState = BossState.Rest;
