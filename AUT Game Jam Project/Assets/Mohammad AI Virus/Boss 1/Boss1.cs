@@ -6,7 +6,7 @@ public class Boss1 : MonoBehaviour
 {
     enum BossState {ShootAttack,CicleAttack,Rest,Standby }
     [SerializeField]BossState bossState;
-    float shootingTimeLenght=2;
+    [SerializeField] GameObject bullet;
 
     private void Update()
     {
@@ -15,9 +15,6 @@ public class Boss1 : MonoBehaviour
             case BossState.ShootAttack:
                 //first shoot bullet for 10 sec
                 //after that switch to circle attack
-                print("shoot");
-                Invoke("SwitchToRest", shootingTimeLenght);
-                
                 break;
             case BossState.CicleAttack:
                 //circle attack 
@@ -36,9 +33,17 @@ public class Boss1 : MonoBehaviour
     {
 
     }
+    void CircleAttack()
+    {
+
+    }
+    
     void SwitchToRest()
     {
         bossState = BossState.Rest;
     }
-
+    void StateSwitcher(BossState givenValue,BossState goalValue)
+    {
+        givenValue = goalValue;
+    }
 }
