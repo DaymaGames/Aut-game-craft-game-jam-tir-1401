@@ -7,6 +7,9 @@ public class Boss1 : MonoBehaviour
     enum BossState {ShootAttack,CicleAttack,Rest,Standby }
     [SerializeField]BossState bossState;
     [SerializeField] GameObject bullet;
+
+    [Header("Scirpts")]
+    [SerializeField]BulletSpawner bulletSpawnerScript;
     private void Start()
     {
         
@@ -34,7 +37,7 @@ public class Boss1 : MonoBehaviour
 
     void ShootAttack()
     {
-       // Instantiate();
+        bulletSpawnerScript.BossShoot();
     }
     void CircleAttack()
     {

@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossState: 0
   bullet: {fileID: 0}
+  bulletSpawnerScript: {fileID: 1956467382}
 --- !u!1 &186104549
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ GameObject:
   - component: {fileID: 186104550}
   - component: {fileID: 186104551}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Facing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,8 +398,6 @@ GameObject:
   m_Component:
   - component: {fileID: 586276527}
   - component: {fileID: 586276528}
-  - component: {fileID: 586276531}
-  - component: {fileID: 586276530}
   m_Layer: 0
   m_Name: Bullet SpawnPos
   m_TagString: Untagged
@@ -471,43 +470,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &586276530
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586276526}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!50 &586276531
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586276526}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1956467379
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,3 +568,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPos: {fileID: 586276527}
   bullet: {fileID: 6142710482477852669, guid: d79cac399903e1f47b02f6120b1e5554, type: 3}
+  eachRingDelay: 0.3

@@ -9,10 +9,7 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField]float eachRingDelay=0.3f;
 
 
-    private void Start()
-    {
-        BossShoot();
-    }
+    
 
    public void BossShoot()
     {

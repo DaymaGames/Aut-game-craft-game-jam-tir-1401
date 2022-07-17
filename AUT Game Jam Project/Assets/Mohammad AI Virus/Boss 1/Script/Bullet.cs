@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rigidBody;
     Transform bossTransform;
 
-    float destroyTime=5;
+    float destroyTime=2;
     float bulletSpeed = 500;
     private void Awake()
     {
