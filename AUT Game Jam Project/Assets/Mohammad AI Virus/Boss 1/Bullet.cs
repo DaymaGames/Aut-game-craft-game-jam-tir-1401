@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    float bulletSpeed=500;
-    Rigidbody2D rigidBody;
-    [SerializeField]Transform bossTransform;
     
+    Rigidbody2D rigidBody;
+    Transform bossTransform;
+
+    float destroyTime=5;
+    float bulletSpeed = 500;
     private void Awake()
     {
         bossTransform = FindObjectOfType<Boss1>().transform;
-
         rigidBody = GetComponent<Rigidbody2D>();
+
+        Destroy(gameObject,destroyTime);
+
     }
     
     private void FixedUpdate()
@@ -20,5 +24,5 @@ public class Bullet : MonoBehaviour
         rigidBody.AddForce((transform.position - bossTransform.position).normalized * bulletSpeed*Time.deltaTime);
     }
 
-    
+  
 }

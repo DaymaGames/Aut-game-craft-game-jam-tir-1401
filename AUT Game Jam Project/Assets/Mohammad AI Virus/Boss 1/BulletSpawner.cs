@@ -6,24 +6,35 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] Transform bulletSpawnPos;
     [SerializeField] GameObject bullet;
-    void Start()
+    [SerializeField]float eachRingDelay=0.3f;
+
+
+    private void Start()
     {
-        //Instantiate(bullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
-        //transform.Rotate(0,0 ,+45 );
-        //Instantiate(bullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
-        //transform.Rotate(0, 0, +45);
-        //Instantiate(bullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
-        //transform.Rotate(0, 0, +45);
-        for(int i = 0; i < 7; i++)
+        BossShoot();
+    }
+
+   public void BossShoot()
+    {
+        StartCoroutine("MakeBulletRings");
+    }
+   IEnumerator MakeBulletRings()
+    {
+        yield return new WaitForSeconds(eachRingDelay);
+        MakeABulletRing();
+        yield return new WaitForSeconds(eachRingDelay);
+        MakeABulletRing();
+        yield return new WaitForSeconds(eachRingDelay);
+        MakeABulletRing();
+    }
+
+   void MakeABulletRing()
+    {
+        for (int i = 0; i < 8; i++)
         {
             transform.Rotate(0, 0, +45);
             Instantiate(bullet, bulletSpawnPos.position, bulletSpawnPos.rotation);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
