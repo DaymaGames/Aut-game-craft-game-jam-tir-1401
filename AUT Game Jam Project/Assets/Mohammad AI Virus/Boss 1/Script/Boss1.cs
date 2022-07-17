@@ -6,13 +6,15 @@ public class Boss1 : MonoBehaviour
 {
     enum BossState {ShootAttack,CicleAttack,Rest,Standby }
     [SerializeField]BossState bossState;
-    [SerializeField] GameObject bullet;
+    [SerializeField]Transform player;
 
     [Header("Scirpts")]
     [SerializeField]BulletSpawner bulletSpawnerScript;
 
     [Header("Delay Between Shooting")]
     [SerializeField]float shootDelay=1.5f;
+
+
     private void Start()
     {
         
@@ -38,6 +40,7 @@ public class Boss1 : MonoBehaviour
                 
 
         }
+        SetFacing();
     }
 
     void ShootAttack()
@@ -67,5 +70,16 @@ public class Boss1 : MonoBehaviour
         ShootAttack();
         yield return new WaitForSeconds(1);
         bossState = BossState.CicleAttack;
+    }
+    void SetFacing()
+    {
+        if (transform.position.x - player.position.x < 0)
+        {
+            transform.localScale=new Vector3(1, 1, 1);
+        }
+        if(transform.position.x - player.position.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }
