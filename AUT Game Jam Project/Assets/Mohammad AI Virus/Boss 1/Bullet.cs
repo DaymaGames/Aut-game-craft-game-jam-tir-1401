@@ -7,9 +7,11 @@ public class Bullet : MonoBehaviour
     float bulletSpeed=500;
     Rigidbody2D rigidBody;
     [SerializeField]Transform bossTransform;
-    [SerializeField]Transform bulletSpawnPos;
+    
     private void Awake()
     {
+        bossTransform = FindObjectOfType<Boss1>().transform;
+
         rigidBody = GetComponent<Rigidbody2D>();
     }
     
