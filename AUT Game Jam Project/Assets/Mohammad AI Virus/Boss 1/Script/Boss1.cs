@@ -7,7 +7,7 @@ public class Boss1 : MonoBehaviour
     [SerializeField] BossState bossState;
     [SerializeField] Transform player;
 
-    [Header("Scirpts")]
+    [Header("Required Scirpts")]
     [SerializeField] BulletSpawner bulletSpawnerScript;
 
     [Header("Delay Between Shooting")]
@@ -15,8 +15,10 @@ public class Boss1 : MonoBehaviour
 
     [Header("Cicrle Attack Damage Range")]
     [SerializeField] float damageRange = 5;
+    float delayBetweenCirlceAttacks = 2f;
 
-    float delayBetweenCirlceAttacks=1.5f;
+    [Header("Boss Rest TimeDelay")]
+    [SerializeField]float restLenght = 3;
     private void Start()
     {
 
@@ -41,41 +43,15 @@ public class Boss1 : MonoBehaviour
             case BossState.Rest:
                 //3 second rest
                 //after 3 second switch to shoot 
-
+                StartCoroutine("Rest");
                 bossState = BossState.Standby;
                 break;
 
 
         }
         SetFacing();
-        
-    }
 
-    void ShootAttack()
-    {
-        bulletSpawnerScript.Shoot();
     }
-    
-    IEnumerator CircleAttack()
-    {
-        //playAttackAnimation
-        if ((player.transform.position - transform.position).magnitude <= damageRange)
-        {
-            //Damage Player
-            print("CircleAttackOne");
-          
-        }
-        yield return new WaitForSeconds(delayBetweenCirlceAttacks);
-        //playAttackAnimation
-        if ((player.transform.position - transform.position).magnitude <= damageRange)
-        {
-            //Damage Player
-            print("CircleAttacktwo");
-        }
-        bossState = BossState.Rest;
-    }
-
-
 
     IEnumerator Shoot()
     {
@@ -92,6 +68,38 @@ public class Boss1 : MonoBehaviour
         ShootAttack();
         yield return new WaitForSeconds(1);
         bossState = BossState.CicleAttack;
+    }
+    IEnumerator CircleAttack()
+    {
+        yield return new WaitForSeconds(delayBetweenCirlceAttacks);
+        //playAttackAnimation
+        print("CircleAttack1");
+        if ((player.transform.position - transform.position).magnitude <= damageRange)
+        {
+            //Damage Player
+            print("Damaged");
+
+        }
+        yield return new WaitForSeconds(delayBetweenCirlceAttacks);
+        //playAttackAnimation
+        print("CircleAttack2");
+        if ((player.transform.position - transform.position).magnitude <= damageRange)
+        {
+            //Damage Player
+            print("Damaged");
+        }
+        yield return new WaitForSeconds(1);
+        bossState = BossState.Rest;
+    }
+    IEnumerator Rest()
+    {
+        print("bossIsResting");
+        yield return new WaitForSeconds(restLenght);
+        bossState = BossState.ShootAttack;
+    }
+    void ShootAttack()
+    {
+        bulletSpawnerScript.Shoot();
     }
     void SetFacing()
     {

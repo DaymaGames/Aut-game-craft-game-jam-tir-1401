@@ -1,21 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] Transform bulletSpawnPos;
     [SerializeField] GameObject bullet;
-    [SerializeField]float eachRingDelay=0.3f;
-
-
+    [SerializeField] float eachRingDelay = 0.3f;
     
+    [SerializeField] float rotateEachThreeRing=25;
 
-   public void Shoot()
+
+    public void Shoot()
     {
         StartCoroutine("MakeBulletRings");
     }
-   IEnumerator MakeBulletRings()
+    IEnumerator MakeBulletRings()
     {
         yield return new WaitForSeconds(eachRingDelay);
         MakeABulletRing();
@@ -23,9 +22,10 @@ public class BulletSpawner : MonoBehaviour
         MakeABulletRing();
         yield return new WaitForSeconds(eachRingDelay);
         MakeABulletRing();
+        transform.Rotate(0, 0, rotateEachThreeRing);
     }
 
-   void MakeABulletRing()
+    void MakeABulletRing()
     {
         for (int i = 0; i < 8; i++)
         {
