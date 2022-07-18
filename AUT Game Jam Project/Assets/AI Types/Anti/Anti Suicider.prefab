@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 1871962880949986862}
   m_Layer: 0
   m_Name: Anti Suicider
-  m_TagString: Virus
+  m_TagString: AntiVirus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTags:
-  - AntiVirus
+  - Virus
+  - Player
   autoAttack: 0
   aIReferences:
     controller: {fileID: 770251297230852303}

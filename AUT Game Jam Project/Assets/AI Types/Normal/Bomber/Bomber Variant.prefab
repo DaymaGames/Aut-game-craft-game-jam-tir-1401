@@ -119,6 +119,7 @@ MonoBehaviour:
   runAnim: Run
   attackAnim: Shoot
   dieAnim: Die
+  suicideAnim: Suicide
 --- !u!1001 &6572621524320028813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,9 +136,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195641233644156313}
     - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
+      propertyPath: enemyTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
       propertyPath: aIReferences.animPlayer
       value: 
       objectReference: {fileID: 195641233644156313}
+    - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
+      propertyPath: enemyTags.Array.data[0]
+      value: AntiVirus
+      objectReference: {fileID: 0}
     - target: {fileID: 8188360388752185038, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
       propertyPath: m_RootOrder
       value: 0

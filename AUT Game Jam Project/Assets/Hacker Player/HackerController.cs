@@ -19,6 +19,10 @@ public class HackerController : MonoBehaviour
     [SerializeField] private bool reloading = false;
     [SerializeField] private Image reloadImage;
 
+    [Space]
+
+    public AnimationPlayer animPlayer;
+    
     [HideInInspector] public bool bypass = false;
 
     private CharacterMovement movement;
@@ -142,5 +146,11 @@ public class HackerController : MonoBehaviour
         bT.Rotate(Vector3.forward * -90);
 
         rb.GetComponent<GeneralBullet>().ignoreTag = ignoreShootTag;
+    }
+
+    public void Die()
+    {
+        movement.enabled = false;
+        animPlayer.PlayAnim(AnimationType.Die);
     }
 }

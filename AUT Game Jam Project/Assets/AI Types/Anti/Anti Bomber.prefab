@@ -119,6 +119,7 @@ MonoBehaviour:
   runAnim: Run
   attackAnim: Shoot
   dieAnim: Die
+  suicideAnim: Suicide
 --- !u!1 &8188360387931038815
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTags:
-  - AntiVirus
+  - Virus
+  - Player
   autoAttack: 0
   aIReferences:
     controller: {fileID: 8188360388752185037}

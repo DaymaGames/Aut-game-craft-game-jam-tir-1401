@@ -47,7 +47,7 @@ public class AnimationPlayer : MonoBehaviour
     }
     public void DestroyObject()
     {
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
     }
 }
 public enum AnimationType { Idle,Run,Attack,Die,Suicide }

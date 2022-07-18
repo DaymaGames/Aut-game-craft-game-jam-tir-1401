@@ -68,9 +68,10 @@ public class Health : MonoBehaviour
         OnDieEvent.Invoke();
         isDead = true;
 
-        GetComponent<AIController>().dontTick = true;
+        if(TryGetComponent<AIController>(out AIController controller))
+            controller.dontTick = true;
 
-        if(animPlayer)
+        if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);
     }
 

@@ -119,6 +119,7 @@ MonoBehaviour:
   runAnim: Run
   attackAnim: Attack
   dieAnim: Die
+  suicideAnim: Suicide
 --- !u!1001 &2296583827978792000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7919699289474637124, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
       propertyPath: m_Name
-      value: Chaser Normal
+      value: Chaser Normal Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919699289474637124, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
+      propertyPath: m_TagString
+      value: Virus
       objectReference: {fileID: 0}
     - target: {fileID: 7919699289474637127, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
       propertyPath: m_RootOrder
@@ -183,9 +188,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4681449817012631369}
     - target: {fileID: 7919699289474637129, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
+      propertyPath: enemyTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919699289474637129, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
       propertyPath: aIReferences.animPlayer
       value: 
       objectReference: {fileID: 4681449817012631369}
+    - target: {fileID: 7919699289474637129, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
+      propertyPath: enemyTags.Array.data[0]
+      value: AntiVirus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
 --- !u!4 &8230176972386542612 stripped

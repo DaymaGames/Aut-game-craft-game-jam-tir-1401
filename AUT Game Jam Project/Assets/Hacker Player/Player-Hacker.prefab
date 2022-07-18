@@ -288,8 +288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 290, y: -54}
-  m_SizeDelta: {x: 363.9, y: 43.57}
+  m_AnchoredPosition: {x: 317.02, y: -54}
+  m_SizeDelta: {x: 417.94, y: 43.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1982171515
 CanvasRenderer:
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 8859555894958813325}
   m_Layer: 9
   m_Name: Player GFX
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1027,6 +1027,7 @@ MonoBehaviour:
   reloadTime: 5
   reloading: 0
   reloadImage: {fileID: 8859555896935658887}
+  animPlayer: {fileID: 8228250353151880045}
   bypass: 0
 --- !u!114 &8859555896615692108
 MonoBehaviour:
@@ -1059,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  maxTeleportRange: 5
+  maxTeleportRange: 6.7
   teleportCircle: {fileID: 0}
   slowMotionScale: 0.05
   teleportCoolDown: 2

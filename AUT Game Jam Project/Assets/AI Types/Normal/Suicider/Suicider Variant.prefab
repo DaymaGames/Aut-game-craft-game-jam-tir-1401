@@ -53,11 +53,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852297, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_Name
-      value: Suicider
+      value: Suicider Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 770251297230852297, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: m_TagString
+      value: Virus
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852303, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: autoAttack
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 770251297230852303, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: enemyTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 770251297230852303, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: enemyTags.Array.data[0]
+      value: AntiVirus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}

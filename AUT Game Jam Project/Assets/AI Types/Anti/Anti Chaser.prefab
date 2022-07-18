@@ -119,6 +119,7 @@ MonoBehaviour:
   runAnim: Run
   attackAnim: Attack
   dieAnim: Die
+  suicideAnim: Suicide
 --- !u!1 &7919699289023318099
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ GameObject:
   - component: {fileID: 5441368407495646685}
   m_Layer: 0
   m_Name: Anti Chaser
-  m_TagString: Virus
+  m_TagString: AntiVirus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTags:
-  - AntiVirus
+  - Virus
+  - Player
   autoAttack: 1
   aIReferences:
     controller: {fileID: 7919699289474637129}
@@ -286,19 +288,7 @@ MonoBehaviour:
   damageForce: 50
   OnDieEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7919699289474637128}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: DestroyGameObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   animPlayer: {fileID: 918561339}
 --- !u!114 &5441368407495646685
 MonoBehaviour:

@@ -24,7 +24,8 @@ public class Boss1 : MonoBehaviour
     [SerializeField] AudioSource audioSource;//age gharar shod dad bezane
     private void Start()
     {
-
+        if (!player)
+            player = FindObjectOfType<HackerController>().transform;
     }
     private void Update()
     {
