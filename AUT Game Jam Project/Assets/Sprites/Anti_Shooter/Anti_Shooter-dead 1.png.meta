@@ -1,46 +1,88 @@
 fileFormatVersion: 2
-guid: ae711ada9b37039418d3679bcbd38313
+guid: 545ce088761ca5c4b8c4ab765cb22aef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4362053081690256267
-    second: Anti_Chaser-DEAD_0
+      213: 7095302641943712161
+    second: Anti_Shooter-dead_0
   - first:
-      213: -160628209210298646
-    second: Anti_Chaser-DEAD_1
+      213: -8829879453259108043
+    second: Anti_Shooter-dead_1
   - first:
-      213: 3219309358756411745
-    second: Anti_Chaser-DEAD_2
+      213: -1994705515576290501
+    second: Anti_Shooter-dead_2
   - first:
-      213: 9191072689054047349
-    second: Anti_Chaser-DEAD_3
+      213: -2305344170184180794
+    second: Anti_Shooter-dead_3
   - first:
-      213: 1745232478245520472
-    second: Anti_Chaser-DEAD_4
+      213: 3632556200760390154
+    second: Anti_Shooter-dead_4
   - first:
-      213: 1953684364111261972
-    second: Anti_Chaser-DEAD_5
+      213: 6378130657840567924
+    second: Anti_Shooter-dead_5
   - first:
-      213: 2121396933959960211
-    second: Anti_Chaser-DEAD_6
+      213: 1729707815866747433
+    second: Anti_Shooter-dead_6
   - first:
-      213: -5367335787608223271
-    second: Anti_Chaser-DEAD_7
+      213: 5026756822128700195
+    second: Anti_Shooter-dead_7
   - first:
-      213: 3798707594409202873
-    second: Anti_Chaser-DEAD_8
+      213: -6260449303951763602
+    second: Anti_Shooter-dead_8
   - first:
-      213: -4907160410839909099
-    second: Anti_Chaser-DEAD_9
+      213: 2550267160330732381
+    second: Anti_Shooter-dead_9
   - first:
-      213: -87996705975500998
-    second: Anti_Chaser-DEAD_10
+      213: 6896000427454991617
+    second: Anti_Shooter-dead_10
   - first:
-      213: 1768652974531296693
-    second: Anti_Chaser-DEAD_11
+      213: -663650045805867978
+    second: Anti_Shooter-dead_11
   - first:
-      213: 4636372732495450207
-    second: Anti_Chaser-DEAD_12
+      213: 4593039222563842812
+    second: Anti_Shooter-dead_12
+  - first:
+      213: -3772197226895195156
+    second: Anti_Shooter-dead_13
+  - first:
+      213: 8795679617110965554
+    second: Anti_Shooter-dead 1_0
+  - first:
+      213: 8454843267993003802
+    second: Anti_Shooter-dead 1_1
+  - first:
+      213: 8123728648230604718
+    second: Anti_Shooter-dead 1_2
+  - first:
+      213: 5754620113944872566
+    second: Anti_Shooter-dead 1_3
+  - first:
+      213: -7080540280713637101
+    second: Anti_Shooter-dead 1_4
+  - first:
+      213: 2676006875261458794
+    second: Anti_Shooter-dead 1_5
+  - first:
+      213: 4516215224252150138
+    second: Anti_Shooter-dead 1_6
+  - first:
+      213: -4375216741870616889
+    second: Anti_Shooter-dead 1_7
+  - first:
+      213: 1563742854518080723
+    second: Anti_Shooter-dead 1_8
+  - first:
+      213: -7098801756135802674
+    second: Anti_Shooter-dead 1_9
+  - first:
+      213: 2407183811727511527
+    second: Anti_Shooter-dead 1_10
+  - first:
+      213: -5789547961236859499
+    second: Anti_Shooter-dead 1_11
+  - first:
+      213: 2274513273150675432
+    second: Anti_Shooter-dead 1_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +172,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_0
+      name: Anti_Shooter-dead 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b83bb89aa20298c30800000000000000
-      internalID: 4362053081690256267
+      spriteID: 23dfa00a208801a70800000000000000
+      internalID: 8795679617110965554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_1
+      name: Anti_Shooter-dead 1_1
       rect:
         serializedVersion: 2
         x: 80
@@ -165,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeeec19ae7555cdf0800000000000000
-      internalID: -160628209210298646
+      spriteID: a1763541823a55570800000000000000
+      internalID: 8454843267993003802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_2
+      name: Anti_Shooter-dead 1_2
       rect:
         serializedVersion: 2
         x: 160
@@ -186,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16934ce1ec84dac20800000000000000
-      internalID: 3219309358756411745
+      spriteID: eaf03790a284db070800000000000000
+      internalID: 8123728648230604718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_3
+      name: Anti_Shooter-dead 1_3
       rect:
         serializedVersion: 2
         x: 240
@@ -207,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57c5cdf0aef3d8f70800000000000000
-      internalID: 9191072689054047349
+      spriteID: 676800d11848cdf40800000000000000
+      internalID: 5754620113944872566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_4
+      name: Anti_Shooter-dead 1_4
       rect:
         serializedVersion: 2
         x: 320
@@ -228,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8548c4c31bf483810800000000000000
-      internalID: 1745232478245520472
+      spriteID: 3131836012edcbd90800000000000000
+      internalID: -7080540280713637101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_5
+      name: Anti_Shooter-dead 1_5
       rect:
         serializedVersion: 2
         x: 400
@@ -249,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 411361ef391ec1b10800000000000000
-      internalID: 1953684364111261972
+      spriteID: a6956703316132520800000000000000
+      internalID: 2676006875261458794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_6
+      name: Anti_Shooter-dead 1_6
       rect:
         serializedVersion: 2
         x: 480
@@ -270,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39649449547b07d10800000000000000
-      internalID: 2121396933959960211
+      spriteID: a71b2ca81d1dcae30800000000000000
+      internalID: 4516215224252150138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_7
+      name: Anti_Shooter-dead 1_7
       rect:
         serializedVersion: 2
         x: 560
@@ -291,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d1de5dd9846385b0800000000000000
-      internalID: -5367335787608223271
+      spriteID: 7ceb57ddd8b1843c0800000000000000
+      internalID: -4375216741870616889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_8
+      name: Anti_Shooter-dead 1_8
       rect:
         serializedVersion: 2
         x: 640
@@ -312,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b4d6524e68b7b430800000000000000
-      internalID: 3798707594409202873
+      spriteID: 3d40b9357d783b510800000000000000
+      internalID: 1563742854518080723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_9
+      name: Anti_Shooter-dead 1_9
       rect:
         serializedVersion: 2
         x: 720
@@ -333,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51df6080b9346ebb0800000000000000
-      internalID: -4907160410839909099
+      spriteID: ec83b92f96dfb7d90800000000000000
+      internalID: -7098801756135802674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_10
+      name: Anti_Shooter-dead 1_10
       rect:
         serializedVersion: 2
         x: 800
@@ -354,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3ffcee467f57cef0800000000000000
-      internalID: -87996705975500998
+      spriteID: 7efc6174ce8086120800000000000000
+      internalID: 2407183811727511527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_11
+      name: Anti_Shooter-dead 1_11
       rect:
         serializedVersion: 2
         x: 880
@@ -375,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd30e572848b8810800000000000000
-      internalID: 1768652974531296693
+      spriteID: 595d368bdc467afa0800000000000000
+      internalID: -5789547961236859499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anti_Chaser-DEAD_12
+      name: Anti_Shooter-dead 1_12
       rect:
         serializedVersion: 2
         x: 960
@@ -396,8 +438,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50d2b68f64b75040800000000000000
-      internalID: 4636372732495450207
+      spriteID: 8e99e0365c1b09f10800000000000000
+      internalID: 2274513273150675432
       vertices: []
       indices: 
       edges: []
