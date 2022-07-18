@@ -19,7 +19,7 @@ public class Boss1 : MonoBehaviour
 
     [Header("Boss Rest TimeDelay")]
     [SerializeField]float restLenght = 3;
-
+    [Space]
     [SerializeField] AudioSource audioSource;//age gharar shod dad bezane
     private void Start()
     {
