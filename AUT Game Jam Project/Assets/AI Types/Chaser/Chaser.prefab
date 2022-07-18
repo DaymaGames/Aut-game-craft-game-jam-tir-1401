@@ -96,9 +96,10 @@ GameObject:
   - component: {fileID: 8364167372875429854}
   - component: {fileID: 7919699289474637129}
   - component: {fileID: 7919699289474637128}
+  - component: {fileID: 5441368407495646685}
   m_Layer: 0
   m_Name: Chaser
-  m_TagString: Untagged
+  m_TagString: Virus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +132,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -167,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022fa32f4bc0982438763f8cf1e2252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 200
   faceVelocity: 1
   facingRight: 1
-  speed: 200
 --- !u!114 &7919699289474637129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,10 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemyTags: []
+  enemyTags:
+  - AntiVirus
+  autoAttack: 1
   aIReferences:
     controller: {fileID: 7919699289474637129}
-    ai: {fileID: 0}
+    ai: {fileID: 8364167372875429854}
     rb: {fileID: 7919699289474637126}
     maxDistanceToTarget: 1.51
     getBackRange: 1
@@ -226,3 +229,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5441368407495646685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919699289474637124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea6730ef5c1d7246a38549a6f7d15f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -81,7 +81,7 @@ public class BossAbilityManager : MonoBehaviour
             }
         }*/
         #region Wrong Matchs
-        if (speed == Abilities.SpeedMode.Fast)
+        if (speed == Abilities.SpeedMode.Fast || speed == Abilities.SpeedMode.Medium)
         {
             if(size == Abilities.SizeMode.Big)
             {

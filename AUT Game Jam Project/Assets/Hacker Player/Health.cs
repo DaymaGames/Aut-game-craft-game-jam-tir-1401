@@ -50,6 +50,12 @@ public class Health : MonoBehaviour
         }
     }
 
+    [ContextMenu("Take 100 Damage")]
+    public void Take100Damage()
+    {
+        TakeDamage(100);
+    }
+
     private void ClampHealth()
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -62,6 +68,7 @@ public class Health : MonoBehaviour
         isDead = true;
     }
 
+    [ContextMenu("Full Health")]
     public void FullHealth()
     {
         currentHealth = maxHealth;

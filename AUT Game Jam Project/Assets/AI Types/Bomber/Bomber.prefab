@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8188360388752185035}
   - component: {fileID: 8188360388752185036}
   - component: {fileID: 8188360388752185037}
+  - component: {fileID: 3637752790962702452}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Virus
@@ -175,7 +176,19 @@ MonoBehaviour:
   damageForce: 50
   OnDieEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8188360388752185035}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: DestroyGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8188360388752185036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,9 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022fa32f4bc0982438763f8cf1e2252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 200
   faceVelocity: 1
   facingRight: 1
-  speed: 200
 --- !u!114 &8188360388752185037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,11 +230,23 @@ MonoBehaviour:
     damage: 10
     attackRate: 0.5
     bypassAttacking: 0
-  bulletForce: 300
+  bulletForce: 200
   bulletPrefab: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
   bulletSpawnParent: {fileID: 8188360389486361336}
   bulletSpawnPoint: {fileID: 8188360388970417104}
   rotateAndLookToTarget: 1
+--- !u!114 &3637752790962702452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188360388752185039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea6730ef5c1d7246a38549a6f7d15f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8188360388970417105
 GameObject:
   m_ObjectHideFlags: 0

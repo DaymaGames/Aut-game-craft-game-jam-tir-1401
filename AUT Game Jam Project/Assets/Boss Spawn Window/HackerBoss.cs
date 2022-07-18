@@ -155,7 +155,7 @@ public class HackerBoss : MonoBehaviour
         switch (sizeMode)
         {
             case Abilities.SizeMode.Big:
-
+                
                 toScale.localScale = Vector3.one * bigSize;
 
                 Vector2 bCollSize = capsuleColliderToScale.size;
@@ -164,7 +164,7 @@ public class HackerBoss : MonoBehaviour
 
                 break;
             case Abilities.SizeMode.Medium:
-
+                
                 toScale.localScale = Vector3.one * mediumSize;
 
                 Vector2 mCollSize = capsuleColliderToScale.size;
@@ -173,7 +173,7 @@ public class HackerBoss : MonoBehaviour
 
                 break;
             case Abilities.SizeMode.Small:
-
+                
                 toScale.localScale = Vector3.one * smallSize;
 
                 Vector2 sCollSize = capsuleColliderToScale.size;

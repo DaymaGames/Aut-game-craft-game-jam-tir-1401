@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2160769923996865766}
   - component: {fileID: 2160769923996865761}
   - component: {fileID: 2160769923996865762}
+  - component: {fileID: 1863702438355974771}
   m_Layer: 0
   m_Name: Blocker
   m_TagString: Virus
@@ -126,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30798b6b26341a04d867e3f6ad21097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 200
   faceVelocity: 1
   facingRight: 1
-  speed: 200
   nextWaypointDistance: 3
   reachedEndOfPath: 0
   updateInterval: 0.3
@@ -147,6 +148,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTags:
   - AntiVirus
+  autoAttack: 1
   aIReferences:
     controller: {fileID: 2160769923996865766}
     ai: {fileID: 2160769923996865767}
@@ -202,6 +204,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnlyIfIsFront: 1
+--- !u!114 &1863702438355974771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160769923996865786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea6730ef5c1d7246a38549a6f7d15f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2160769924589106404
 GameObject:
   m_ObjectHideFlags: 0
