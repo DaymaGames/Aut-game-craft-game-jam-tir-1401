@@ -41,6 +41,8 @@ public class Boss1 : MonoBehaviour
             case BossState.Rest:
                 //3 second rest
                 //after 3 second switch to shoot 
+
+                bossState = BossState.Standby;
                 break;
 
 
@@ -70,7 +72,7 @@ public class Boss1 : MonoBehaviour
             //Damage Player
             print("CircleAttacktwo");
         }
-
+        bossState = BossState.Rest;
     }
 
 
