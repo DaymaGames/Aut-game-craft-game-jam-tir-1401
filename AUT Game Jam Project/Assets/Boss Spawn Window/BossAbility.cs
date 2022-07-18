@@ -51,8 +51,14 @@ public class BossAbility : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 abilityManager.SetMode(mode3);
 
                 break;
+            case AbilityType.Speed:
+
+                Abilities.SpeedMode mode4 = (Abilities.SpeedMode)currentOption;
+                abilityManager.SetMode(mode4);
+
+                break;
         }
     }
 
-    public enum AbilityType { Size, MoveType, AttackRange }
+    public enum AbilityType { Size, MoveType, AttackRange, Speed }
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class SimpleMoveAI : AIParentClass
 {
-    public float speed = 200;
-    
     Vector2? destination = null;
     Rigidbody2D rb;
 
@@ -22,7 +20,7 @@ public class SimpleMoveAI : AIParentClass
 
         Vector2 relative = destination.Value - rb.position;
 
-        Vector2 force = speed * Time.deltaTime * relative.normalized;
+        Vector2 force = moveSpeed * Time.deltaTime * relative.normalized;
 
         rb.AddForce(force);
 

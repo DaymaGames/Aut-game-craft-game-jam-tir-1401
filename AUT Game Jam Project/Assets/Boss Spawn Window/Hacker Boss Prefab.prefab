@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3314329153774529067}
   m_Layer: 0
   m_Name: Hacker Boss Prefab
-  m_TagString: Untagged
+  m_TagString: Virus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,17 +88,25 @@ MonoBehaviour:
   followRange: 4.5
   getBackRange: 3.6
   getBackForce: 160
-  Far_FollowRange: 5
-  Far_GetBackRange: 3.5
-  Close_FollowRange: 3
-  Close_GetBackRange: 2
+  Far_FollowRange: 7
+  Far_GetBackRange: 6
+  Close_FollowRange: 2.5
+  Close_GetBackRange: 1.75
   toScale: {fileID: 3314329154346452709}
   capsuleColliderToScale: {fileID: 3314329153774529066}
   bigSize: 4
   mediumSize: 1
   smallSize: 0.25
+  fastSpeed: 350
+  getBackFastSpeed: 300
+  mediumSpeed: 250
+  getBackMediumSpeed: 250
+  slowSpeed: 150
+  getBackSlowSpeed: 250
   damage: 20
   attackRate: 1
+  previewMode: 0
+  target: {fileID: 0}
 --- !u!1 &3314329154346452708
 GameObject:
   m_ObjectHideFlags: 0

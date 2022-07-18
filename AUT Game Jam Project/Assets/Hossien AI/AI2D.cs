@@ -6,10 +6,6 @@ using Pathfinding;
 [RequireComponent(typeof(Rigidbody2D),typeof(Seeker))]
 public class AI2D : AIParentClass
 {
-    public float speed = 200f;
-
-    [Space]
-
     public float nextWaypointDistance = 3f;
     public bool reachedEndOfPath = false;
 
@@ -68,7 +64,7 @@ public class AI2D : AIParentClass
         }
 
         Vector2 relative = (Vector2)path.vectorPath[currentWaypoint] - rb.position;
-        Vector2 force = speed * Time.fixedDeltaTime * relative.normalized;
+        Vector2 force = moveSpeed * Time.fixedDeltaTime * relative.normalized;
 
         rb.AddForce(force);
 

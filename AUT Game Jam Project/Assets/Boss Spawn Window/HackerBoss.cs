@@ -26,14 +26,29 @@ public class HackerBoss : MonoBehaviour
     public float mediumSize = 3;
     public float smallSize = 0.75f;
 
+    [Header("Speeds")]
+    public float fastSpeed = 300;
+    public float getBackFastSpeed = 250;
+    [Space]
+    public float mediumSpeed = 250;
+    public float getBackMediumSpeed = 250;
+    [Space]
+    public float slowSpeed = 150;
+    public float getBackSlowSpeed = 250;
+
     [Header("Attacking")]
     public int damage = 20;
     public float attackRate = 1;
 
+    [Space]
+    public bool previewMode = false;
+
+    [SerializeField] Transform target;
+
     Abilities.AttackMode attackMode;
     Abilities.SizeMode sizeMode;
     Abilities.MoveMode moveMode;
-    Transform target;
+    Abilities.SpeedMode speedMode;
     Rigidbody2D rb;
     private AIParentClass mover;
 
@@ -58,6 +73,9 @@ public class HackerBoss : MonoBehaviour
 
     private void Update()
     {
+        if (previewMode)
+            return;
+
         if (!target)
         {
             FindClosestEnemy();
@@ -115,7 +133,7 @@ public class HackerBoss : MonoBehaviour
         attackMode = abilities.attackMode;
         sizeMode = abilities.sizeMode;
         moveMode = abilities.moveMode;
-
+        speedMode = abilities.speedMode;
 
         switch (attackMode)
         {
@@ -143,7 +161,7 @@ public class HackerBoss : MonoBehaviour
                 Vector2 bCollSize = capsuleColliderToScale.size;
                 bCollSize.x = bigSize;
                 bCollSize.y = 2 * bigSize;
-                print("set size to big");
+
                 break;
             case Abilities.SizeMode.Medium:
 
@@ -152,7 +170,7 @@ public class HackerBoss : MonoBehaviour
                 Vector2 mCollSize = capsuleColliderToScale.size;
                 mCollSize.x = mediumSize;
                 mCollSize.y = 2 * mediumSize;
-                print("set size to medium");
+
                 break;
             case Abilities.SizeMode.Small:
 
@@ -161,7 +179,7 @@ public class HackerBoss : MonoBehaviour
                 Vector2 sCollSize = capsuleColliderToScale.size;
                 sCollSize.x = smallSize;
                 sCollSize.y = 2 * smallSize;
-                print("set size to small");
+
                 break;
         }
 
@@ -169,12 +187,45 @@ public class HackerBoss : MonoBehaviour
         {
             case Abilities.MoveMode.Air:
 
-                mover = gameObject.AddComponent<SimpleMoveAI>();
+                if (!previewMode)
+                    mover = gameObject.AddComponent<SimpleMoveAI>();
 
                 break;
             case Abilities.MoveMode.Ground:
 
-                mover = gameObject.AddComponent<AI2D>();
+                if (!previewMode)
+                    mover = gameObject.AddComponent<AI2D>();
+
+                break;
+        }
+
+        switch (speedMode)
+        {
+            case Abilities.SpeedMode.Fast:
+
+                if (!previewMode)
+                {
+                    mover.moveSpeed = fastSpeed;
+                    getBackForce = getBackFastSpeed;
+                }
+
+                break;
+            case Abilities.SpeedMode.Medium:
+
+                if (!previewMode)
+                {
+                    mover.moveSpeed = mediumSize;
+                    getBackForce = getBackMediumSpeed;
+                }
+
+                break;
+            case Abilities.SpeedMode.Slow:
+
+                if (!previewMode)
+                {
+                    mover.moveSpeed = slowSpeed;
+                    getBackForce = getBackSlowSpeed;
+                }
 
                 break;
         }

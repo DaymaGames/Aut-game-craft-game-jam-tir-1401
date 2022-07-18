@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AIParentClass : MonoBehaviour
 {
     public abstract void SetDestination(Vector2 target);
+    public float moveSpeed = 200;
     public bool faceVelocity = true;
     public bool IsStopped { get; set; } = false;
     public bool facingRight = true;
