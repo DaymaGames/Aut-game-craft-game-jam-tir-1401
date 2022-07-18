@@ -8,6 +8,7 @@ public class Suicider : MonoBehaviour
     public float attackRadius = 1.25f;
     public LayerMask attackMask;
     public int damage = 20;
+    public AnimationPlayer animPlayer;
 
     bool attacking = false;
     private void Awake()
@@ -38,6 +39,9 @@ public class Suicider : MonoBehaviour
 
     public void Attack()
     {
+        if (animPlayer)
+            animPlayer.PlayAnim(AnimationType.Suicide);
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRadius, attackMask);
 
         foreach (var coll in colliders)

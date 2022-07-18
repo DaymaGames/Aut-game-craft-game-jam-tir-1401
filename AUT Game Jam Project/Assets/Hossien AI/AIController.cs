@@ -10,11 +10,14 @@ public class AIController : MonoBehaviour
     public bool autoAttack = true;
     
     [Space]
+
     public AIStateReferences aIReferences;
 
     private AIState state;
 
     public System.Action OnAttackAction;
+
+    public bool dontTick = false;
     private void Awake()
     {
         state = new MoveToTargetState
@@ -61,6 +64,9 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
+        if (dontTick)
+            return;
+
         state = state.Tick();
     }
 

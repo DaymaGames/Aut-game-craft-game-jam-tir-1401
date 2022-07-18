@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public float damageForce = 50f;
     [Space]
     public UnityEvent OnDieEvent;
+    public AnimationPlayer animPlayer;
     private void Awake()
     {
         if (fullHealthOnAwake)
@@ -66,6 +67,11 @@ public class Health : MonoBehaviour
         OnDie?.Invoke();
         OnDieEvent.Invoke();
         isDead = true;
+
+        GetComponent<AIController>().dontTick = true;
+
+        if(animPlayer)
+            animPlayer.PlayAnim(AnimationType.Die);
     }
 
     [ContextMenu("Full Health")]

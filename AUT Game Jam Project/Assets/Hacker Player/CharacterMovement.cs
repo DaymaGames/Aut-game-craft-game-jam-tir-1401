@@ -11,6 +11,9 @@ public class CharacterMovement : MonoBehaviour
     [Header("Facing Direction")]
     [SerializeField] private Transform targetFlip;
 
+    [Space]
+    public bool autoAnimation = true;
+    public AnimationPlayer animPlayer;
 
     [HideInInspector] public bool facingRight = true;
 
@@ -21,6 +24,20 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
     }
+
+    private void Update()
+    {
+        if (autoAnimation == false || animPlayer == null) return;
+
+        float threshold = 0.2f;
+        if (rb.velocity.sqrMagnitude > threshold * threshold)
+        {
+            animPlayer.PlayAnim(AnimationType.Run);
+        }
+        else
+            animPlayer.PlayAnim(AnimationType.Idle);
+    }
+
     private void FixedUpdate()
     {
         if (!rb)

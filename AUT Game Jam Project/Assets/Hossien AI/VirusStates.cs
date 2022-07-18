@@ -8,6 +8,7 @@ public class AIStateReferences
     public AIController controller;
     public AIParentClass ai;
     public Rigidbody2D rb;
+    public AnimationPlayer animPlayer;
 
     [Header("Moving To Target")]
     public float maxDistanceToTarget = 2;
@@ -98,13 +99,16 @@ public class MoveToTargetState : AIState
             {
                 GetBack(relative);
             }
-
-            HandleAttacking();
+            else
+            {
+                HandleAttacking();
+            }
         }
         else
         {
             ai.IsStopped = false;
             MoveToTarget();
+            references.animPlayer.PlayAnim(AnimationType.Run);
         }
 
         HandleFlipping(relative);
@@ -129,6 +133,9 @@ public class MoveToTargetState : AIState
         if (references.bypassAttacking)
             return;
         OnAttack?.Invoke(target);
+
+        references.animPlayer.PlayAnim(AnimationType.Attack);
+
         //target.GetComponent<Health>().TakeDamage(references.damage);
     }
 

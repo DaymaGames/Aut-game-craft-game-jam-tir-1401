@@ -31,6 +31,9 @@ public class HackerController : MonoBehaviour
         movement = GetComponent<CharacterMovement>();
         inventory = GetComponent<HackerInventory>();
         reloadImage.gameObject.SetActive(false);
+        
+        if (!camera)
+            camera = Camera.main;
     }
 
     private void Update()
