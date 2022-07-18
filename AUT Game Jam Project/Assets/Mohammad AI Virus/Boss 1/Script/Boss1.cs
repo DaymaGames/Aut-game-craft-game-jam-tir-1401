@@ -14,8 +14,9 @@ public class Boss1 : MonoBehaviour
     [SerializeField] float shootDelay = 1.3f;
 
     [Header("Cicrle Attack Damage Range")]
-    [SerializeField] float damageRange = 5;
-    float delayBetweenCirlceAttacks = 2f;
+    [SerializeField]float damageRange = 5;
+    [Header("Delay Before Each Circle Attack")]
+    [SerializeField]float delayBetweenCirlceAttacks = 2f;
 
     [Header("Boss Rest TimeDelay")]
     [SerializeField]float restLenght = 3;
