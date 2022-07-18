@@ -19,6 +19,8 @@ public class Boss1 : MonoBehaviour
 
     [Header("Boss Rest TimeDelay")]
     [SerializeField]float restLenght = 3;
+
+    [SerializeField] AudioSource audioSource;//age gharar shod dad bezane
     private void Start()
     {
 
@@ -93,7 +95,7 @@ public class Boss1 : MonoBehaviour
     }
     IEnumerator Rest()
     {
-        print("bossIsResting");
+        print("BossIsResting");
         yield return new WaitForSeconds(restLenght);
         bossState = BossState.ShootAttack;
     }
@@ -112,4 +114,9 @@ public class Boss1 : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(gameObject.transform.position, damageRange);
+    }
+   
 }
