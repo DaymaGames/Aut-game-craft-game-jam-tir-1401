@@ -95,8 +95,8 @@ MonoBehaviour:
   toScale: {fileID: 3314329154346452709}
   capsuleColliderToScale: {fileID: 3314329153774529066}
   bigSize: 4
-  mediumSize: 1
-  smallSize: 0.25
+  mediumSize: 2
+  smallSize: 1
   fastSpeed: 350
   getBackFastSpeed: 300
   mediumSpeed: 250

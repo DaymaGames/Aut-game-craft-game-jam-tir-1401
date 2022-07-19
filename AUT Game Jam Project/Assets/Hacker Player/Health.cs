@@ -68,8 +68,10 @@ public class Health : MonoBehaviour
         OnDieEvent.Invoke();
         isDead = true;
 
-        if(TryGetComponent<AIController>(out AIController controller))
+        if (TryGetComponent<AIController>(out AIController controller))
             controller.dontTick = true;
+        else if (TryGetComponent(out CharacterMovement movement))
+            movement.autoAnimation = false;
 
         if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);

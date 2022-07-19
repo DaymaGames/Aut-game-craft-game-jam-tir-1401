@@ -30,7 +30,7 @@ public class CharacterMovement : MonoBehaviour
         if (autoAnimation == false || animPlayer == null) return;
 
         float threshold = 0.2f;
-        if (rb.velocity.sqrMagnitude > threshold * threshold)
+        if (rb.velocity.sqrMagnitude > threshold * threshold && velocity.sqrMagnitude > threshold * threshold)
         {
             animPlayer.PlayAnim(AnimationType.Run);
         }

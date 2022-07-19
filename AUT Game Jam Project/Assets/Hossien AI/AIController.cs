@@ -83,7 +83,7 @@ public class AIController : MonoBehaviour
         OnAttackAction?.Invoke();
         if (autoAttack)
         {
-            if(target.TryGetComponent(out Health health))
+            if (target.root.TryGetComponent(out Health health))
             {
                 health.TakeDamage(aIReferences.damage, transform);
             }

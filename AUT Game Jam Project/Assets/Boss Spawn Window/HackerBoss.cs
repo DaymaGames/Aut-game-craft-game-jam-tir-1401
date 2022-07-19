@@ -37,7 +37,9 @@ public class HackerBoss : MonoBehaviour
     public float getBackSlowSpeed = 250;
 
     [Header("Attacking")]
-    public int damage = 20;
+    public int bigDamage = 30;
+    public int mediumDamage = 20;
+    public int smallDamage = 10;
     public float attackRate = 1;
 
     [Space]
@@ -45,6 +47,7 @@ public class HackerBoss : MonoBehaviour
 
     [SerializeField] Transform target;
 
+    int currentDamage = 20;
     Abilities.AttackMode attackMode;
     Abilities.SizeMode sizeMode;
     Abilities.MoveMode moveMode;
@@ -125,7 +128,7 @@ public class HackerBoss : MonoBehaviour
 
     void Attack()
     {
-        target.GetComponent<Health>().TakeDamage(damage, transform);
+        target.GetComponent<Health>().TakeDamage(currentDamage, transform);
     }
 
     public void SetAbilities(Abilities abilities)
@@ -162,6 +165,8 @@ public class HackerBoss : MonoBehaviour
                 bCollSize.x = bigSize;
                 bCollSize.y = 2 * bigSize;
 
+                currentDamage = bigDamage;
+
                 break;
             case Abilities.SizeMode.Medium:
                 
@@ -171,6 +176,8 @@ public class HackerBoss : MonoBehaviour
                 mCollSize.x = mediumSize;
                 mCollSize.y = 2 * mediumSize;
 
+                currentDamage = mediumDamage;
+
                 break;
             case Abilities.SizeMode.Small:
                 
@@ -179,6 +186,8 @@ public class HackerBoss : MonoBehaviour
                 Vector2 sCollSize = capsuleColliderToScale.size;
                 sCollSize.x = smallSize;
                 sCollSize.y = 2 * smallSize;
+
+                currentDamage = smallDamage;
 
                 break;
         }

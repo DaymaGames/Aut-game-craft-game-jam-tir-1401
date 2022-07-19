@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class SpawnManager : MonoBehaviour
 
         Vector2 spawnPos = round.spawnPointManager.GetRandomPosition();
 
+        round.roundStartEvent.Invoke();
+
         int spawnedViruses = 0;
 
         for (int i = 0; i < round.toSpawn.Count; i++)
@@ -71,6 +74,8 @@ public class SpawnManager : MonoBehaviour
         {
             yield return null;
         }
+
+        round.roundEndEvent.Invoke();
 
         currentRound++;
 
@@ -106,4 +111,9 @@ public class Round<T> where T : Object
     public bool isFixedPos = false;
     [ShowIf(nameof(isFixedPos))]
     public List<Transform> fixedSpawnPos = new List<Transform>();
+    
+    [BoxGroup]
+    public UnityEvent roundStartEvent;
+    [BoxGroup]
+    public UnityEvent roundEndEvent;
 }

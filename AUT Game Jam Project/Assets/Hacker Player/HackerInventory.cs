@@ -16,11 +16,13 @@ public class HackerInventory : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMPro.TextMeshProUGUI bulletsLeftText;
     [SerializeField] private TMPro.TextMeshProUGUI bulletsSavedText;
+    [SerializeField] private string bulletsPishvand;
+    [SerializeField] private string bulletsSavedPishvand;
 
     private void Update()
     {
-        bulletsLeftText.SetText("Bullets : " + bulletsInMag);
-        bulletsSavedText.SetText("Saved Bullets : " + bulletsSaved);
+        bulletsLeftText.SetText(bulletsPishvand + bulletsInMag);
+        bulletsSavedText.SetText(bulletsSavedPishvand + bulletsSaved);
     }
 
     private int Clamp(int num, int min, int max)

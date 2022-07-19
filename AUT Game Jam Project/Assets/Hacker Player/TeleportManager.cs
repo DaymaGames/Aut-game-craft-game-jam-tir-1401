@@ -10,7 +10,7 @@ public class TeleportManager : MonoBehaviour
     [SerializeField] private float maxTeleportRange = 3;
     [SerializeField] private Transform teleportCircle;
     [SerializeField] private float slowMotionScale = 0.05f;
-
+    [SerializeField] private Transform mousePosTransform;
     [Space]
     [SerializeField] private float teleportCoolDown = 2;
 
@@ -20,6 +20,9 @@ public class TeleportManager : MonoBehaviour
     [Header("Damaging")]
     [SerializeField] private LayerMask damageMask;
     [SerializeField] private int damage = 10;
+
+    [Header("Teleport Effect")]
+    public TrailRenderer teleportTrail;
 
     private float remainingTime = 0;
 
@@ -31,6 +34,8 @@ public class TeleportManager : MonoBehaviour
     {
         controller = GetComponent<HackerController>();
         teleportCircle.gameObject.SetActive(false);
+        teleportTrail.gameObject.SetActive(false);
+        mousePosTransform.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -68,6 +73,10 @@ public class TeleportManager : MonoBehaviour
     void Down()
     {
         controller.bypass = true;
+        mousePosTransform.gameObject.SetActive(true);
+
+        teleportTrail.gameObject.SetActive(true);
+
         GetComponent<CharacterMovement>().SetVelocity(Vector2.zero);
         teleportCircle.gameObject.SetActive(true);
         teleportCircle.position = transform.position;
@@ -87,12 +96,17 @@ public class TeleportManager : MonoBehaviour
         {
             dropPoint = mousePos;
         }
+
+        mousePosTransform.position = dropPoint;
     }
 
     void Up()
     {
         controller.bypass = false;
         teleportCircle.gameObject.SetActive(false);
+        mousePosTransform.gameObject.SetActive(false);
+
+        Invoke(nameof(TurnOffTrail), teleportTrail.time);
 
         //damaging anything along the way
 
@@ -113,5 +127,10 @@ public class TeleportManager : MonoBehaviour
         remainingTime = teleportCoolDown;
         coolDownImage.gameObject.SetActive(true);
         coolDownImage.fillAmount = 1;
+    }
+
+    void TurnOffTrail()
+    {
+        teleportTrail.gameObject.SetActive(false);
     }
 }
