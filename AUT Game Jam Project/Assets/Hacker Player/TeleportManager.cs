@@ -29,6 +29,7 @@ public class TeleportManager : MonoBehaviour
     [HideInInspector] public Vector2 dropPoint;
 
     HackerController controller;
+    bool hasButtonDown = false;
 
     private void Awake()
     {
@@ -72,6 +73,8 @@ public class TeleportManager : MonoBehaviour
 
     void Down()
     {
+        hasButtonDown = true;
+
         controller.bypass = true;
         mousePosTransform.gameObject.SetActive(true);
 
@@ -102,6 +105,11 @@ public class TeleportManager : MonoBehaviour
 
     void Up()
     {
+        if (!hasButtonDown)
+            return;
+
+        hasButtonDown = false;
+
         controller.bypass = false;
         teleportCircle.gameObject.SetActive(false);
         mousePosTransform.gameObject.SetActive(false);

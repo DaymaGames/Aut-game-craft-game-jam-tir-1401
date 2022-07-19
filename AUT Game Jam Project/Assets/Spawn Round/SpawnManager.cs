@@ -41,8 +41,10 @@ public class SpawnManager : MonoBehaviour
 
         if (startDelay > 0)
             yield return new WaitForSeconds(startDelay);
-
-        Vector2 spawnPos = round.spawnPointManager.GetRandomPosition();
+        
+        Vector2 spawnPos = new Vector2();
+        if(round.isFixedPos == false)
+            spawnPos = round.spawnPointManager.GetRandomPosition();
 
         round.roundStartEvent.Invoke();
 

@@ -19,6 +19,18 @@ public class HackerInventory : MonoBehaviour
     [SerializeField] private string bulletsPishvand;
     [SerializeField] private string bulletsSavedPishvand;
 
+    private void Awake()
+    {
+        if(bulletsSavedText == null)
+        {
+            bulletsSavedText = GameObject.FindGameObjectWithTag("T_Bullet").GetComponent<TMPro.TextMeshProUGUI>();
+        }
+        if(bulletsLeftText == null)
+        {
+            bulletsLeftText = GameObject.FindGameObjectWithTag("T_Saved").GetComponent<TMPro.TextMeshProUGUI>();
+        }
+    }
+
     private void Update()
     {
         bulletsLeftText.SetText(bulletsPishvand + bulletsInMag);

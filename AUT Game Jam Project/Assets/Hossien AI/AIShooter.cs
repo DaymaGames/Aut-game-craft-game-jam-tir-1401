@@ -35,7 +35,16 @@ public class AIShooter : AIController
     void SpawnBullet()
     {
         GeneralBullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.ignoreTag = tag;
+        
+        bullet.ignoreTags.Add(tag);
+        
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * bulletForce);
+    }
+}
+public static class ExtenstionForTransform
+{
+    public static void Look2D()
+    {
+
     }
 }

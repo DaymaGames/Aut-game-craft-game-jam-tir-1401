@@ -277,8 +277,8 @@ MonoBehaviour:
     ai: {fileID: 4941078556297951727}
     rb: {fileID: 4941078556297951721}
     animPlayer: {fileID: 1004702079}
-    maxDistanceToTarget: 5
-    getBackRange: 4
+    maxDistanceToTarget: 60
+    getBackRange: 2.71
     getBackForce: 160
     damage: 10
     attackRate: 0.5

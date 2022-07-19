@@ -7,7 +7,7 @@ public class GeneralBullet : MonoBehaviour
     [SerializeField] private int damage = 20;
     [SerializeField] private float killTimer = 10;
 
-    public string ignoreTag;
+    public List<string> ignoreTags = new List<string>();
 
     private void Start()
     {
@@ -25,8 +25,11 @@ public class GeneralBullet : MonoBehaviour
     {
         Collider2D c = collider;
 
-        if (c.CompareTag(ignoreTag))
-            return;
+        foreach (var tag in ignoreTags)
+        {
+            if (c.CompareTag(tag))
+                return;
+        }
 
         if(c.TryGetComponent(out Health health))
         {

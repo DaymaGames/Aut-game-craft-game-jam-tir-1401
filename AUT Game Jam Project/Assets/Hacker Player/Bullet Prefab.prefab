@@ -151,4 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   killTimer: 10
-  ignoreTag: 
+  ignoreTags:
+  - Map
+  - Loot

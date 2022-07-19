@@ -8,6 +8,10 @@ TagManager:
   - AntiVirus
   - Blocker
   - DieTrigger
+  - T_Bullet
+  - T_Saved
+  - Map
+  - Loot
   layers:
   - Default
   - TransparentFX
