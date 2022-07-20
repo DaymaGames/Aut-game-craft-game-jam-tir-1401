@@ -40,6 +40,10 @@ public class AnimationPlayer : MonoBehaviour
     void PlayState(string state)
     {
         int id = Animator.StringToHash(state);
+        
+        if (animator == null)
+            return;
+
         if (animator.HasState(0, id) == false)
         {
             return;

@@ -150,7 +150,8 @@ public class HackerController : MonoBehaviour
 
     public void Die()
     {
-        movement.enabled = false;
+        if (movement)
+            movement.enabled = false;
         animPlayer.PlayAnim(AnimationType.Die);
     }
 }
