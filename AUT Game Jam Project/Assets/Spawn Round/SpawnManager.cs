@@ -68,6 +68,23 @@ public class SpawnManager : MonoBehaviour
             spawnedViruses++;
 
             virus.OnDieAction += () => { spawnedViruses--; };
+
+            if(round.spawnLoot == true && round.indexesToSpawnLoot.Count > 0)
+            {
+                foreach (var index in round.indexesToSpawnLoot)
+                {
+                    if (i == index)
+                    {
+                        if (round.lootToSpawn)
+                        {
+                            virus.OnDieAction += () =>
+                                Instantiate(round.lootToSpawn,
+                                virus.transform.position, Quaternion.identity);
+                        }
+                        break;
+                    }
+                }
+            }
             
             yield return new WaitForSeconds(round.delayBetweenSpawns);
         }
@@ -101,14 +118,24 @@ public class SpawnManager : MonoBehaviour
 public class Round<T> where T : Object
 {
     public List<T> toSpawn = new List<T>();
+    
     [HideIf(nameof(isFixedPos))]
     public SpawnPointManager spawnPointManager;
     public float delayBetweenSpawns = 3;
-    [HideInInspector] public Vector2 spawnPos = Vector2.zero;
-    public void SetPos(Vector2 point)
-    {
-        spawnPos = point;
-    }
+
+    [Space]
+    [BoxGroup("Loot")]
+    public bool spawnLoot = false;
+    
+    [BoxGroup("Loot")]
+    [ShowIf(nameof(spawnLoot))]
+    public Loot lootToSpawn;
+    
+    [BoxGroup("Loot")]
+    [ShowIf(nameof(spawnLoot))]
+    public List<int> indexesToSpawnLoot;
+
+    [Space]
 
     public bool isFixedPos = false;
     [ShowIf(nameof(isFixedPos))]

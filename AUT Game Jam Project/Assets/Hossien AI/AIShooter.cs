@@ -37,14 +37,33 @@ public class AIShooter : AIController
         GeneralBullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         
         bullet.ignoreTags.Add(tag);
+
+        if (target)
+            bullet.transform.Look2D(target, Vector3.right);
         
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * bulletForce);
     }
 }
 public static class ExtenstionForTransform
 {
-    public static void Look2D()
+    public static void Look2D(this Transform transform, Transform target, Vector3 forward)
     {
-
+        Vector2 direction = target.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
+        transform.Rotate(Vector3.forward *
+            Quaternion.FromToRotation(Vector3.right, forward).eulerAngles.z);
+    }
+    public static void Look2D(this Transform transform, Vector3 target, Vector3 forward)
+    {
+        Vector2 direction = target - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
+        transform.Rotate(Vector3.forward *
+            Quaternion.FromToRotation(Vector3.right, forward).eulerAngles.z);
     }
 }

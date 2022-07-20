@@ -31,7 +31,7 @@ public class HackerInventory : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         bulletsLeftText.SetText(bulletsPishvand + bulletsInMag);
         bulletsSavedText.SetText(bulletsSavedPishvand + bulletsSaved);
@@ -58,12 +58,6 @@ public class HackerInventory : MonoBehaviour
     public void DecreaseBulletsInMag()
     {
         bulletsInMag--;
-        ClampBulletsInMag();
-    }
-
-    public void FullBulletsInMag()
-    {
-        bulletsInMag = magSize;
         ClampBulletsInMag();
     }
     
@@ -104,18 +98,16 @@ public class HackerInventory : MonoBehaviour
         return true;
     }
 
-    public void DecreaseSavedBullets(int amount)
-    {
-        bulletsSaved -= amount;
-        ClampBulletsSaved();
-    }
-
     public void Reload()
     {
-        int remainingBullets = magSize - bulletsInMag;
-        DecreaseSavedBullets(remainingBullets);
+        int howMuchWeNeed = magSize - bulletsInMag;
+        int howMuchWeCanAdd = Mathf.Clamp(bulletsSaved, 0, howMuchWeNeed);
 
-        FullBulletsInMag();
+        bulletsInMag += howMuchWeCanAdd;
+        bulletsSaved -= howMuchWeCanAdd;
+
+        ClampBulletsInMag();
+        ClampBulletsSaved();
     }
     #endregion
 }

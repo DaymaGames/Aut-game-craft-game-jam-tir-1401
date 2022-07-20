@@ -11,7 +11,7 @@ public class AnimationPlayer : MonoBehaviour
     public string dieAnim = "Die";
     public string suicideAnim = "Suicide";
 
-    private Animator animator; 
+    private Animator animator;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -40,8 +40,14 @@ public class AnimationPlayer : MonoBehaviour
     void PlayState(string state)
     {
         int id = Animator.StringToHash(state);
-        if (animator.HasState(0, id) == false) return;
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName(state)) return;
+        if (animator.HasState(0, id) == false)
+        {
+            return;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName(state)) 
+        {
+            return;
+        }
 
         animator.Play(id);
     }

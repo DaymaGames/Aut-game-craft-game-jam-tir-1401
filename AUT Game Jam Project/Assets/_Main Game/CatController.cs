@@ -37,6 +37,9 @@ public class CatController : MonoBehaviour
     bool facingRight = true;
     private void LateUpdate()
     {
+        if (playerFollow == null)
+            return;
+
         if(transform.position.x > playerFollow.position.x)
         {
             if (facingRight)
