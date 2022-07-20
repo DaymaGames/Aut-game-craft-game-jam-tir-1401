@@ -17,11 +17,6 @@ public class LevelLoader : MonoBehaviour
         elementsParent.gameObject.SetActive(false);
         elementsParent.alpha = 0;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            LoadScene("Menu");
-    }
 
     IEnumerator LoadSceneAsync(string sceneName)
     {

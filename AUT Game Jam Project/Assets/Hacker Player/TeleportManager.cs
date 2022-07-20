@@ -9,7 +9,7 @@ public class TeleportManager : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float maxTeleportRange = 3;
     [SerializeField] private Transform teleportCircle;
-    [SerializeField] private float slowMotionScale = 0.05f;
+    public float slowMotionScale = 0.05f;
     [SerializeField] private Transform mousePosTransform;
     [Space]
     [SerializeField] private float teleportCoolDown = 2;
@@ -24,15 +24,22 @@ public class TeleportManager : MonoBehaviour
     [Header("Teleport Effect")]
     public TrailRenderer teleportTrail;
 
+    [Header("Animations")]
+    public AnimationPlayer animPlayer;
+    public string teleportStartState = "TStart";
+    public string teleportFinishState = "TFinish";
+
     private float remainingTime = 0;
 
     [HideInInspector] public Vector2 dropPoint;
 
     HackerController controller;
+    CharacterMovement movement;
     bool hasButtonDown = false;
 
     private void Awake()
     {
+        movement = GetComponent<CharacterMovement>();
         controller = GetComponent<HackerController>();
         teleportCircle.gameObject.SetActive(false);
         teleportTrail.gameObject.SetActive(false);
@@ -73,6 +80,9 @@ public class TeleportManager : MonoBehaviour
 
     void Down()
     {
+        movement.autoAnimation = false;
+        animPlayer.PlayState(teleportStartState);
+
         hasButtonDown = true;
 
         controller.bypass = true;
@@ -84,7 +94,7 @@ public class TeleportManager : MonoBehaviour
         teleportCircle.gameObject.SetActive(true);
         teleportCircle.position = transform.position;
         teleportCircle.localScale = Vector3.one * maxTeleportRange / transform.localScale.x;
-        Time.timeScale = slowMotionScale;
+
     }
 
     void Hold()
@@ -107,8 +117,12 @@ public class TeleportManager : MonoBehaviour
     {
         if (!hasButtonDown)
             return;
+        
+        animPlayer.PlayState(teleportFinishState);
 
         hasButtonDown = false;
+
+        Time.timeScale = 1;
 
         controller.bypass = false;
         teleportCircle.gameObject.SetActive(false);
@@ -131,7 +145,6 @@ public class TeleportManager : MonoBehaviour
         }
 
         controller.transform.position = dropPoint;
-        Time.timeScale = 1;
         remainingTime = teleportCoolDown;
         coolDownImage.gameObject.SetActive(true);
         coolDownImage.fillAmount = 1;

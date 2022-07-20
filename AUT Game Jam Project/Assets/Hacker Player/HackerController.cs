@@ -42,7 +42,7 @@ public class HackerController : MonoBehaviour
 
     private void Update()
     {
-        if (bypass)
+        if (bypass || movement == null)
         {
             return;
         }
@@ -62,8 +62,6 @@ public class HackerController : MonoBehaviour
         {
             Reload();
         }
-
-        
     }
 
     private void Reload()
@@ -153,5 +151,12 @@ public class HackerController : MonoBehaviour
         if (movement)
             movement.enabled = false;
         animPlayer.PlayAnim(AnimationType.Die);
+
+        Invoke(nameof(DelayGameOver), 1.5f);
+    }
+
+    private void DelayGameOver()
+    {
+        GameManager.Instance.OpenGameOver();
     }
 }

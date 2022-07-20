@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No Rigidbody Detected");
+            //Debug.LogWarning("No Rigidbody Detected");
         }
     }
 
@@ -68,10 +68,13 @@ public class Health : MonoBehaviour
         OnDieEvent.Invoke();
         isDead = true;
 
-        if (TryGetComponent<AIController>(out AIController controller))
+        if (TryGetComponent(out AIController controller))
             controller.dontTick = true;
         else if (TryGetComponent(out CharacterMovement movement))
+        {
             movement.autoAnimation = false;
+            GetComponent<HackerController>().Die();
+        }
 
         if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);

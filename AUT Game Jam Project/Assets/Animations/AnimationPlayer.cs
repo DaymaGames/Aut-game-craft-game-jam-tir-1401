@@ -37,7 +37,7 @@ public class AnimationPlayer : MonoBehaviour
                 break;
         }
     }
-    void PlayState(string state)
+    public void PlayState(string state)
     {
         int id = Animator.StringToHash(state);
         
