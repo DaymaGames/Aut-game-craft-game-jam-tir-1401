@@ -184,6 +184,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e9ab338d36a5f14cacc48e30fb8a30f, type: 3}
+--- !u!1 &122065058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122065059}
+  - component: {fileID: 122065060}
+  m_Layer: 0
+  m_Name: Dialogue R 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122065059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122065058}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2125144392}
+  m_Father: {fileID: 680085435}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122065060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122065058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "\uFEE6\uFEEB\u0627\u0631 \uFEEE\uFE97 \u0645\u0632\uFE8E\uFE91 \uFBFD\uFEDF\u0648
+      \u06CC\u062F\u0632 \u0648\u0631\uFE8E\uFEE8\uFBFE\u0627 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622"
+    - "\u061F\uFEEA\uFBFF\uFB7C \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622
+      \uFE8E\uFE91 \uFEEA\uFEE0\uFE91\uFE8E\uFED8\uFEE3 \u0647\u0627\u0631 \uFEE6\uFBFE\uFEAE\uFE98\uFEEC\uFE91
+      \u061F\uFEEA\uFEE7 \uFEEA\uFB95\uFBFE\u062F \u06CC\uFEAE\uFB91\uFEEB \uFEEA\uFBFE
+      \uFEEE\uFE97"
+--- !u!1 &126430635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 126430636}
+  - component: {fileID: 126430637}
+  m_Layer: 0
+  m_Name: Dialogue R 2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &126430636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126430635}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 460274581}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126430637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126430635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
 --- !u!1 &208527576
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +480,7 @@ GameObject:
   - component: {fileID: 253346520}
   - component: {fileID: 253346521}
   m_Layer: 0
-  m_Name: Dialogue 1
+  m_Name: 'Dialogue R Start 1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +496,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 328559973}
+  - {fileID: 1690023902}
+  - {fileID: 1993819991}
+  - {fileID: 491316395}
   m_Father: {fileID: 680085435}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -413,11 +517,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: '''vfi'
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
-    - " \uFBFD\uFE98\uFEE3\uFEFC\uFEB3 \uFEAE\uFE92\uFEA7 \uFB7A \uFBFC\uFEAD\uFEEE\uFEC4\uFB7C
-      \uFBFD\uFE91\uFEEE\uFEA7 \uFEE1\uFEFC\uFEB3 "
-    - adaad
+    - "\uFEB2\uFBFF\uFE8B\u0631 \uFBFD\uFEEB"
+    - "\u06CC\uFEAA\uFEE3\u0648\u0627 \u0634\uFEEE\uFEA7 \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
+      \u06CC\uFE8E\uFBFF\uFEE7\u062F \uFEEA\uFE91"
+--- !u!1 &294335185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294335186}
+  - component: {fileID: 294335187}
+  m_Layer: 0
+  m_Name: Dialogue End R 5 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &294335186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294335185}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 504228791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &294335187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294335185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEAE\uFB91\uFEEB"
+    sentences:
+    - ".\uFEAA\uFEB7 \u0645\uFEEE\uFEE4\uFE97 \u0647\uFEAE\uFEA7\uFEFB\uFE8E\uFE91
+      \u060C\uFEB6\uFBFF\uFEA7\u0622"
+    - ".\uFEE2\uFEE8\uFB90 \u0632\u0627\uFE91 \u0648 \u0644\uFE8E\uFE97\uFEAE\u0648\uFB58
+      \uFEEA\uFEB8\uFE98\uFED7\u0648"
 --- !u!1 &297037502
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,9 +633,9 @@ MonoBehaviour:
     roundStartEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 328559974}
           m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: TriggerDialogue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -582,6 +736,58 @@ MonoBehaviour:
   roundDelay: 5
   currentRound: 0
   inRound: 0
+--- !u!1 &328559972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328559973}
+  - component: {fileID: 328559974}
+  m_Layer: 0
+  m_Name: Dialogue 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328559973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328559972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253346520}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328559974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328559972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEAE\uFB91\uFEEB"
+    sentences:
+    - "\u061F\uFBFD\uFEE7\uFEB0\uFBFF\uFEE3 \u0641\uFEAE\uFEA3 \u06CC\u0631\u0627\u062F
+      \uFEEE\uFE97 \u060C\u0645\uFE8E\uFB94\uFEAE\uFE91"
+    - "\u061F\u0645\uFE8E\uFEA0\uFB90 \uFEE6\uFEE3"
+    - " \u061F\u0647\uFEAA\uFEB8\uFBFF\uFB7C"
+    - "\u061F\uFEEA\uFBFF\uFB7C \uFEEA\uFB95\uFBFE\u062F \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
+      \u06CC\uFE8E\uFBFF\uFEE7\u062F"
 --- !u!1 &329659298
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +915,162 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &460274580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 460274581}
+  - component: {fileID: 460274582}
+  m_Layer: 0
+  m_Name: Dialogue R 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &460274581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460274580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 126430636}
+  m_Father: {fileID: 680085435}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &460274582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460274580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - ".\uFEEE\uFEB7 \u0647\u062F\u0627\uFEE3\u0622 \u060C\u062F\uFE8E\uFBFF\uFEE3
+      \u0647\u0631\u0627\u062F \u0646\uFEEE\uFEB7 \u0647\uFEAA\uFEE8\uFB94 \uFEE2\uFEE8\uFB90
+      \uFB8F\uFED3"
+--- !u!1 &491316394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491316395}
+  - component: {fileID: 491316396}
+  m_Layer: 0
+  m_Name: Dialogue 1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491316395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491316394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253346520}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491316396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491316394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "\uFEEA\uFEEB"
+    - "\u0627\uFEAA\uFECC\uFE91 \u0627\uFEAE\uFE91 \uFEEA\uFEB7\uFE8E\uFE91 \uFE8E\uFE9C\uFEA4\uFE91
+      \uFEE6\uFBFE\u0627"
+    - "\u060C\uFBFD\uFEE8\uFB90 \uFEEA\uFE91\uFEAE\uFEA0\uFE97 \uFEEE\uFBFF\uFECC\uFED7\u0627\u0648
+      \u06CC\uFE8E\uFBFF\uFEE7\u062F \u0647\u0631\uFE8E\uFE91\u0648\u062F \u06CC\u0627\uFEEE\uFEA8\uFBFF\uFEE3
+      \uFEEA\uFB94\u0627 \uFEFC\uFECC\uFED3\n!\uFBFD\uFEB8\uFEE7 \u062F\uFEEE\uFE91\uFE8E\uFEE7
+      \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622 \uFEC2\uFEB3\uFEEE\uFE97
+      \uFBFD\uFEE8\uFB90 \uFBFD\uFECC\uFEB3 \uFEAA\uFBFE\uFE8E\uFE91"
+--- !u!1 &504228790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504228791}
+  - component: {fileID: 504228792}
+  m_Layer: 0
+  m_Name: Dialogue End R 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504228791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504228790}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 294335186}
+  m_Father: {fileID: 680085435}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504228792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504228790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "\uFBFD\uFE98\uFEA7\u0627\uFEAA\uFEE7\u0627 \u0631\uFE8E\uFB90 \u0632\u0627
+      \u0648\u0631 \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622 \uFEEA\uFB91\uFEE8\uFBFE\u0627
+      \uFEDE\uFE9C\uFEE3 \u060C\u0644\uFEEE\uFBFE\u0627"
+    - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFBFD\uFEE8\uFB90
+      \u0632\uFE8E\uFE91 \u0648 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \uFEEA\uFEB8\uFE98\uFED7\u0648"
 --- !u!1001 &670668226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -814,6 +1176,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 253346520}
+  - {fileID: 122065059}
+  - {fileID: 460274581}
+  - {fileID: 504228791}
+  - {fileID: 1893225467}
+  - {fileID: 1752086434}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2160,6 +2527,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1690023901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690023902}
+  - component: {fileID: 1690023903}
+  m_Layer: 0
+  m_Name: Dialogue 1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1690023902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690023901}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253346520}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690023903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690023901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "!\u06CC\uFEAA\uFEB7 \uFEEA\uFB7C\uFE8E\uFB58 \uFE96\uFEB3\u062F \u0627\uFEAE\uFB7C
+      \u060C\uFEB2\uFBFF\uFE8B\u0631 \u0647\u0648\u0627"
+    - "\u061F\uFEEA\uFE98\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91 \u060C\uFEEA\uFB90
+      \u0647\u0631\u0627\uFEAA\uFEE7 \u0633\uFEAE\uFE97\r"
 --- !u!1 &1707896531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2607,54 @@ Transform:
   m_Father: {fileID: 776047598}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752086433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752086434}
+  - component: {fileID: 1752086435}
+  m_Layer: 0
+  m_Name: Dialogue End R 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1752086434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752086433}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 680085435}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752086435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752086433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFEEE\uFEB7
+      \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u062F\u0631\u0627\u0648"
 --- !u!114 &1815325628 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8859555896615692111, guid: e13d72f6db725fc4d89682a3da406035, type: 3}
@@ -2206,6 +2671,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8859555896615692099, guid: e13d72f6db725fc4d89682a3da406035, type: 3}
   m_PrefabInstance: {fileID: 670668226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1893225466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893225467}
+  - component: {fileID: 1893225468}
+  m_Layer: 0
+  m_Name: Dialogue R 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1893225467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893225466}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 680085435}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893225468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893225466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "\u0646\uFE8E\uFBFF\uFEE3 \u0646\u0631\u0627\u062F \u0645\u0632\u0627\uFE91
+      \uFEEA\uFB91\uFEE8\uFBFE\u0627 \uFEDE\uFE9C\uFEE3 \u0647\u0648\u0627"
+    - ".\uFEEA\uFEB8\uFE91 \uFE90\uFEBC\uFEE7 \uFE8E\uFE97 \uFEE2\uFBFF\uFEE8\uFB90
+      \uFE96\uFEC8\uFED3\uFE8E\uFEA4\uFEE3 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u0632\u0627
+      \uFEAA\uFBFE\uFE8E\uFE91\r\n"
+--- !u!1 &1993819990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993819991}
+  - component: {fileID: 1993819992}
+  m_Layer: 0
+  m_Name: Dialogue 1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993819991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993819990}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253346520}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993819992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993819990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEAE\uFB91\uFEEB "
+    sentences:
+    - "!\uFE8E\uFEA0\uFEE8\uFBFE\u0627 \u0645\uFE8E\uFBFF\uFEE3 \u0631\uFE8E\uFE91
+      \uFEEA\uFBFE \u06CC\u0632\u0648\u0631 \uFE8E\uFE91\uFE8E\uFE91 \uFEEA\uFEE7 "
+    - "!\uFEEA\uFEEC\uFEEC\uFEEC\uFEEC\uFEE4\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91
+      \uFEEA\uFB90 \uFEEA\uFEE3\uFEEE\uFEE0\uFECC\uFEE3"
 --- !u!1 &2035298658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +3040,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054472927}
   m_CullTransparentMesh: 1
+--- !u!1 &2125144391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125144392}
+  - component: {fileID: 2125144393}
+  m_Layer: 0
+  m_Name: Dialogue R 2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2125144392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125144391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 122065059}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125144393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125144391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "\uFEEA\uFE91\uFEAE\uFB94"
+    sentences:
+    - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
 --- !u!212 &670716061948781910
 SpriteRenderer:
   m_ObjectHideFlags: 0
