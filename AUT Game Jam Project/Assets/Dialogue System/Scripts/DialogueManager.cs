@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         dialogueParent.DOMoveY(0, animationDuration)
-            .OnComplete(()=> DisplayNextSentence(dialogue.sound))
+            .OnComplete(()=> DisplayNextSentence())
             .SetEase(Ease.InOutCubic);
 
         nameText.text = dialogue.name;
@@ -37,16 +37,17 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void DisplayNextSentence(AudioClip clip)
+    public void DisplayNextSentence()
     {
+        print("display");
+        
         if(sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        if (source && clip)
-            source.PlayOneShot(clip);
+        
 
         string sentence = sentences.Dequeue();
 
@@ -69,6 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        print("End");
         dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 10, animationDuration);
     }
 
