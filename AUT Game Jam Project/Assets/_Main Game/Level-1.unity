@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "\uFEE6\uFEEB\u0627\u0631 \uFEEE\uFE97 \u0645\u0632\uFE8E\uFE91 \uFBFD\uFEDF\u0648
       \u06CC\u062F\u0632 \u0648\u0631\uFE8E\uFEE8\uFBFE\u0627 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622"
@@ -241,6 +240,7 @@ MonoBehaviour:
       \uFE8E\uFE91 \uFEEA\uFEE0\uFE91\uFE8E\uFED8\uFEE3 \u0647\u0627\u0631 \uFEE6\uFBFE\uFEAE\uFE98\uFEEC\uFE91
       \u061F\uFEEA\uFEE7 \uFEEA\uFB95\uFBFE\u062F \u06CC\uFEAE\uFB91\uFEEB \uFEEA\uFBFE
       \uFEEE\uFE97"
+    names: []
     sounds: []
 --- !u!1 &126430635
 GameObject:
@@ -286,9 +286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
+    names: []
     sounds: []
 --- !u!1 &208527576
 GameObject:
@@ -523,11 +523,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "\uFEB2\uFBFF\uFE8B\u0631 \uFBFD\uFEEB"
     - "\u06CC\uFEAA\uFEE3\u0648\u0627 \u0634\uFEEE\uFEA7 \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
       \u06CC\uFE8E\uFBFF\uFEE7\u062F \uFEEA\uFE91"
+    names: []
     sounds: []
 --- !u!1 &294335185
 GameObject:
@@ -573,12 +573,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEAE\uFB91\uFEEB"
     sentences:
     - ".\uFEAA\uFEB7 \u0645\uFEEE\uFEE4\uFE97 \u0647\uFEAE\uFEA7\uFEFB\uFE8E\uFE91
       \u060C\uFEB6\uFBFF\uFEA7\u0622"
     - ".\uFEE2\uFEE8\uFB90 \u0632\u0627\uFE91 \u0648 \u0644\uFE8E\uFE97\uFEAE\u0648\uFB58
       \uFEEA\uFEB8\uFE98\uFED7\u0648"
+    names: []
     sounds: []
 --- !u!1 &297037502
 GameObject:
@@ -776,7 +776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEAE\uFB91\uFEEB"
     sentences:
     - "\u061F\uFBFD\uFEE7\uFEB0\uFBFF\uFEE3 \u0641\uFEAE\uFEA3 \u06CC\u0631\u0627\u062F
       \uFEEE\uFE97 \u060C\u0645\uFE8E\uFB94\uFEAE\uFE91"
@@ -784,6 +783,7 @@ MonoBehaviour:
     - " \u061F\u0647\uFEAA\uFEB8\uFBFF\uFB7C"
     - "\u061F\uFEEA\uFBFF\uFB7C \uFEEA\uFB95\uFBFE\u062F \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
       \u06CC\uFE8E\uFBFF\uFEE7\u062F"
+    names: []
     sounds: []
 --- !u!1 &329659298
 GameObject:
@@ -957,11 +957,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - ".\uFEEE\uFEB7 \u0647\u062F\u0627\uFEE3\u0622 \u060C\u062F\uFE8E\uFBFF\uFEE3
       \u0647\u0631\u0627\u062F \u0646\uFEEE\uFEB7 \u0647\uFEAA\uFEE8\uFB94 \uFEE2\uFEE8\uFB90
       \uFB8F\uFED3"
+    names: []
     sounds: []
 --- !u!1 &491316394
 GameObject:
@@ -1007,7 +1007,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "\uFEEA\uFEEB"
     - "\u0627\uFEAA\uFECC\uFE91 \u0627\uFEAE\uFE91 \uFEEA\uFEB7\uFE8E\uFE91 \uFE8E\uFE9C\uFEA4\uFE91
@@ -1017,6 +1016,7 @@ MonoBehaviour:
       \uFEEA\uFB94\u0627 \uFEFC\uFECC\uFED3\n!\uFBFD\uFEB8\uFEE7 \u062F\uFEEE\uFE91\uFE8E\uFEE7
       \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622 \uFEC2\uFEB3\uFEEE\uFE97
       \uFBFD\uFEE8\uFB90 \uFBFD\uFECC\uFEB3 \uFEAA\uFBFE\uFE8E\uFE91"
+    names: []
     sounds: []
 --- !u!1 &504228790
 GameObject:
@@ -1063,13 +1063,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "\uFBFD\uFE98\uFEA7\u0627\uFEAA\uFEE7\u0627 \u0631\uFE8E\uFB90 \u0632\u0627
       \u0648\u0631 \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622 \uFEEA\uFB91\uFEE8\uFBFE\u0627
       \uFEDE\uFE9C\uFEE3 \u060C\u0644\uFEEE\uFBFE\u0627"
     - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFBFD\uFEE8\uFB90
       \u0632\uFE8E\uFE91 \u0648 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \uFEEA\uFEB8\uFE98\uFED7\u0648"
+    names: []
     sounds: []
 --- !u!1001 &670668226
 PrefabInstance:
@@ -3069,7 +3069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2351902759960095013, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2351902759960095014, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: m_Pivot.x
@@ -3356,12 +3356,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "!\u06CC\uFEAA\uFEB7 \uFEEA\uFB7C\uFE8E\uFB58 \uFE96\uFEB3\u062F \u0627\uFEAE\uFB7C
       \u060C\uFEB2\uFBFF\uFE8B\u0631 \u0647\u0648\u0627"
     - "\u061F\uFEEA\uFE98\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91 \u060C\uFEEA\uFB90
       \u0647\u0631\u0627\uFEAA\uFEE7 \u0633\uFEAE\uFE97\r"
+    names: []
     sounds: []
 --- !u!1 &1752086433
 GameObject:
@@ -3407,10 +3407,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFEEE\uFEB7
       \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u062F\u0631\u0627\u0648"
+    names: []
     sounds: []
 --- !u!1001 &1773089714
 PrefabInstance:
@@ -3590,13 +3590,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "\u0646\uFE8E\uFBFF\uFEE3 \u0646\u0631\u0627\u062F \u0645\u0632\u0627\uFE91
       \uFEEA\uFB91\uFEE8\uFBFE\u0627 \uFEDE\uFE9C\uFEE3 \u0647\u0648\u0627"
     - ".\uFEEA\uFEB8\uFE91 \uFE90\uFEBC\uFEE7 \uFE8E\uFE97 \uFEE2\uFBFF\uFEE8\uFB90
       \uFE96\uFEC8\uFED3\uFE8E\uFEA4\uFEE3 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u0632\u0627
       \uFEAA\uFBFE\uFE8E\uFE91\r\n"
+    names: []
     sounds: []
 --- !u!1 &1993819990
 GameObject:
@@ -3642,12 +3642,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEAE\uFB91\uFEEB "
     sentences:
     - "!\uFE8E\uFEA0\uFEE8\uFBFE\u0627 \u0645\uFE8E\uFBFF\uFEE3 \u0631\uFE8E\uFE91
       \uFEEA\uFBFE \u06CC\u0632\u0648\u0631 \uFE8E\uFE91\uFE8E\uFE91 \uFEEA\uFEE7 "
     - "!\uFEEA\uFEEC\uFEEC\uFEEC\uFEEC\uFEE4\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91
       \uFEEA\uFB90 \uFEEA\uFEE3\uFEEE\uFEE0\uFECC\uFEE3"
+    names: []
     sounds: []
 --- !u!1 &2035298658
 GameObject:
@@ -3961,9 +3961,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\uFEEA\uFE91\uFEAE\uFB94"
     sentences:
     - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
+    names: []
     sounds: []
 --- !u!212 &670716061948781910
 SpriteRenderer:

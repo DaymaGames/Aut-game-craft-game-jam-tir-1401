@@ -21,14 +21,13 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
     private Queue<AudioClip> clips;
+    private Queue<string> names;
 
     public void StartDialogue(Dialogue dialogue)
     {
         dialogueParent.DOMoveY(0, animationDuration)
             .OnComplete(()=> DisplayNextSentence())
             .SetEase(Ease.InOutCubic);
-
-        nameText.text = dialogue.name;
 
         sentences.Clear();
 
@@ -39,6 +38,10 @@ public class DialogueManager : MonoBehaviour
         foreach (var clip in dialogue.sounds)
         {
             clips.Enqueue(clip);
+        }
+        foreach (var name in dialogue.names)
+        {
+            names.Enqueue(name);
         }
     }
 
@@ -52,7 +55,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        
+        string name = names.Dequeue();
+
+        nameText.SetText(name);
 
         string sentence = sentences.Dequeue();
 
@@ -95,5 +100,6 @@ public class DialogueManager : MonoBehaviour
         Instance = this;
         sentences = new Queue<string>();
         clips = new Queue<AudioClip>();
+        names = new Queue<string>();
     }
 }
