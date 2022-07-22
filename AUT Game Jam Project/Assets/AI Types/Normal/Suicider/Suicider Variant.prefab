@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 904210843, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -68,8 +72,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852303, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: aIReferences.animPlayer
+      value: 
+      objectReference: {fileID: 2261629003060014396}
+    - target: {fileID: 770251297230852303, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: enemyTags.Array.data[0]
       value: AntiVirus
       objectReference: {fileID: 0}
+    - target: {fileID: 3060930932553089426, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099903717592246526, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: animPlayer
+      value: 
+      objectReference: {fileID: 2261629003060014396}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+--- !u!114 &2261629003060014396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 904210847, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+  m_PrefabInstance: {fileID: 2261629002185295011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21657a8b459e9dc4bb371947e0ef65ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

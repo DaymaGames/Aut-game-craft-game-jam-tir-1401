@@ -1008,6 +1008,7 @@ MonoBehaviour:
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []
+  animPlayer: {fileID: 0}
 --- !u!4 &1550342836
 Transform:
   m_ObjectHideFlags: 0
