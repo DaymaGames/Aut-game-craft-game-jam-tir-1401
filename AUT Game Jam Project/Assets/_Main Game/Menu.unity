@@ -134,6 +134,34 @@ PrefabInstance:
       propertyPath: m_text
       value: MENU
       objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 66.466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902759880500640, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.533997
+      objectReference: {fileID: 0}
     - target: {fileID: 2351902759960095013, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: m_Name
       value: Command Prompt
@@ -226,26 +254,45 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Menu
 
+
         Welcome to Bad Sector Command Menu
 
         Write down
-        actions such as start, exit'
+        actions such as start, exit
+
+        you can see the credits here (action
+        : credit)'
       objectReference: {fileID: 0}
     - target: {fileID: 2351902760242093424, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: m_fontSize
       value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2351902760242093424, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_lineSpacing
+      value: -75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351902760242093424, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: m_fontSizeBase
       value: 36
       objectReference: {fileID: 0}
-    - target: {fileID: 2351902760242093431, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
-      propertyPath: timeBtwChars
-      value: 0.01
+    - target: {fileID: 2351902760242093430, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 346.887
       objectReference: {fileID: 0}
+    - target: {fileID: 6045674960997543170, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: creditsText
+      value: "Bad Sector\n\nDesigner: M.Amin Shateri / Navid Mohseni\nProgramers:
+        Hossein Anisi / M.Hossein Setareh \nArtists: Amirreza Madih / M.Amin Shateri\n\nThanks
+        to: Pixel Jeff [cut scene inspiration]\n\nSpecial Thanks to: \nAmir Bromand\nAmirreza
+        Pakrooh\n\nMade in AUT GameJam - Tir 1401"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045674960997543170, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: creditsTextMesh
+      value: 
+      objectReference: {fileID: 291601340}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[0].commandInput
@@ -256,7 +303,15 @@ PrefabInstance:
       value: start
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].commandInput
+      value: credit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[1].action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
@@ -264,11 +319,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[1].action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1521619038}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1521619038}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[1].action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
@@ -280,11 +347,23 @@ PrefabInstance:
       value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowCredit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[1].action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CommandManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CommandManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
       propertyPath: cMDAction.Array.data[1].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844986712816438072, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+      propertyPath: cMDAction.Array.data[2].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -294,6 +373,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2351902759960095014, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
   m_PrefabInstance: {fileID: 291601338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &291601340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2351902760242093424, guid: 5ed92e2c7ba9ecc42ad88ef94e308bd1, type: 3}
+  m_PrefabInstance: {fileID: 291601338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632025232
 GameObject:
   m_ObjectHideFlags: 0

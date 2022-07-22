@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022fa32f4bc0982438763f8cf1e2252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 200
   faceVelocity: 1
   facingRight: 1
-  speed: 200
 --- !u!212 &2704432291686427957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,6 +139,9 @@ MonoBehaviour:
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 50
+  targetGraphics: {fileID: 0}
+  damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -154,6 +157,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  animPlayer: {fileID: 0}
+  dieSound: {fileID: 0}
 --- !u!114 &2704432291686427952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,13 +173,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTags: []
+  autoAttack: 1
+  spawnAnimFinished: 1
   aIReferences:
     controller: {fileID: 2704432291686427952}
     ai: {fileID: 2704432291686427956}
     rb: {fileID: 2704432291686427963}
+    animPlayer: {fileID: 0}
     maxDistanceToTarget: 2
     getBackRange: 1
     getBackForce: 160
     damage: 10
     attackRate: 0.5
     bypassAttacking: 0
+    runSource: {fileID: 0}
+    spawnSource: {fileID: 0}
+  dontTick: 0

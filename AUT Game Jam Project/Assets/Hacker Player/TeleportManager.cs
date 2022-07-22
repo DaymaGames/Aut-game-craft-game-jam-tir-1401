@@ -31,7 +31,8 @@ public class TeleportManager : MonoBehaviour
     public string teleportFinishState = "TFinish";
 
     [Space]
-    public VolumeProfile profile;
+    public GameObject globalLight;
+    public GameObject circleLight;
 
     private float remainingTime = 0;
 
@@ -107,6 +108,9 @@ public class TeleportManager : MonoBehaviour
         teleportCircle.position = transform.position;
         teleportCircle.localScale = Vector3.one * maxTeleportRange / transform.localScale.x;
 
+        globalLight.SetActive(false);
+        circleLight.SetActive(true);
+
     }
 
     void Hold()
@@ -160,6 +164,9 @@ public class TeleportManager : MonoBehaviour
         remainingTime = teleportCoolDown;
         coolDownImage.gameObject.SetActive(true);
         coolDownImage.fillAmount = 1;
+
+        globalLight.SetActive(true);
+        circleLight.SetActive(false);
     }
 
     void TurnOffTrail()
