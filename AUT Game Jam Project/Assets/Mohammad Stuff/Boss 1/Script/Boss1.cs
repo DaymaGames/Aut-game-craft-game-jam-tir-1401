@@ -53,8 +53,6 @@ public class Boss1 : MonoBehaviour
 
 
         }
-        SetFacing();
-
     }
 
     IEnumerator Shoot()
@@ -104,17 +102,6 @@ public class Boss1 : MonoBehaviour
     void ShootAttack()
     {
         bulletSpawnerScript.Shoot();
-    }
-    void SetFacing()
-    {
-        if (transform.position.x - player.position.x < 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        if (transform.position.x - player.position.x > 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
     }
     private void OnDrawGizmosSelected()
     {

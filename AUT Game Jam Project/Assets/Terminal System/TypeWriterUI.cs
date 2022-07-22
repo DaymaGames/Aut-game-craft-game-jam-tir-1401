@@ -14,8 +14,7 @@ public class TypeWriterUI : MonoBehaviour
 	[SerializeField] string leadingChar = "";
 	[SerializeField] bool leadingCharBeforeDelay = false;
 
-	// Use this for initialization
-	void Start()
+	private void OnEnable()
 	{
 		_text = GetComponent<Text>()!;
 		_tmpProText = GetComponent<TMP_Text>()!;
@@ -37,7 +36,16 @@ public class TypeWriterUI : MonoBehaviour
 		}
 	}
 
-	IEnumerator TypeWriterText()
+    private void OnDisable()
+    {
+		StopAllCoroutines();
+		if (_text)
+			_text.text = "";
+		if (_tmpProText)
+			_tmpProText.SetText("");
+    }
+
+    IEnumerator TypeWriterText()
 	{
 		_text.text = leadingCharBeforeDelay ? leadingChar : "";
 

@@ -136,6 +136,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195641233644156313}
     - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5039892224325655094, guid: c85b2e2a70fab0646bc70bf4b01969ce, type: 3}
+    - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
       propertyPath: spawnAnimFinished
       value: 1
       objectReference: {fileID: 0}
