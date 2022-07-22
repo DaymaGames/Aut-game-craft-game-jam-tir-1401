@@ -939,6 +939,7 @@ MonoBehaviour:
   animPlayer: {fileID: 8228250353151880045}
   teleportStartState: TStart
   teleportFinishState: TFinish
+  profile: {fileID: 11400000, guid: d20d7c71053f4c741aa6956f69928335, type: 2}
   dropPoint: {x: 0, y: 0}
 --- !u!114 &177382631282214895
 MonoBehaviour:

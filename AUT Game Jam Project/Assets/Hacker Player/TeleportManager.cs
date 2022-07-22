@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(HackerController))]
 public class TeleportManager : MonoBehaviour
@@ -28,6 +29,9 @@ public class TeleportManager : MonoBehaviour
     public AnimationPlayer animPlayer;
     public string teleportStartState = "TStart";
     public string teleportFinishState = "TFinish";
+
+    [Space]
+    public VolumeProfile profile;
 
     private float remainingTime = 0;
 
@@ -161,5 +165,17 @@ public class TeleportManager : MonoBehaviour
     void TurnOffTrail()
     {
         teleportTrail.gameObject.SetActive(false);
+    }
+
+    IEnumerator SetVignetCoroutine(float duration)
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / duration;
+
+            yield return null;
+        }
+
     }
 }
