@@ -240,55 +240,9 @@ MonoBehaviour:
       \uFE8E\uFE91 \uFEEA\uFEE0\uFE91\uFE8E\uFED8\uFEE3 \u0647\u0627\u0631 \uFEE6\uFBFE\uFEAE\uFE98\uFEEC\uFE91
       \u061F\uFEEA\uFEE7 \uFEEA\uFB95\uFBFE\u062F \u06CC\uFEAE\uFB91\uFEEB \uFEEA\uFBFE
       \uFEEE\uFE97"
-    names: []
-    sounds: []
---- !u!1 &126430635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126430636}
-  - component: {fileID: 126430637}
-  m_Layer: 0
-  m_Name: Dialogue R 2 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &126430636
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126430635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460274581}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126430637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126430635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52044ae8c4584a644bd3398aac4dab61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &208527576
 GameObject:
@@ -527,7 +481,9 @@ MonoBehaviour:
     - "\uFEB2\uFBFF\uFE8B\u0631 \uFBFD\uFEEB"
     - "\u06CC\uFEAA\uFEE3\u0648\u0627 \u0634\uFEEE\uFEA7 \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
       \u06CC\uFE8E\uFBFF\uFEE7\u062F \uFEEA\uFE91"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &294335185
 GameObject:
@@ -578,7 +534,9 @@ MonoBehaviour:
       \u060C\uFEB6\uFBFF\uFEA7\u0622"
     - ".\uFEE2\uFEE8\uFB90 \u0632\u0627\uFE91 \u0648 \u0644\uFE8E\uFE97\uFEAE\u0648\uFB58
       \uFEEA\uFEB8\uFE98\uFED7\u0648"
-    names: []
+    names:
+    - "\uFEAE\uFB91\uFEEB"
+    - "\uFEAE\uFB91\uFEEB"
     sounds: []
 --- !u!1 &297037502
 GameObject:
@@ -783,7 +741,11 @@ MonoBehaviour:
     - " \u061F\u0647\uFEAA\uFEB8\uFBFF\uFB7C"
     - "\u061F\uFEEA\uFBFF\uFB7C \uFEEA\uFB95\uFBFE\u062F \uFBFD\uFEDF\uFE8E\uFE98\uFBFF\uFEA0\uFBFE\u062F
       \u06CC\uFE8E\uFBFF\uFEE7\u062F"
-    names: []
+    names:
+    - "\uFEAE\uFB91\uFEEB"
+    - "\uFEAE\uFB91\uFEEB"
+    - "\uFEAE\uFB91\uFEEB"
+    - "\uFEAE\uFB91\uFEEB"
     sounds: []
 --- !u!1 &329659298
 GameObject:
@@ -939,8 +901,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 126430636}
+  m_Children: []
   m_Father: {fileID: 680085435}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -961,7 +922,8 @@ MonoBehaviour:
     - ".\uFEEE\uFEB7 \u0647\u062F\u0627\uFEE3\u0622 \u060C\u062F\uFE8E\uFBFF\uFEE3
       \u0647\u0631\u0627\u062F \u0646\uFEEE\uFEB7 \u0647\uFEAA\uFEE8\uFB94 \uFEE2\uFEE8\uFB90
       \uFB8F\uFED3"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &491316394
 GameObject:
@@ -1016,7 +978,10 @@ MonoBehaviour:
       \uFEEA\uFB94\u0627 \uFEFC\uFECC\uFED3\n!\uFBFD\uFEB8\uFEE7 \u062F\uFEEE\uFE91\uFE8E\uFEE7
       \u0633\u0648\uFEAE\uFBFE\u0648 \uFBFD\uFE98\uFEE7\u0622 \uFEC2\uFEB3\uFEEE\uFE97
       \uFBFD\uFEE8\uFB90 \uFBFD\uFECC\uFEB3 \uFEAA\uFBFE\uFE8E\uFE91"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &504228790
 GameObject:
@@ -1069,7 +1034,9 @@ MonoBehaviour:
       \uFEDE\uFE9C\uFEE3 \u060C\u0644\uFEEE\uFBFE\u0627"
     - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFBFD\uFEE8\uFB90
       \u0632\uFE8E\uFE91 \u0648 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \uFEEA\uFEB8\uFE98\uFED7\u0648"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1001 &670668226
 PrefabInstance:
@@ -3361,7 +3328,9 @@ MonoBehaviour:
       \u060C\uFEB2\uFBFF\uFE8B\u0631 \u0647\u0648\u0627"
     - "\u061F\uFEEA\uFE98\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91 \u060C\uFEEA\uFB90
       \u0647\u0631\u0627\uFEAA\uFEE7 \u0633\uFEAE\uFE97\r"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &1752086433
 GameObject:
@@ -3410,7 +3379,8 @@ MonoBehaviour:
     sentences:
     - ".\uFEEA\uFEE7\uFEEE\uFEA7 \uFEE2\uFBFE\uFEAE\uFE91 \uFE8E\uFE97 \uFEEE\uFEB7
       \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u062F\u0631\u0627\u0648"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1001 &1773089714
 PrefabInstance:
@@ -3596,7 +3566,9 @@ MonoBehaviour:
     - ".\uFEEA\uFEB8\uFE91 \uFE90\uFEBC\uFEE7 \uFE8E\uFE97 \uFEE2\uFBFF\uFEE8\uFB90
       \uFE96\uFEC8\uFED3\uFE8E\uFEA4\uFEE3 \u0644\uFE8E\uFE97\u0631\uFEEE\uFB58 \u0632\u0627
       \uFEAA\uFBFE\uFE8E\uFE91\r\n"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!1 &1993819990
 GameObject:
@@ -3647,7 +3619,9 @@ MonoBehaviour:
       \uFEEA\uFBFE \u06CC\u0632\u0648\u0631 \uFE8E\uFE91\uFE8E\uFE91 \uFEEA\uFEE7 "
     - "!\uFEEA\uFEEC\uFEEC\uFEEC\uFEEC\uFEE4\uFEDF\u0648\u0627 \u0631\uFE8E\uFE91
       \uFEEA\uFB90 \uFEEA\uFEE3\uFEEE\uFEE0\uFECC\uFEE3"
-    names: []
+    names:
+    - "\uFEAE\uFB91\uFEEB"
+    - "\uFEAE\uFB91\uFEEB"
     sounds: []
 --- !u!1 &2035298658
 GameObject:
@@ -3963,7 +3937,8 @@ MonoBehaviour:
   dialogue:
     sentences:
     - "!\uFEE6\uFB90 \u0639\u0648\uFEAE\uFEB7 \u060C\uFEE6\uFBFE\uFEAE\uFED3\u0622\n"
-    names: []
+    names:
+    - "\uFEEA\uFE91\uFEAE\uFB94"
     sounds: []
 --- !u!212 &670716061948781910
 SpriteRenderer:
