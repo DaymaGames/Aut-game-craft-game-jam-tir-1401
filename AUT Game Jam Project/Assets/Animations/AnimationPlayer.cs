@@ -59,5 +59,9 @@ public class AnimationPlayer : MonoBehaviour
     {
         Destroy(transform.root.gameObject);
     }
+    public void AnimationSpawnFinish()
+    {
+        transform.root.GetComponent<AIController>().spawnAnimFinished = true;
+    }
 }
 public enum AnimationType { Idle,Run,Attack,Die,Suicide }

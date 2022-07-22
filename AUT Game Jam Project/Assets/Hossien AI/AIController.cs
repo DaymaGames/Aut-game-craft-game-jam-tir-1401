@@ -8,6 +8,7 @@ public class AIController : MonoBehaviour
     public Transform target;
     public List<string> enemyTags;
     public bool autoAttack = true;
+    public bool spawnAnimFinished = true;
     
     [Space]
 
@@ -64,7 +65,7 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
-        if (dontTick)
+        if (dontTick || spawnAnimFinished == false)
             return;
 
         state = state.Tick();

@@ -273,6 +273,7 @@ MonoBehaviour:
   - Virus
   - Player
   autoAttack: 0
+  spawnAnimFinished: 0
   aIReferences:
     controller: {fileID: 4941078556297951724}
     ai: {fileID: 4941078556297951727}

@@ -43,7 +43,6 @@ public class AI2D : AIParentClass
     {
         if (path.error)
         {
-            print("error");
             return;
         }
 

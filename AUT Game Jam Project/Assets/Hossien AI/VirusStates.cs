@@ -118,7 +118,12 @@ public class MoveToTargetState : AIState
         {
             ai.IsStopped = false;
             MoveToTarget();
-            references.animPlayer.PlayAnim(AnimationType.Run);
+
+            float speedThreshold = 0.3f;
+            if (rb.velocity.sqrMagnitude > speedThreshold * speedThreshold)
+                references.animPlayer.PlayAnim(AnimationType.Run);
+            else
+                references.animPlayer.PlayAnim(AnimationType.Idle);
         }
 
         HandleFlipping(relative);
