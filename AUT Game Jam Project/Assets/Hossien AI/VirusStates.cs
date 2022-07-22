@@ -80,7 +80,8 @@ public class MoveToTargetState : AIState
 
     protected override AIState Update()
     {
-        if(DialogueManager.ShowingDialogue == true)
+        if(DialogueManager.ShowingDialogue == true || PauseMenu.IsPaused ||
+            GameManager.Instance.GameOver)
         {
             ai.IsStopped = true;
             return this;

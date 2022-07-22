@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] AudioClip audioClip;
     [Space]
     [Header("Delay before input activision")]
-    [SerializeField] float typeTimeStartDelay = 1;
+    [SerializeField] float selectInputFieldDelay = 1;
     [Space]
     [SerializeField] TMP_InputField inputFiled;
     [SerializeField] string currentInput;
@@ -22,13 +22,13 @@ public class InputManager : MonoBehaviour
     [Header("Warning! Use small letters for Command Input")]
     public List<CMDActions> cMDAction;
     
-    public void OnEndEdit()
+    public void OnEndEdit(string input)
     {
-        
-        currentInput = inputFiled.text.ToLower(); 
+        currentInput = input.ToLower(); 
         
         CheckInput(currentInput);
     }
+
     void CheckInput(string currentInput)
     {
         foreach (CMDActions cmdCommand in cMDAction)
@@ -42,17 +42,18 @@ public class InputManager : MonoBehaviour
 
     }
     
-
     private void Awake()
     {
       
         audioSource = GetComponent<AudioSource>();
 
     }
+
     private void Start()
     {
-        Invoke(nameof(SelectInputFiled), typeTimeStartDelay);
+        Invoke(nameof(SelectInputFiled), selectInputFieldDelay);
     }
+
     private void Update()
     {
         if (Input.anyKeyDown)
@@ -62,18 +63,15 @@ public class InputManager : MonoBehaviour
                 Input.GetMouseButtonDown(2))
                 return;
 
-            audioSource.PlayOneShot(audioClip);
+            if (audioSource)
+                audioSource.PlayOneShot(audioClip);
         }
     }
-
 
     void SelectInputFiled()
     {
         inputFiled.Select();
-
-
     }
-
 }
 
 

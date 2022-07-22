@@ -37,7 +37,7 @@ public class Boss1 : MonoBehaviour
     }
     private void Update()
     {
-        if (isDead)
+        if (isDead || DialogueManager.ShowingDialogue == true)
             return;
 
         switch (bossState)

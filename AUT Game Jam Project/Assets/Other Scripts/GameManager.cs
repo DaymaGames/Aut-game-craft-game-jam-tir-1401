@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class GameManager : MonoBehaviour
     public float gameOverFadeDurartion = 0.3f;
 
     public static GameManager Instance { get; private set; }
-    public bool GameOver { get; private set; } = true;
+    public bool GameOver { get; private set; } = false;
 
     private void Awake()
     {
         Instance = this;
         gameOverParent.gameObject.SetActive(false);
         gameOverParent.alpha = 0;
+        SceneManager.sceneLoaded += OnSceneLoad;
     }
     public void OpenGameOver()
     {
@@ -31,5 +33,9 @@ public class GameManager : MonoBehaviour
         GameOver = false;
         gameOverParent.gameObject.SetActive(false);
         gameOverParent.alpha = 0;
+    }
+    void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        CloseGameOver();
     }
 }

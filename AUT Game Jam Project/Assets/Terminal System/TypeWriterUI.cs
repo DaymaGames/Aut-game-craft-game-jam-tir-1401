@@ -40,9 +40,9 @@ public class TypeWriterUI : MonoBehaviour
     {
 		StopAllCoroutines();
 		if (_text)
-			_text.text = "";
+			_text.text = writer;
 		if (_tmpProText)
-			_tmpProText.SetText("");
+			_tmpProText.SetText(writer);
     }
 
     IEnumerator TypeWriterText()

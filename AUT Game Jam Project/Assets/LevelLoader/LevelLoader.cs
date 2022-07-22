@@ -36,4 +36,9 @@ public class LevelLoader : MonoBehaviour
             OnComplete(() => 
             Instance.StartCoroutine(Instance.LoadSceneAsync(sceneName)));
     }
+
+    public static void ReloadScene()
+    {
+        LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

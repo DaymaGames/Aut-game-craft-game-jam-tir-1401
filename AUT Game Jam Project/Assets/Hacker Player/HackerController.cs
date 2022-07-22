@@ -46,7 +46,8 @@ public class HackerController : MonoBehaviour
         {
             return;
         }
-        if(DialogueManager.ShowingDialogue == true)
+        if(DialogueManager.ShowingDialogue == true || PauseMenu.IsPaused
+            || GameManager.Instance.GameOver)
         {
             movement.SetVelocity(Vector2.zero);
             return;

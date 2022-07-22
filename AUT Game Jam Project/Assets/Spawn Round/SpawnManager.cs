@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     public float roundDelay = 5;
 
     [HideInInspector] public int currentRound = 0;
-    
+
     [HideInInspector] public bool inRound = false;
 
     private void Start()
@@ -37,7 +37,8 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnRound(Round<Virus> round, float startDelay = 0)
     {
-        if(DialogueManager.ShowingDialogue==true)
+        if (DialogueManager.ShowingDialogue == true||
+            PauseMenu.IsPaused||GameManager.Instance.GameOver)
         {
             yield return null;
         }
