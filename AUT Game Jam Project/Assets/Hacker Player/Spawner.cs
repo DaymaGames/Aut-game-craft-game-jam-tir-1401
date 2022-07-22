@@ -5,25 +5,62 @@ using TMPro;
 
 public class Spawner : MonoBehaviour
 {
-    public int count = 2;
+    public int maxCount = 2;
+    public float timeToAddEach = 3;
     public GameObject prefab;
     public Transform spawnPoint;
     public TextMeshProUGUI countLeft;
 
+    private int currentCount = 2;
+    private float timer = 0;
+
+    private void Awake()
+    {
+        if(!spawnPoint)
+        {
+            spawnPoint = GameObject.Find("Virus Spawn Transform").transform;
+        }
+    }
+
     private void Start()
     {
-        countLeft.SetText(count.ToString());
+        currentCount = maxCount;
+
+        countLeft.SetText(currentCount.ToString());
+
+        timer = timeToAddEach;
+    }
+
+    private void Update()
+    {
+        if (currentCount == maxCount)
+        {
+            return;
+        }
+
+        if (timer <= 0)
+        {
+            currentCount++;
+            countLeft.SetText(currentCount.ToString());
+            timer = timeToAddEach;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
     }
 
     public void Spawn()
     {
-        if (count <= 0)
+        if (currentCount <= 0)
+        {
             return;
+        }
 
-        Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(prefab, spawnPoint.position, Quaternion.identity);
         
-        count--;
+        currentCount--;
 
-        countLeft.SetText(count.ToString());
+        countLeft.SetText(currentCount.ToString());
     }
 }

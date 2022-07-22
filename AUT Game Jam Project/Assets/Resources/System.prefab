@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746947777}
   - component: {fileID: 746947778}
-  - component: {fileID: 746947779}
+  - component: {fileID: 7235361145288643559}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: Untagged
@@ -199,7 +199,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746947776}
   m_CullTransparentMesh: 1
---- !u!114 &746947779
+--- !u!114 &7235361145288643559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,8 +221,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
-  m_sharedMaterial: {fileID: 4923863695232322084, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -246,8 +246,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85
-  m_fontSizeBase: 85
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1267987964}
-  dialogueText: {fileID: 746947779}
+  dialogueText: {fileID: 0}
   dialogueParent: {fileID: 291234950}
   animationDuration: 0.5
   dialogueTyperDuration: 0.05
@@ -854,7 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845017389161250981}
   - component: {fileID: 353957433765232714}
-  - component: {fileID: 8833883320725834957}
+  - component: {fileID: 7306377063363080399}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -878,8 +878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7.5}
+  m_SizeDelta: {x: 0, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &353957433765232714
 CanvasRenderer:
@@ -889,7 +889,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460473196822202831}
   m_CullTransparentMesh: 1
---- !u!114 &8833883320725834957
+--- !u!114 &7306377063363080399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -909,17 +909,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: "\u06CC\uFEAA\uFECC\uFE91"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 03d0af2b11ba7c54d89f70e131390348, type: 2}
-  m_sharedMaterial: {fileID: 4261072247869345264, guid: 03d0af2b11ba7c54d89f70e131390348, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
+  m_sharedMaterial: {fileID: 4923863695232322084, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -936,8 +936,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55.6
+  m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
