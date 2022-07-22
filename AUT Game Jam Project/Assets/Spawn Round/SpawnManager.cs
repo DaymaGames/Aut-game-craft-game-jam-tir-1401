@@ -38,7 +38,8 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnRound(Round<Virus> round, float startDelay = 0)
     {
         if (DialogueManager.ShowingDialogue == true||
-            PauseMenu.IsPaused||GameManager.Instance.GameOver)
+            PauseMenu.IsPaused||GameManager.Instance.GameOver ||
+            BossAbilityManager.DesigningBoss)
         {
             yield return null;
         }
@@ -58,6 +59,13 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < round.toSpawn.Count; i++)
         {
+            if (DialogueManager.ShowingDialogue == true ||
+            PauseMenu.IsPaused || GameManager.Instance.GameOver ||
+            BossAbilityManager.DesigningBoss)
+            {
+                yield return null;
+            }
+
             Vector2 pos = new Vector2();
 
             if (round.isFixedPos)

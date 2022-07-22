@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class BossAbilityManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class BossAbilityManager : MonoBehaviour
 
     public float timeToDesign = 10;
 
+    public TMPro.TextMeshProUGUI timeText;
+    public string pishvand = "Remaining: ";
 
     float time = 0;
 
@@ -24,9 +27,12 @@ public class BossAbilityManager : MonoBehaviour
 
     Abilities abilities = new Abilities();
 
+    public static bool DesigningBoss { get; private set; } = false;
+
     private void Awake()
     {
         parent = transform.GetChild(0);
+        CloseMenu();
     }
 
     public void SetMode(Abilities.SizeMode sizeMode)
@@ -48,13 +54,12 @@ public class BossAbilityManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartDesigning();
-
         if (time <= 0)
             return;
 
         time -= Time.deltaTime;
+
+        timeText.SetText(pishvand + time.ToString("0"));
 
         if (time <= 0)
             CloseMenu();
@@ -114,15 +119,17 @@ public class BossAbilityManager : MonoBehaviour
         time = timeToDesign;
         OpenMenu();
     }
-
+    [Button]
     void OpenMenu()
     {
         parent.gameObject.SetActive(true);
+        DesigningBoss = true;
     }
-
+    [Button]
     void CloseMenu()
     {
         parent.gameObject.SetActive(false);
+        DesigningBoss = false;
     }
 
     public void SpawnBoss()

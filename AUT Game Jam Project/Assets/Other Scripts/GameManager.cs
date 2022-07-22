@@ -37,5 +37,6 @@ public class GameManager : MonoBehaviour
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         CloseGameOver();
+        Tooltip.HideTooltip();
     }
 }

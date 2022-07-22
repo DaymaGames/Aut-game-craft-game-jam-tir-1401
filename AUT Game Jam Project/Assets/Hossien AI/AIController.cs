@@ -19,6 +19,8 @@ public class AIController : MonoBehaviour
     public System.Action OnAttackAction;
 
     public bool dontTick = false;
+
+
     private void Awake()
     {
         state = new MoveToTargetState

@@ -48,7 +48,15 @@ public class TeleportManager : MonoBehaviour
 
     private void Update()
     {
-        if (remainingTime > 0)
+        if (DialogueManager.ShowingDialogue == true
+            ||PauseMenu.IsPaused
+            ||GameManager.Instance.GameOver
+            ||BossAbilityManager.DesigningBoss)
+        {
+            return;
+        }
+
+            if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
             coolDownImage.fillAmount = remainingTime / teleportCoolDown;

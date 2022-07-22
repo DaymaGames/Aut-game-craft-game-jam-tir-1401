@@ -19,6 +19,10 @@ public class AIStateReferences
     public int damage = 10;
     public float attackRate = 0.5f;
     public bool bypassAttacking = false;
+
+    [Header("Audio")]
+    public AudioSource runSource;
+    public AudioSource spawnSource;
 }
 
 public abstract class AIState
@@ -67,7 +71,7 @@ public class MoveToTargetState : AIState
     Transform target;
     AIParentClass ai;
     Rigidbody2D rb;
-
+    bool spawnSoundPlayed = false;
     protected override void Start()
     {
         target = references.controller.target;
@@ -81,7 +85,7 @@ public class MoveToTargetState : AIState
     protected override AIState Update()
     {
         if(DialogueManager.ShowingDialogue == true || PauseMenu.IsPaused ||
-            GameManager.Instance.GameOver)
+            GameManager.Instance.GameOver || BossAbilityManager.DesigningBoss)
         {
             ai.IsStopped = true;
             return this;
@@ -89,6 +93,17 @@ public class MoveToTargetState : AIState
         else
         {
             ai.IsStopped = false;
+        }
+
+        //playing spawn sound
+        if(spawnSoundPlayed == false)
+        {
+            spawnSoundPlayed = true;
+
+            if (references.spawnSource)
+            {
+                references.spawnSource.Play();
+            }
         }
 
         if (!target)
@@ -119,12 +134,25 @@ public class MoveToTargetState : AIState
         {
             ai.IsStopped = false;
             MoveToTarget();
-
             float speedThreshold = 0.3f;
             if (rb.velocity.sqrMagnitude > speedThreshold * speedThreshold)
+            {
                 references.animPlayer.PlayAnim(AnimationType.Run);
+
+                if(references.runSource && references.runSource.isPlaying == false)
+                {
+                    references.runSource.Play();
+                }
+                
+            }
             else
+            {
                 references.animPlayer.PlayAnim(AnimationType.Idle);
+                if(references.runSource && references.runSource.isPlaying == true)
+                {
+                    references.runSource.Stop();
+                }
+            }
         }
 
         HandleFlipping(relative);

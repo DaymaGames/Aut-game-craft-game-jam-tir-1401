@@ -143,6 +143,7 @@ MonoBehaviour:
   shootState: Shoot
   attackState: Attack
   dieState: Die
+  shootSound: {fileID: 8300000, guid: 658f198b9bc3415468853bf6eb0f9f52, type: 3}
   isDead: 0
 --- !u!82 &763908722459825334
 AudioSource:

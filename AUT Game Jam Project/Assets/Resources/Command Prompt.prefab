@@ -897,7 +897,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pause Menu
 
-    //resume, menu, exit, retry'
+    example : resume, menu, exit, retry'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
   m_sharedMaterial: {fileID: 4923863695232322084, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}

@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     [Space]
     public UnityEvent OnDieEvent;
     public AnimationPlayer animPlayer;
+
+    public AudioSource dieSound;
     private void Awake()
     {
         if (fullHealthOnAwake)
@@ -84,6 +86,9 @@ public class Health : MonoBehaviour
 
         if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);
+
+        if (dieSound)
+            dieSound.Play();
     }
 
     [ContextMenu("Full Health")]

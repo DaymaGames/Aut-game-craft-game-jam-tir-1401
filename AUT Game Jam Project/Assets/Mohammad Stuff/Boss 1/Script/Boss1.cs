@@ -29,6 +29,9 @@ public class Boss1 : MonoBehaviour
     public string attackState = "Shoot";
     public string dieState = "Die";
 
+    [Header("Sounds")]
+    public AudioClip shootSound;
+
     public bool isDead = false; 
     private void Start()
     {
@@ -37,7 +40,9 @@ public class Boss1 : MonoBehaviour
     }
     private void Update()
     {
-        if (isDead || DialogueManager.ShowingDialogue == true)
+        if (isDead || DialogueManager.ShowingDialogue == true
+            || PauseMenu.IsPaused || GameManager.Instance.GameOver ||
+            BossAbilityManager.DesigningBoss)
             return;
 
         switch (bossState)
@@ -118,6 +123,7 @@ public class Boss1 : MonoBehaviour
         bulletSpawnerScript.Shoot();
         //play shooting animation
         animator.Play(shootState);
+        audioSource.PlayOneShot(shootSound);
     }
     private void OnDrawGizmosSelected()
     {
