@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] AudioClip audioClip;
     [Space]
     [Header("Delay before input activision")]
-    [SerializeField] float selectInputFieldDelay = 1;
+    [SerializeField] float selectRepeatRate = .5f;
     [Space]
     [SerializeField] TMP_InputField inputFiled;
     [SerializeField] string currentInput;
@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(SelectInputFiled), selectInputFieldDelay);
+        InvokeRepeating(nameof(SelectInputFiled),0, selectRepeatRate);
     }
 
     private void Update()

@@ -89,7 +89,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
         dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 10, animationDuration)
             .OnComplete(() => ShowingDialogue = false) ;

@@ -38,5 +38,6 @@ public class GameManager : MonoBehaviour
     {
         CloseGameOver();
         Tooltip.HideTooltip();
+        DialogueManager.Instance.EndDialogue();
     }
 }
