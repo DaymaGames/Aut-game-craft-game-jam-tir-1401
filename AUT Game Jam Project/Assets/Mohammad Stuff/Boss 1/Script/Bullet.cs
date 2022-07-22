@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    
+    public int damage = 20;
+
     Rigidbody2D rigidBody;
     Transform bossTransform;
 
@@ -21,8 +22,21 @@ public class Bullet : MonoBehaviour
     
     private void FixedUpdate()
     {
-        rigidBody.AddForce((transform.position - bossTransform.position).normalized * bulletSpeed*Time.deltaTime);
+        if(bossTransform == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        rigidBody.AddForce(bulletSpeed * Time.deltaTime * (transform.position - bossTransform.position).normalized);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<Health>().TakeDamage(damage, transform);
+            Destroy(gameObject);
+        }
     }
 
-  
 }

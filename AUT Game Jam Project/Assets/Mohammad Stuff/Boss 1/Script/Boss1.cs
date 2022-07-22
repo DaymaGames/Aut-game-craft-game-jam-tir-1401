@@ -22,6 +22,14 @@ public class Boss1 : MonoBehaviour
     [SerializeField]float restLenght = 3;
     [Space]
     [SerializeField] AudioSource audioSource;//age gharar shod dad bezane
+
+    [Header("Animation")]
+    public Animator animator;
+    public string shootState = "Shoot";
+    public string attackState = "Shoot";
+    public string dieState = "Die";
+
+    public bool isDead = false; 
     private void Start()
     {
         if (!player)
@@ -29,6 +37,8 @@ public class Boss1 : MonoBehaviour
     }
     private void Update()
     {
+        if (isDead)
+            return;
 
         switch (bossState)
         {
@@ -57,17 +67,21 @@ public class Boss1 : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        yield return new WaitForSeconds(shootDelay);
+        ShootAttack();
 
         yield return new WaitForSeconds(shootDelay);
         ShootAttack();
+        
         yield return new WaitForSeconds(shootDelay);
         ShootAttack();
+        
         yield return new WaitForSeconds(shootDelay);
         ShootAttack();
+        
         yield return new WaitForSeconds(shootDelay);
         ShootAttack();
-        yield return new WaitForSeconds(shootDelay);
-        ShootAttack();
+        
         yield return new WaitForSeconds(1);
         bossState = BossState.CicleAttack;
     }
@@ -102,10 +116,15 @@ public class Boss1 : MonoBehaviour
     void ShootAttack()
     {
         bulletSpawnerScript.Shoot();
+        //play shooting animation
+        animator.Play(shootState);
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(gameObject.transform.position, damageRange);
     }
-   
+    public void AnimationDieEnd()
+    {
+        Destroy(gameObject);
+    }
 }

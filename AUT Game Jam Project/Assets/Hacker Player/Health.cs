@@ -75,6 +75,12 @@ public class Health : MonoBehaviour
             movement.autoAnimation = false;
             GetComponent<HackerController>().Die();
         }
+        else if (TryGetComponent(out Boss1 boss))
+        {
+            boss.isDead = true;
+            boss.StopAllCoroutines();
+            boss.animator.Play(boss.dieState);
+        }
 
         if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);
