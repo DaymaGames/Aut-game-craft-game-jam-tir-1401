@@ -46,6 +46,27 @@ public class HackerBoss : MonoBehaviour
     public bool previewMode = false;
 
     [SerializeField] Transform target;
+    public GeneralBullet bullet;
+    public Transform bulletStartPos;
+    public float bulletForce = 500;
+
+    [Header("Animations")]
+    public Animator animator;
+    public RuntimeAnimatorController flyingAnim;
+    public RuntimeAnimatorController groundedAnim;
+    
+    [Space]
+    public string moveState;
+
+    [Space]
+    public string attackState;
+
+    [Space]
+    public string shootState;
+
+    [Space]
+    public string dieState;
+
 
     int currentDamage = 20;
     Abilities.AttackMode attackMode;
@@ -54,7 +75,7 @@ public class HackerBoss : MonoBehaviour
     Abilities.SpeedMode speedMode;
     Rigidbody2D rb;
     private AIParentClass mover;
-
+    [HideInInspector] public bool isDead = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,7 +97,7 @@ public class HackerBoss : MonoBehaviour
 
     private void Update()
     {
-        if (previewMode)
+        if (previewMode || isDead)
             return;
 
         if (!target)
@@ -91,6 +112,7 @@ public class HackerBoss : MonoBehaviour
         }
 
         Vector2 relative = target.position - transform.position;
+
         if (relative.sqrMagnitude <= followRange * followRange)
         {
             mover.IsStopped = true;
@@ -106,6 +128,8 @@ public class HackerBoss : MonoBehaviour
             mover.IsStopped = false;
             mover.SetDestination(target.position);
         }
+
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
     }
 
     void GetBack(Vector2 relative)
@@ -128,9 +152,29 @@ public class HackerBoss : MonoBehaviour
 
     void Attack()
     {
-        target.GetComponent<Health>().TakeDamage(currentDamage, transform);
-    }
+        switch (attackMode)
+        {
+            case Abilities.AttackMode.Far:
 
+                InstantiateBullet();
+                animator.Play(shootState);
+
+                break;
+            case Abilities.AttackMode.Close:
+
+                target.GetComponent<Health>().TakeDamage(currentDamage, transform);
+                animator.Play(attackState);
+
+                break;
+        }
+
+        
+    }
+    void InstantiateBullet()
+    {
+        Rigidbody2D rb = Instantiate(bullet, bulletStartPos.position, bulletStartPos.rotation).GetComponent<Rigidbody2D>();
+        rb.AddForce(rb.transform.right * bulletForce);
+    }
     public void SetAbilities(Abilities abilities)
     {
         attackMode = abilities.attackMode;
@@ -199,11 +243,15 @@ public class HackerBoss : MonoBehaviour
                 if (!previewMode)
                     mover = gameObject.AddComponent<SimpleMoveAI>();
 
+                animator.runtimeAnimatorController = flyingAnim;
+
                 break;
             case Abilities.MoveMode.Ground:
 
                 if (!previewMode)
                     mover = gameObject.AddComponent<AI2D>();
+
+                animator.runtimeAnimatorController = groundedAnim;
 
                 break;
         }

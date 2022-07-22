@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: animPlayer
       value: 
       objectReference: {fileID: 195641233644156313}
+    - target: {fileID: 8188360388752185035, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
+      propertyPath: targetGraphics
+      value: 
+      objectReference: {fileID: 1860694955}
     - target: {fileID: 8188360388752185037, guid: 5e27ccfd5cdd5e944842bfb82c787921, type: 3}
       propertyPath: bulletPrefab
       value: 

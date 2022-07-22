@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6105340044229585914, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: targetGraphics
+      value: 
+      objectReference: {fileID: 2261629003060014398}
     - target: {fileID: 904210843, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -89,6 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 2261629003060014396}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+--- !u!212 &2261629003060014398 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 904210845, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+  m_PrefabInstance: {fileID: 2261629002185295011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2261629003060014396 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 904210847, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}

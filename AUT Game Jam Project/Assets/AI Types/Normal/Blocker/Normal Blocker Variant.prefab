@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: animPlayer
       value: 
       objectReference: {fileID: 93047466}
+    - target: {fileID: 2160769923996865761, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
+      propertyPath: targetGraphics
+      value: 
+      objectReference: {fileID: 93047464}
     - target: {fileID: 2160769923996865764, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
       propertyPath: m_RootOrder
       value: 0

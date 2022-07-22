@@ -143,6 +143,7 @@ MonoBehaviour:
   shootState: Shoot
   attackState: Attack
   dieState: Die
+  attackDamage: 25
   shootSound: {fileID: 8300000, guid: 658f198b9bc3415468853bf6eb0f9f52, type: 3}
   isDead: 0
 --- !u!82 &763908722459825334
@@ -258,10 +259,14 @@ MonoBehaviour:
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 5
+  targetGraphics: {fileID: 763908722459825333}
+  damagedColor: {r: 1, g: 0.6179246, b: 0.6179246, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []
   animPlayer: {fileID: 0}
+  dieSound: {fileID: 0}
 --- !u!114 &952136598571404696
 MonoBehaviour:
   m_ObjectHideFlags: 0

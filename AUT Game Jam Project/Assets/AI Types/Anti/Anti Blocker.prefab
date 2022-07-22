@@ -252,10 +252,10 @@ MonoBehaviour:
     ai: {fileID: 2160769923996865767}
     rb: {fileID: 2160769923996865765}
     animPlayer: {fileID: 1402234015}
-    maxDistanceToTarget: 3.08
+    maxDistanceToTarget: 3.13
     getBackRange: 0.55
     getBackForce: 110
-    damage: 10
+    damage: 15
     attackRate: 0.5
     bypassAttacking: 0
     runSource: {fileID: 1456296082}
@@ -273,11 +273,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1687f6c39776f14ebf75f96437579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 15
+  currentHealth: 15
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 50
+  targetGraphics: {fileID: 1402234013}
+  damagedColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []

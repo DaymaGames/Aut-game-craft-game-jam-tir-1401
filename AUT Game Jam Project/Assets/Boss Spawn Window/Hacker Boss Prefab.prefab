@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314329153774529071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 2.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3314329154346452709}
@@ -103,10 +103,23 @@ MonoBehaviour:
   getBackMediumSpeed: 250
   slowSpeed: 150
   getBackSlowSpeed: 250
-  damage: 20
+  bigDamage: 30
+  mediumDamage: 20
+  smallDamage: 10
   attackRate: 1
   previewMode: 0
   target: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletStartPos: {fileID: 0}
+  bulletForce: 500
+  animator: {fileID: 4247954327377611328}
+  flyingAnim: {fileID: 9100000, guid: 19580c58f14eed743be5a714d421892b, type: 2}
+  groundedAnim: {fileID: 9100000, guid: 1d866447a12ce58428ada024a7c055bd, type: 2}
+  moveState: Move
+  attackState: Attack
+  shootState: Shoot
+  dieState: Die
+  isDead: 0
 --- !u!1 &3314329154346452708
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3314329154346452709}
   - component: {fileID: 3314329154346452706}
+  - component: {fileID: 4247954327377611328}
   m_Layer: 0
   m_Name: GFX
   m_TagString: Untagged
@@ -133,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 3314329154346452708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3314329153774529069}
   m_RootOrder: 0
@@ -178,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 5782166638464627555, guid: 2fd8b9bf581c4e64f9ed84f45ba9f2db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,3 +203,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4247954327377611328
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3314329154346452708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d866447a12ce58428ada024a7c055bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

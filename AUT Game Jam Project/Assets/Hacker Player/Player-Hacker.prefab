@@ -957,10 +957,14 @@ MonoBehaviour:
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 50
+  targetGraphics: {fileID: 1108644131}
+  damagedColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []
   animPlayer: {fileID: 8228250353151880045}
+  dieSound: {fileID: 0}
 --- !u!1 &8859555896935658936
 GameObject:
   m_ObjectHideFlags: 0

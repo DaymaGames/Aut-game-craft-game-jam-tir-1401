@@ -113,13 +113,13 @@ public class BossAbilityManager : MonoBehaviour
         #endregion
         spawnButton.interactable = true;
     }
-
+    [Button]
     public void StartDesigning()
     {
         time = timeToDesign;
         OpenMenu();
     }
-    [Button]
+    
     void OpenMenu()
     {
         parent.gameObject.SetActive(true);

@@ -283,7 +283,7 @@ MonoBehaviour:
     animPlayer: {fileID: 1004702079}
     maxDistanceToTarget: 70
     getBackRange: 0.6
-    getBackForce: 160
+    getBackForce: 50
     damage: 10
     attackRate: 0.5
     bypassAttacking: 0
@@ -312,6 +312,9 @@ MonoBehaviour:
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 50
+  targetGraphics: {fileID: 1004702077}
+  damagedColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []

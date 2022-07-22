@@ -202,7 +202,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 1.7
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022fa32f4bc0982438763f8cf1e2252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 200
+  moveSpeed: 350
   faceVelocity: 1
   facingRight: 1
 --- !u!114 &7919699289474637129
@@ -266,8 +266,8 @@ MonoBehaviour:
     animPlayer: {fileID: 918561339}
     maxDistanceToTarget: 5.27
     getBackRange: 2.95
-    getBackForce: 160
-    damage: 10
+    getBackForce: 90
+    damage: 5
     attackRate: 0.5
     bypassAttacking: 0
     runSource: {fileID: 0}
@@ -285,11 +285,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1687f6c39776f14ebf75f96437579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
   currentHealth: 100
   fullHealthOnAwake: 1
   isDead: 0
   damageForce: 50
+  targetGraphics: {fileID: 918561337}
+  damagedColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   OnDieEvent:
     m_PersistentCalls:
       m_Calls: []

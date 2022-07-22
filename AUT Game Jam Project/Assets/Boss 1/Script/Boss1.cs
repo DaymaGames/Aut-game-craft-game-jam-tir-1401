@@ -29,6 +29,9 @@ public class Boss1 : MonoBehaviour
     public string attackState = "Shoot";
     public string dieState = "Die";
 
+    [Header("Damage")]
+    public int attackDamage = 30;
+
     [Header("Sounds")]
     public AudioClip shootSound;
 
@@ -93,28 +96,35 @@ public class Boss1 : MonoBehaviour
     IEnumerator CircleAttack()
     {
         yield return new WaitForSeconds(delayBetweenCirlceAttacks);
+        
         //playAttackAnimation
-        print("CircleAttack1");
+
+        animator.Play(attackState);
+
         if ((player.transform.position - transform.position).magnitude <= damageRange)
         {
             //Damage Player
-            print("Damaged");
+            DamagePlayer(attackDamage);
 
         }
         yield return new WaitForSeconds(delayBetweenCirlceAttacks);
+        
         //playAttackAnimation
-        print("CircleAttack2");
+
+        animator.Play(attackState);
+
         if ((player.transform.position - transform.position).magnitude <= damageRange)
         {
             //Damage Player
-            print("Damaged");
+            DamagePlayer(attackDamage);
         }
+
         yield return new WaitForSeconds(1);
         bossState = BossState.Rest;
     }
     IEnumerator Rest()
     {
-        print("BossIsResting");
+
         yield return new WaitForSeconds(restLenght);
         bossState = BossState.ShootAttack;
     }
@@ -132,5 +142,10 @@ public class Boss1 : MonoBehaviour
     public void AnimationDieEnd()
     {
         Destroy(gameObject);
+    }
+
+    void DamagePlayer(int damage)
+    {
+        player.GetComponent<Health>().TakeDamage(damage, transform);
     }
 }

@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     public bool fullHealthOnAwake = true;
     public bool isDead = false;
     public float damageForce = 50f;
+    public SpriteRenderer targetGraphics;
+    public Color damagedColor = Color.red;
+    public Color normalColor = Color.white;
     [Space]
     public UnityEvent OnDieEvent;
     public AnimationPlayer animPlayer;
@@ -28,6 +31,13 @@ public class Health : MonoBehaviour
         if (isDead)
             return false;
 
+        if (targetGraphics)
+        {
+            targetGraphics.color = damagedColor;
+
+            Invoke(nameof(SetColorToWhite), 0.25f);
+        }
+
         currentHealth -= damage;
         ClampHealth();
         if (currentHealth == 0)
@@ -35,6 +45,11 @@ public class Health : MonoBehaviour
             Die();
         }
         return true;
+    }
+
+    void SetColorToWhite()
+    {
+        targetGraphics.color = normalColor;
     }
 
     public void TakeDamage(int damage, Transform damager)
@@ -82,6 +97,11 @@ public class Health : MonoBehaviour
             boss.isDead = true;
             boss.StopAllCoroutines();
             boss.animator.Play(boss.dieState);
+        }
+        else if(TryGetComponent(out HackerBoss hboss))
+        {
+            hboss.animator.Play(hboss.dieState);
+            hboss.isDead = true;
         }
 
         if (animPlayer)
