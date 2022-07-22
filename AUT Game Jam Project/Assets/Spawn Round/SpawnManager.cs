@@ -37,6 +37,11 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnRound(Round<Virus> round, float startDelay = 0)
     {
+        if(DialogueManager.ShowingDialogue==true)
+        {
+            yield return null;
+        }
+
         inRound = true;
 
         if (startDelay > 0)

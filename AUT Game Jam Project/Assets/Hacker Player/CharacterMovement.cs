@@ -40,11 +40,6 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!rb)
-        {
-            Debug.LogError("attach a 2d rigidbody component", gameObject);
-            return;
-        }
         rb.velocity = velocity;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }

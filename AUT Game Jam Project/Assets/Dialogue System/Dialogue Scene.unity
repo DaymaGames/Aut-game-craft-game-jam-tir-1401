@@ -171,7 +171,8 @@ MonoBehaviour:
     sentences:
     - Hello you are pashmak
     - hope it works fine <sprite=0>
-    sound: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 586727980dde8394d99e5d19de30b787, type: 3}
 --- !u!1 &1115970041
 GameObject:
   m_ObjectHideFlags: 0

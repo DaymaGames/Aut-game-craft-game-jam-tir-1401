@@ -42,7 +42,10 @@ public class AI2D : AIParentClass
     private void OnPathComplete(Path path)
     {
         if (path.error)
+        {
+            print("error");
             return;
+        }
 
         this.path = path;
         currentWaypoint = 0;

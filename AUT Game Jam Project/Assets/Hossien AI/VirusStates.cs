@@ -80,6 +80,16 @@ public class MoveToTargetState : AIState
 
     protected override AIState Update()
     {
+        if(DialogueManager.ShowingDialogue == true)
+        {
+            ai.IsStopped = true;
+            return this;
+        }
+        else
+        {
+            ai.IsStopped = false;
+        }
+
         if (!target)
         {
             target = references.controller.FindClosestEnemy();

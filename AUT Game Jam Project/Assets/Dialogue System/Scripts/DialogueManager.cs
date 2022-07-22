@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +17,10 @@ public class DialogueManager : MonoBehaviour
     public AudioSource source;
 
     public static DialogueManager Instance { get; private set; }
+    public static bool ShowingDialogue = false;
 
     private Queue<string> sentences;
+    private Queue<AudioClip> clips;
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -35,12 +36,16 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        foreach (var clip in dialogue.sounds)
+        {
+            clips.Enqueue(clip);
+        }
     }
 
     public void DisplayNextSentence()
     {
-        print("display");
-        
+        ShowingDialogue = true;
+
         if(sentences.Count == 0)
         {
             EndDialogue();
@@ -50,6 +55,17 @@ public class DialogueManager : MonoBehaviour
         
 
         string sentence = sentences.Dequeue();
+
+        source.Stop();
+        if (clips.Count != 0)
+        {
+            AudioClip clipToPlay = clips.Dequeue();
+
+            if (clipToPlay && source)
+            {
+                source.PlayOneShot(clipToPlay);
+            }
+        }
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, dialogueTyperDuration));
@@ -70,13 +86,14 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        print("End");
-        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 10, animationDuration);
+        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 10, animationDuration)
+            .OnComplete(() => ShowingDialogue = false) ;
     }
 
     private void Awake()
     {
         Instance = this;
         sentences = new Queue<string>();
+        clips = new Queue<AudioClip>();
     }
 }

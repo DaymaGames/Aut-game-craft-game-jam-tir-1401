@@ -46,6 +46,11 @@ public class HackerController : MonoBehaviour
         {
             return;
         }
+        if(DialogueManager.ShowingDialogue == true)
+        {
+            movement.SetVelocity(Vector2.zero);
+            return;
+        }
 
         float h = Input.GetAxisRaw(HORIZONTAL);
         float v = Input.GetAxisRaw(VERTICAL);
