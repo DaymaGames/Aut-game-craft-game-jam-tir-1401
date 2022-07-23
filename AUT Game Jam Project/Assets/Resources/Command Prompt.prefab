@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 64cf2a252d1307746a62c4037e40dcd0, type: 3}
-  selectInputFieldDelay: 1
+  selectRepeatRate: 0.5
   inputFiled: {fileID: 2351902759880500641}
   currentInput: 
   cMDAction:
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSceneName: Menu
-  level1Name: Level-1
+  nextLevelName: Cutscene
   creditsText: 
   creditsTextMesh: {fileID: 0}
 --- !u!82 &1532035682

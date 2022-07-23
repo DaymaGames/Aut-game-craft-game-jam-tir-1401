@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6b10b5ae00eb45b48ad50493ade00913
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Urdu Typesetting
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 81c98d59b77831e47b7bcc50715ea314, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

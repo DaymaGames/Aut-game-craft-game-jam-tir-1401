@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using RTLTMPro;
 using DG.Tweening;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    //public TextMeshProUGUI nameText;
+    public RTLTextMeshPro nameText;
+    //public TextMeshProUGUI dialogueText;
+    public RTLTextMeshPro dialogueText;
     [Space]
     public RectTransform dialogueParent;
     public float animationDuration = 1;
@@ -15,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     public float dialogueTyperDuration = 0.1f;
     [Space]
     public AudioSource source;
+    [Space]
+    public bool typeSentences = false;
 
     public static DialogueManager Instance { get; private set; }
     public static bool ShowingDialogue = false;
@@ -57,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 
         string name = names.Dequeue();
 
-        nameText.SetText(name);
+        nameText.text = name;
 
         string sentence = sentences.Dequeue();
 
@@ -73,15 +78,21 @@ public class DialogueManager : MonoBehaviour
         }
 
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence, dialogueTyperDuration));
+        if (typeSentences)
+            StartCoroutine(TypeSentence(sentence, dialogueTyperDuration));
+        else
+            dialogueText.text = sentence;
     }
 
     IEnumerator TypeSentence(string sentence, float typeDelay = 0)
     {
-        dialogueText.SetText("");
-        foreach (var letter in sentence.ToCharArray())
+        dialogueText.text = "";
+
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
+            dialogueText.ForceMeshUpdate();
+
             if (typeDelay <= 0)
                 yield return null;
             else
