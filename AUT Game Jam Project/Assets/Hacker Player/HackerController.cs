@@ -9,7 +9,7 @@ public class HackerController : MonoBehaviour
 {
     [Header("Shoot")]
     [SerializeField] private Transform shootTransform;
-    [SerializeField] private new Camera camera;
+    [SerializeField] private Camera mainCam;
     [SerializeField] private Rigidbody2D bulletPrefab;
     [SerializeField] private float shootSpeed = 10;
     [SerializeField] private string ignoreShootTag = "enter";
@@ -36,8 +36,8 @@ public class HackerController : MonoBehaviour
         inventory = GetComponent<HackerInventory>();
         reloadImage.gameObject.SetActive(false);
         
-        if (!camera)
-            camera = Camera.main;
+        if (!mainCam)
+            mainCam = Camera.main;
     }
 
     private void Update()
@@ -114,7 +114,7 @@ public class HackerController : MonoBehaviour
             return;
         }
 
-        Vector2 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         if (movement.facingRight)
         {

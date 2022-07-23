@@ -14,7 +14,7 @@ public class AICustomScript : MonoBehaviour
 
     Seeker seeker;
 
-    new Rigidbody2D rigidbody;
+    Rigidbody2D rb;
 
     GameObject GFX;
     private void Awake()
@@ -25,7 +25,7 @@ public class AICustomScript : MonoBehaviour
             Debug.LogError("Speed Value Is zero");
         }
         seeker = GetComponent<Seeker>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0, 0.5f);
 
@@ -59,7 +59,7 @@ public class AICustomScript : MonoBehaviour
 
         Vector3 direction = (path.vectorPath[currentWayPoint] - transform.position).normalized;
         Vector3 force = direction * speed * Time.deltaTime;
-        rigidbody.AddForce(force);
+        rb.AddForce(force);
 
         SetFacing();
         
