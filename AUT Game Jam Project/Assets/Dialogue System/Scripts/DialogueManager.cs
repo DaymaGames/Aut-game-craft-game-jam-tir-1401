@@ -90,8 +90,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
-            dialogueText.ForceMeshUpdate();
+            dialogueText.text = dialogueText.OriginalText + letter;
 
             if (typeDelay <= 0)
                 yield return null;

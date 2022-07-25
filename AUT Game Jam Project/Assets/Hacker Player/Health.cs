@@ -97,6 +97,7 @@ public class Health : MonoBehaviour
         else if (TryGetComponent(out CharacterMovement movement))
         {
             movement.autoAnimation = false;
+            movement.SetVelocity(Vector2.zero);
             GetComponent<HackerController>().Die();
         }
         else if (TryGetComponent(out Boss1 boss))
