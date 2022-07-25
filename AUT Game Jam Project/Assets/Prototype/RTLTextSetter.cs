@@ -17,7 +17,6 @@ public class RTLTextSetter : MonoBehaviour
         {
             SetText();
         }
-
     }
 
     public void SetText()
@@ -25,11 +24,12 @@ public class RTLTextSetter : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeText(writeTime));
     }
+
     IEnumerator TypeText(float writeTime)
     {
-        foreach (var c in text.ToCharArray())
+        foreach (char c in text)
         {
-            textMeshPro.text += c;
+            textMeshPro.text = textMeshPro.OriginalText + c;
 
             yield return new WaitForSeconds(writeTime);
         }

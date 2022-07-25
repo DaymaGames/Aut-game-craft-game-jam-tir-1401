@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1447002286}
   - component: {fileID: 1447002288}
   m_Layer: 0
-  m_Name: dialogue
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 400}
+  m_SizeDelta: {x: 976.7244, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447002286
 MonoBehaviour:
@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3fbde2e562e333d488bc46986fc6f4f1, type: 2}
-  m_sharedMaterial: {fileID: -6949820610600499109, guid: 3fbde2e562e333d488bc46986fc6f4f1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e0345a2c2596e9468b00e1d51ae4719, type: 2}
+  m_sharedMaterial: {fileID: -7525405437759036041, guid: 5e0345a2c2596e9468b00e1d51ae4719, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 30, y: 30, z: 30, w: 30}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883391440d0499b4c94753eea21a2fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\u0633\u0644\u0627\u0645 \u0645\u0646 \u062D\u0633\u06CC\u0646 \u0627\u0646\u06CC\u0633\u06CC
-    \u0647\u0633\u062A\u0645"
+  text: "\u0633\u0644\u0627\u0645 \u0645\u0646 \u0645\u062D\u0645\u062F \u062D\u0633\u06CC\u0646
+    \u0633\u062A\u0627\u0631\u0647 \u0647\u0633\u062A\u0645"
   textMeshPro: {fileID: 1447002286}
-  writeTime: 0.2
+  writeTime: 0.05
