@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
         if (isDead)
             return false;
 
-        if (targetGraphics)
+        if (targetGraphics != null)
         {
             targetGraphics.color = damagedColor;
 
@@ -57,14 +57,19 @@ public class Health : MonoBehaviour
         if (TakeDamage(damage) == false)
             return;
 
-        if (TryGetComponent(out Rigidbody2D rb))
+        Rigidbody2D r = GetComponent<Rigidbody2D>();
+
+        bool hasRigidbody;
+
+        if (r == null)
+            hasRigidbody = false;
+        else
+            hasRigidbody = true;
+
+        if (hasRigidbody)
         {
             Vector2 relative = transform.position - damager.position;
-            rb.AddForce(damageForce * relative.normalized);
-        }
-        else
-        {
-            //Debug.LogWarning("No Rigidbody Detected");
+            r.AddForce(damageForce * relative.normalized);
         }
     }
 
@@ -86,7 +91,9 @@ public class Health : MonoBehaviour
         isDead = true;
 
         if (TryGetComponent(out AIController controller))
+        {
             controller.dontTick = true;
+        }
         else if (TryGetComponent(out CharacterMovement movement))
         {
             movement.autoAnimation = false;
@@ -98,7 +105,7 @@ public class Health : MonoBehaviour
             boss.StopAllCoroutines();
             boss.animator.Play(boss.dieState);
         }
-        else if(TryGetComponent(out HackerBoss hboss))
+        else if (TryGetComponent(out HackerBoss hboss))
         {
             hboss.animator.Play(hboss.dieState);
             hboss.isDead = true;

@@ -31,7 +31,7 @@ public class GeneralBullet : MonoBehaviour
                 return;
         }
 
-        if(c.TryGetComponent(out Health health))
+        if(c.transform.root.TryGetComponent(out Health health))
         {
             health.TakeDamage(damage, transform);
         }
