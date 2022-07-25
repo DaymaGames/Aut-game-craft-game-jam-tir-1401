@@ -8,8 +8,12 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth = 100;
     public bool fullHealthOnAwake = true;
+    [Space]
+    public bool isVulnerable = true;
     public bool isDead = false;
+    [Space]
     public float damageForce = 50f;
+    [Space]
     public SpriteRenderer targetGraphics;
     public Color damagedColor = Color.red;
     public Color normalColor = Color.white;
@@ -54,6 +58,9 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage, Transform damager)
     {
+        if (!isVulnerable)
+            return;
+
         if (TakeDamage(damage) == false)
             return;
 

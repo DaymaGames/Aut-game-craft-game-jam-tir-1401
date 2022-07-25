@@ -25,6 +25,7 @@ public class HackerController : MonoBehaviour
     
     [HideInInspector] public bool bypass = false;
 
+    private Health health;
     private CharacterMovement movement;
     private HackerInventory inventory;
     private const string HORIZONTAL = "Horizontal";
@@ -34,6 +35,7 @@ public class HackerController : MonoBehaviour
     {
         movement = GetComponent<CharacterMovement>();
         inventory = GetComponent<HackerInventory>();
+        health = GetComponent<Health>();
         reloadImage.gameObject.SetActive(false);
         
         if (!mainCam)
@@ -47,8 +49,9 @@ public class HackerController : MonoBehaviour
             return;
         }
         if(DialogueManager.ShowingDialogue == true || PauseMenu.IsPaused
-            || GameManager.Instance.GameOver||
-            BossAbilityManager.DesigningBoss)
+            || GameManager.Instance.GameOver
+            || BossAbilityManager.DesigningBoss
+            || health.isDead)
         {
             movement.SetVelocity(Vector2.zero);
             return;
