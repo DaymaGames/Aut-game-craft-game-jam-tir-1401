@@ -1198,30 +1198,6 @@ MonoBehaviour:
     roundStartEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1773089716}
-          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-          m_MethodName: set_interactable
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1773089716}
-          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-          m_MethodName: set_alpha
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 2127057262}
           m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
           m_MethodName: TriggerDialogue
@@ -1288,6 +1264,30 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
           m_MethodName: TriggerDialogue
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1773089716}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_alpha
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1773089716}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_interactable
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9769,8 +9769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Saved : 30'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1fb3b5759b0f89841bf2efc4a484a0b1, type: 2}
-  m_sharedMaterial: {fileID: -4120155394406474543, guid: 1fb3b5759b0f89841bf2efc4a484a0b1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
+  m_sharedMaterial: {fileID: 4923863695232322084, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9794,8 +9794,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 1
@@ -9903,8 +9903,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Bullets : 10'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1fb3b5759b0f89841bf2efc4a484a0b1, type: 2}
-  m_sharedMaterial: {fileID: -4120155394406474543, guid: 1fb3b5759b0f89841bf2efc4a484a0b1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
+  m_sharedMaterial: {fileID: 4923863695232322084, guid: 83f16b5c91be97f4cb194d51bd44ae91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9928,8 +9928,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 1
@@ -10250,7 +10250,7 @@ MonoBehaviour:
     - "\u0647\u06CC \u0631\u0626\u06CC\u0633"
     - "\u0628\u0647 \u062F\u0646\u06CC\u0627\u06CC \u062F\u06CC\u062C\u06CC\u062A\u0627\u0644\u06CC
       \u062E\u0648\u0634 \u0627\u0648\u0645\u062F\u06CC"
-    - "\u0628\u0631\u06AF\u0627\u0645\u060C\u062A\u0648 \u062F\u0627\u0631\u06CC
+    - "\u0628\u0631\u06AF\u0627\u0645\u060C \u062A\u0648 \u062F\u0627\u0631\u06CC
       \u062D\u0631\u0641 \u0645\u06CC\u0632\u0646\u06CC\u061F"
     - "\u0645\u0646 \u06A9\u062C\u0627\u0645\u061F"
     - "\u0686\u06CC \u0634\u062F\u0647\u061F"
@@ -10259,7 +10259,7 @@ MonoBehaviour:
     - "\u0627\u0648\u0647 \u0631\u0626\u06CC\u0633 \u0686\u0631\u0627 \u062F\u0633\u062A
       \u0648 \u067E\u0627\u062A \u0631\u0648 \u06AF\u0645 \u06A9\u0631\u062F\u06CC!\u061F"
     - "\u062A\u0631\u0633 \u0646\u062F\u0627\u0631\u0647 \u06A9\u0647\u060C \u0645\u06AF\u0647
-      \u0628\u0627\u0631 \u0627\u0648\u0644\u062A\u0647"
+      \u0628\u0627\u0631 \u0627\u0648\u0644\u062A\u0647\u061F"
     - "\u0646\u0647 \u0628\u0627\u0628\u0627 \u0631\u0648\u0632\u06CC \u06CC\u0647
       \u0628\u0627\u0631 \u0627\u06CC\u0646\u062C\u0627\u0645!"
     - "\u0645\u0639\u0644\u0648\u0645\u0647 \u06A9\u0647 \u0628\u0627\u0631 \u0627\u0648\u0644\u0645\u0647\u0647\u0647\u0647\u0647!"
@@ -10272,8 +10272,12 @@ MonoBehaviour:
       \u0633\u0639\u06CC \u06A9\u0646\u06CC \u062A\u0648\u0633\u0637 \u0622\u0646\u062A\u06CC
       \u0648\u06CC\u0631\u0648\u0633 \u0646\u0627\u0628\u0648\u062F \u0646\u0634\u06CC!"
     - "\u0628\u0627 \u06A9\u0644\u06CC\u06A9 \u0686\u067E \u0645\u06CC\u062A\u0648\u0646\u06CC
-      \u062A\u06CC\u0631 \u0627\u0646\u062F\u0627\u0632\u06CC \u06A9\u0646\u06CC"
-    - "\u0628\u0627 \u06A9\u0644\u06CC\u06A9 R \u062E\u0634\u0627\u0628 \u0639\u0648\u0636
+      \u062A\u06CC\u0631 \u0627\u0646\u062F\u0627\u0632\u06CC \u06A9\u0646\u06CC\n\u062A\u0639\u062F\u0627\u062F
+      \u062A\u06CC\u0631 \u0647\u0627\u06CC \u062F\u0627\u062E\u0644 \u062E\u0634\u0627\u0628
+      \u0648 \u062A\u0639\u062F\u0627\u062F \u062A\u06CC\u0631 \u0647\u0627\u06CC
+      \u062F\u0627\u062E\u0644 \u06A9\u06CC\u0641\u062A \u062F\u0631 \u0628\u0627\u0644\u0627
+      \u0642\u0633\u0645\u062A \u0686\u067E \u0646\u0648\u0634\u062A\u0647 \u0634\u062F\u0647"
+    - "\u0648 \u0628\u0627 \u06A9\u0644\u06CC\u06A9 R \u062E\u0634\u0627\u0628 \u0639\u0648\u0636
       \u0628\u06A9\u0646\u06CC\n\u0631\u0627\u0633\u062A\u06CC \u0628\u0639\u0636\u06CC
       \u0627\u0632 \u062F\u0634\u0645\u0646 \u0647\u0627 \u0648\u0642\u062A\u06CC
       \u0628\u0645\u06CC\u0631\u0646 \u062A\u06CC\u0631 \u0627\u0632\u0634\u0648\u0646
@@ -10292,15 +10296,15 @@ MonoBehaviour:
     - "\u0647\u06A9\u0631"
     - "\u0647\u06A9\u0631"
     - "\u0647\u06A9\u0631"
+    - "\u06AF\u0631\u0628\u0647"
+    - "\u06AF\u0631\u0628\u0647"
     - "\u0647\u06A9\u0631"
     - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
-    - "\u0647\u06A9\u0631"
+    - "\u06AF\u0631\u0628\u0647"
+    - "\u06AF\u0631\u0628\u0647"
+    - "\u06AF\u0631\u0628\u0647"
+    - "\u06AF\u0631\u0628\u0647"
+    - "\u06AF\u0631\u0628\u0647"
     - "\u0647\u06A9\u0631"
     sounds: []
 --- !u!212 &670716061948781910

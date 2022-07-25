@@ -40,12 +40,14 @@ public class TeleportManager : MonoBehaviour
 
     HackerController controller;
     CharacterMovement movement;
+    Health health;
     bool hasButtonDown = false;
 
     private void Awake()
     {
         movement = GetComponent<CharacterMovement>();
         controller = GetComponent<HackerController>();
+        health = GetComponent<Health>();
         teleportCircle.gameObject.SetActive(false);
         teleportTrail.gameObject.SetActive(false);
         mousePosTransform.gameObject.SetActive(false);
@@ -54,9 +56,10 @@ public class TeleportManager : MonoBehaviour
     private void Update()
     {
         if (DialogueManager.ShowingDialogue == true
-            ||PauseMenu.IsPaused
-            ||GameManager.Instance.GameOver
-            ||BossAbilityManager.DesigningBoss)
+            || PauseMenu.IsPaused
+            || GameManager.Instance.GameOver
+            || BossAbilityManager.DesigningBoss
+            || health.isDead == true)
         {
             return;
         }
@@ -111,6 +114,8 @@ public class TeleportManager : MonoBehaviour
         globalLight.SetActive(false);
         circleLight.SetActive(true);
 
+
+        health.isVulnerable = false;
     }
 
     void Hold()
@@ -167,6 +172,8 @@ public class TeleportManager : MonoBehaviour
 
         globalLight.SetActive(true);
         circleLight.SetActive(false);
+
+        health.isVulnerable = true;
     }
 
     void TurnOffTrail()

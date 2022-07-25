@@ -90,8 +90,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
-            dialogueText.ForceMeshUpdate();
+            dialogueText.text = dialogueText.OriginalText + letter;
 
             if (typeDelay <= 0)
                 yield return null;
@@ -102,7 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 10, animationDuration)
+        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 50, animationDuration)
             .OnComplete(() => ShowingDialogue = false) ;
     }
 
@@ -112,5 +111,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         clips = new Queue<AudioClip>();
         names = new Queue<string>();
+
+        Vector2 pos = dialogueParent.position;
+        pos.y = -dialogueParent.sizeDelta.y - 50;
+        dialogueParent.position = pos;
     }
 }
