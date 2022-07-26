@@ -25,9 +25,13 @@ public class Suicider : MonoBehaviour
     public void StartSuicide()
     {
         if (attacking) return;
+
+
         attacking = true;
         GetComponent<AIController>().enabled = false;
+        GetComponent<AIController>().dontTick = true;
         GetComponent<Rigidbody2D>().simulated = false;
+
         StartCoroutine(DelaySuicide());
     }
 
@@ -49,7 +53,7 @@ public class Suicider : MonoBehaviour
             if (coll.transform == transform)
                 break;
 
-            if(coll.TryGetComponent(out Health health))
+            if(coll.transform.root.TryGetComponent(out Health health))
             {
                 health.TakeDamage(damage, transform);
             }

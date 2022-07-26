@@ -163,13 +163,12 @@ GameObject:
   - component: {fileID: 770251297230852296}
   - component: {fileID: 770251297230852300}
   - component: {fileID: 770251297230852301}
-  - component: {fileID: 770251297230852298}
-  - component: {fileID: 770251297230852299}
   - component: {fileID: 770251297230852303}
   - component: {fileID: 6099903717592246526}
   - component: {fileID: -6105340044229585914}
   - component: {fileID: 1871962880949986862}
   - component: {fileID: 7162282390834202443}
+  - component: {fileID: 2902636124800631106}
   m_Layer: 0
   m_Name: Anti Suicider
   m_TagString: AntiVirus
@@ -229,52 +228,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &770251297230852298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770251297230852297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!114 &770251297230852299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770251297230852297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30798b6b26341a04d867e3f6ad21097d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 200
-  faceVelocity: 1
-  facingRight: 1
-  nextWaypointDistance: 3
-  reachedEndOfPath: 0
-  updateInterval: 0.3
 --- !u!114 &770251297230852303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,10 +248,10 @@ MonoBehaviour:
   spawnAnimFinished: 1
   aIReferences:
     controller: {fileID: 770251297230852303}
-    ai: {fileID: 770251297230852299}
+    ai: {fileID: 2902636124800631106}
     rb: {fileID: 770251297230852301}
     animPlayer: {fileID: 6516519644007334654}
-    maxDistanceToTarget: 1.25
+    maxDistanceToTarget: 3.3
     getBackRange: 0.2
     getBackForce: 90
     damage: 10
@@ -320,10 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suicideTime: 3
-  attackRadius: 3.36
+  attackRadius: 3.5
   attackMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 887
   damage: 20
   animPlayer: {fileID: 6516519644007334654}
 --- !u!114 &-6105340044229585914
@@ -341,6 +294,7 @@ MonoBehaviour:
   maxHealth: 2147483647
   currentHealth: 100
   fullHealthOnAwake: 1
+  isVulnerable: 1
   isDead: 0
   damageForce: 50
   targetGraphics: {fileID: 7231394145747486241}
@@ -459,6 +413,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2902636124800631106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770251297230852297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022fa32f4bc0982438763f8cf1e2252a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 200
+  faceVelocity: 1
+  facingRight: 1
 --- !u!1 &3060930932553089426
 GameObject:
   m_ObjectHideFlags: 0

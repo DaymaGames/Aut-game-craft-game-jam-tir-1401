@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8223016
+      value: 8.273693
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3331356
+      value: -11.746326
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.z
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: animPlayer
       value: 
       objectReference: {fileID: 2261629003060014396}
+    - target: {fileID: 6099903717592246526, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: attackMask.m_Bits
+      value: 247
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
 --- !u!212 &2261629003060014398 stripped
