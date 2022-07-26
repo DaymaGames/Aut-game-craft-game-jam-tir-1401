@@ -61,6 +61,19 @@ public class TeleportManager : MonoBehaviour
             || BossAbilityManager.DesigningBoss
             || health.isDead == true)
         {
+            if (Time.timeScale != 1)
+                Time.timeScale = 1;
+
+            movement.autoAnimation = true;
+            hasButtonDown = false;
+            controller.bypass = false;
+            mousePosTransform.gameObject.SetActive(false);
+            teleportTrail.gameObject.SetActive(false);
+            teleportCircle.gameObject.SetActive(false);
+            globalLight.SetActive(true);
+            circleLight.SetActive(false);
+            health.isVulnerable = true;
+
             return;
         }
 
@@ -106,7 +119,8 @@ public class TeleportManager : MonoBehaviour
 
         teleportTrail.gameObject.SetActive(true);
 
-        GetComponent<CharacterMovement>().SetVelocity(Vector2.zero);
+        movement.SetVelocity(Vector2.zero);
+
         teleportCircle.gameObject.SetActive(true);
         teleportCircle.position = transform.position;
         teleportCircle.localScale = Vector3.one * maxTeleportRange / transform.localScale.x;

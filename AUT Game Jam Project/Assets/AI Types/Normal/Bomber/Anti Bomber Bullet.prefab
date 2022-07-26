@@ -155,6 +155,7 @@ MonoBehaviour:
   ignoreTags:
   - Map
   - Loot
+  - AntiVirus
 --- !u!61 &4612377215954610276
 BoxCollider2D:
   m_ObjectHideFlags: 0

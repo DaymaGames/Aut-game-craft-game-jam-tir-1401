@@ -103,6 +103,7 @@ MonoBehaviour:
   ignoreTags:
   - Map
   - Loot
+  - AntiVirus
 --- !u!50 &3666269377731063897
 Rigidbody2D:
   serializedVersion: 4

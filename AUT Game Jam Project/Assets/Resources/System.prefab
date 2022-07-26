@@ -545,7 +545,7 @@ MonoBehaviour:
   dialogueText: {fileID: 6848021219147622945}
   dialogueParent: {fileID: 291234950}
   animationDuration: 0.5
-  dialogueTyperDuration: 0.05
+  dialogueTyperDuration: 0.02
   source: {fileID: 1011169286}
   typeSentences: 1
 --- !u!82 &1011169286
