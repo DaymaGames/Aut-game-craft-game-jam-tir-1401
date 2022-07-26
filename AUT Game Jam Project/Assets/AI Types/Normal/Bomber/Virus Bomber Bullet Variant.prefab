@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
       propertyPath: ignoreTags.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
       propertyPath: ignoreTags.Array.data[2]
@@ -26,6 +26,14 @@ PrefabInstance:
     - target: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
       propertyPath: ignoreTags.Array.data[3]
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
+      propertyPath: ignoreTags.Array.data[4]
+      value: DieTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
+      propertyPath: ignoreTags.Array.data[5]
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 8717236204797756557, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size

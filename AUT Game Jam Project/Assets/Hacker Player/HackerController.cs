@@ -44,14 +44,20 @@ public class HackerController : MonoBehaviour
 
     private void Update()
     {
+        if(health.isDead)
+        {
+            if (movement)
+                movement.SetVelocity(Vector2.zero);
+            return;
+        }
+
         if (bypass || movement == null)
         {
             return;
         }
         if(DialogueManager.ShowingDialogue == true || PauseMenu.IsPaused
             || GameManager.Instance.GameOver
-            || BossAbilityManager.DesigningBoss
-            || health.isDead)
+            || BossAbilityManager.DesigningBoss)
         {
             movement.SetVelocity(Vector2.zero);
             return;

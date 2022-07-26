@@ -25,10 +25,9 @@ public class GeneralBullet : MonoBehaviour
     {
         Collider2D c = collider;
 
-        foreach (var tag in ignoreTags)
+        if (ignoreTags.Contains(c.tag))
         {
-            if (c.CompareTag(tag))
-                return;
+            return;
         }
 
         if(c.transform.root.TryGetComponent(out Health health))

@@ -13,6 +13,8 @@ TagManager:
   - Map
   - Loot
   - OutSide
+  - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX

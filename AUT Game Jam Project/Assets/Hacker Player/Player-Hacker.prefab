@@ -1029,9 +1029,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootTransform: {fileID: 8859555895863475930}
-  camera: {fileID: 0}
+  mainCam: {fileID: 0}
   bulletPrefab: {fileID: 8673581824459203041, guid: d52ab59016a29414391968126e70c5e6, type: 3}
-  shootSpeed: 10
+  shootSpeed: 20
   ignoreShootTag: Player
   reloadTime: 5
   reloading: 0
@@ -1103,6 +1103,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   fullHealthOnAwake: 1
+  isVulnerable: 1
   isDead: 0
   damageForce: 50
   targetGraphics: {fileID: 1108644131}

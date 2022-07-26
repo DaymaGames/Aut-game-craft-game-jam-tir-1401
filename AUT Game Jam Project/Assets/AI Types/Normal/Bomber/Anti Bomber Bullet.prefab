@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7821058255506060722}
   m_Layer: 0
   m_Name: Anti Bomber Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   - Map
   - Loot
   - AntiVirus
+  - Bullet
 --- !u!61 &4612377215954610276
 BoxCollider2D:
   m_ObjectHideFlags: 0

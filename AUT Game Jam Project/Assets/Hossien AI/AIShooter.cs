@@ -40,8 +40,8 @@ public class AIShooter : AIController
 
         if (target)
             bullet.transform.Look2D(target, Vector3.right);
-        
-        bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * bulletForce);
+
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletForce;
     }
 }
 public static class ExtenstionForTransform

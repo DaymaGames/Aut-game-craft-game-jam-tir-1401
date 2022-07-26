@@ -5,7 +5,6 @@ public class Boss1 : MonoBehaviour
 {
     enum BossState { ShootAttack, CicleAttack, Rest, Standby }
     [SerializeField] BossState bossState;
-    [SerializeField] Transform player;
 
     [Header("Required Scirpts")]
     [SerializeField] BulletSpawner bulletSpawnerScript;
@@ -35,12 +34,8 @@ public class Boss1 : MonoBehaviour
     [Header("Sounds")]
     public AudioClip shootSound;
 
-    public bool isDead = false; 
-    private void Start()
-    {
-        if (!player)
-            player = FindObjectOfType<HackerController>().transform;
-    }
+    public bool isDead = false;
+
     private void Update()
     {
         if (isDead || DialogueManager.ShowingDialogue == true
@@ -100,24 +95,14 @@ public class Boss1 : MonoBehaviour
         //playAttackAnimation
 
         animator.Play(attackState);
+        //damaging player is handled by script
 
-        if ((player.transform.position - transform.position).magnitude <= damageRange)
-        {
-            //Damage Player
-            DamagePlayer(attackDamage);
-
-        }
         yield return new WaitForSeconds(delayBetweenCirlceAttacks);
         
         //playAttackAnimation
 
         animator.Play(attackState);
-
-        if ((player.transform.position - transform.position).magnitude <= damageRange)
-        {
-            //Damage Player
-            DamagePlayer(attackDamage);
-        }
+        //damaging player is handled by script
 
         yield return new WaitForSeconds(1);
         bossState = BossState.Rest;
@@ -144,8 +129,18 @@ public class Boss1 : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void DamagePlayer(int damage)
+    public void CheckForCircleDamagPlayer()
     {
-        player.GetComponent<Health>().TakeDamage(damage, transform);
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, damageRange);
+        foreach (var coll in colls)
+        {
+            if (coll.CompareTag("Player"))
+            {
+                if(coll.transform.root.TryGetComponent(out Health health))
+                {
+                    health.TakeDamage(attackDamage, transform);
+                }
+            }
+        }
     }
 }

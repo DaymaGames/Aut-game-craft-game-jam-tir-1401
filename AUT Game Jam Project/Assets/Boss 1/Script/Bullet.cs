@@ -5,11 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage = 20;
+    public float destroyTime=2;
 
     Rigidbody2D rigidBody;
     Transform bossTransform;
 
-    float destroyTime=2;
     float bulletSpeed = 500;
     private void Awake()
     {

@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
       propertyPath: ignoreTags.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
       propertyPath: ignoreTags.Array.data[2]
@@ -70,6 +70,14 @@ PrefabInstance:
     - target: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
       propertyPath: ignoreTags.Array.data[3]
       value: Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
+      propertyPath: ignoreTags.Array.data[4]
+      value: DieTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
+      propertyPath: ignoreTags.Array.data[5]
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}

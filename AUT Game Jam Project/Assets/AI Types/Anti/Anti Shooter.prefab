@@ -290,7 +290,7 @@ MonoBehaviour:
     runSource: {fileID: 7659099738080043179}
     spawnSource: {fileID: -1064310358121443759}
   dontTick: 0
-  bulletForce: 500
+  bulletForce: 20
   bulletPrefab: {fileID: 5496722665786685096, guid: 475c16dbe573fec4eb7d5ed35c696e32, type: 3}
   bulletSpawnParent: {fileID: 4941078556975831786}
   bulletSpawnPoint: {fileID: 4941078555852693400}
@@ -310,6 +310,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   fullHealthOnAwake: 1
+  isVulnerable: 1
   isDead: 0
   damageForce: 50
   targetGraphics: {fileID: 1004702077}

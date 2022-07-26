@@ -157,6 +157,8 @@ MonoBehaviour:
   - Loot
   - Virus
   - Player
+  - DieTrigger
+  - Bullet
 --- !u!61 &452822705849600988
 BoxCollider2D:
   m_ObjectHideFlags: 0

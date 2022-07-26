@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
-
 using UnityEngine;
 using UnityEngine.Events;
-
-
 
 public class InputManager : MonoBehaviour
 {
@@ -14,14 +10,16 @@ public class InputManager : MonoBehaviour
     [SerializeField] AudioClip audioClip;
     [Space]
     [Header("Delay before input activision")]
+    [SerializeField] bool autoSelect = false;
     [SerializeField] float selectRepeatRate = .5f;
     [Space]
-    [SerializeField] TMP_InputField inputFiled;
+    [SerializeField] InputFieldWithSelected inputFiled;
     [SerializeField] string currentInput;
     [Space]
     [Header("Warning! Use small letters for Command Input")]
     public List<CMDActions> cMDAction;
-    
+    [Space]
+    public bool isSelected = false;
     public void OnEndEdit(string input)
     {
         currentInput = input.ToLower(); 
@@ -43,10 +41,14 @@ public class InputManager : MonoBehaviour
     }
     
     private void Awake()
-    {
-      
+    { 
         audioSource = GetComponent<AudioSource>();
+        
+    }
 
+    private void OnEnable()
+    {
+        inputFiled.Select();
     }
 
     private void Start()
@@ -66,11 +68,14 @@ public class InputManager : MonoBehaviour
             if (audioSource)
                 audioSource.PlayOneShot(audioClip);
         }
+
+        isSelected = inputFiled.isSelected;
     }
 
     void SelectInputFiled()
     {
-        inputFiled.Select();
+        if (autoSelect && inputFiled.isSelected == false)
+            inputFiled.Select();
     }
 }
 

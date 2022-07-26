@@ -45,9 +45,11 @@ GameObject:
   - component: {fileID: -7144260498055426172}
   - component: {fileID: 952136598571404696}
   - component: {fileID: 7366092859754997414}
+  - component: {fileID: 3818003754644625158}
+  - component: {fileID: 3699959862320467275}
   m_Layer: 0
   m_Name: Boss1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,10 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossState: 0
-  player: {fileID: 0}
   bulletSpawnerScript: {fileID: 763908724307241859}
   shootDelay: 1.2
-  damageRange: 6
+  damageRange: 25
   delayBetweenCirlceAttacks: 2
   restLenght: 3
   audioSource: {fileID: 763908722459825334}
@@ -257,6 +258,7 @@ MonoBehaviour:
   maxHealth: 600
   currentHealth: 600
   fullHealthOnAwake: 1
+  isVulnerable: 1
   isDead: 0
   damageForce: 5
   targetGraphics: {fileID: 763908722459825333}
@@ -298,6 +300,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &3818003754644625158
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763908722459825226}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.87408274}
+  m_Size: {x: 2.9652474, y: 5.2933}
+  m_Direction: 0
+--- !u!50 &3699959862320467275
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763908722459825226}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &763908723068053403
 GameObject:
   m_ObjectHideFlags: 0
