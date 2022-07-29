@@ -36,6 +36,9 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
+        dialogueText.text = "";
+        nameText.text = "";
+
         foreach (var sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);

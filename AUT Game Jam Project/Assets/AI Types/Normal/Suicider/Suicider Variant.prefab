@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.273693
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.746326
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 770251297230852296, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: m_LocalPosition.z
@@ -94,6 +94,14 @@ PrefabInstance:
     - target: {fileID: 6099903717592246526, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
       propertyPath: attackMask.m_Bits
       value: 247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986335247105109118, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: m_Color.b
+      value: 0.047058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986335247105109118, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99607843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd8a9950e4b4f5448cb18d311ff8278, type: 3}

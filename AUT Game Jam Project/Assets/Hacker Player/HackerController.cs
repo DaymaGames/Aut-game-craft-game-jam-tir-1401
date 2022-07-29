@@ -179,7 +179,13 @@ public class HackerController : MonoBehaviour
     public void Die()
     {
         if (movement)
+        {
+            movement.SetVelocity(Vector2.zero);
+            movement.autoAnimation = false;
             movement.enabled = false;
+            GetComponent<Rigidbody2D>().simulated = false;
+        }
+
         animPlayer.PlayAnim(AnimationType.Die);
 
         Invoke(nameof(DelayGameOver), 1.5f);

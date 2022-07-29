@@ -53,6 +53,13 @@ public class SpawnManager : MonoBehaviour
 
         round.roundStartEvent.Invoke();
 
+        //kill every viruses when we start any round
+        GameObject[] viruses =  GameObject.FindGameObjectsWithTag("Virus");
+        foreach (var virus in viruses)
+        {
+            Destroy(virus.transform.root.gameObject);
+        }
+
         int spawnedViruses = 0;
 
         for (int i = 0; i < round.toSpawn.Count; i++)

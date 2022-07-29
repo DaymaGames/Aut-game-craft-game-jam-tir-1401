@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3409554065614418394, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
+      propertyPath: m_Color.b
+      value: 0.047058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409554065614418394, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99607843
+      objectReference: {fileID: 0}
     - target: {fileID: 7919699289474637124, guid: 150bfb0540fdfa64585e3957575f2e86, type: 3}
       propertyPath: m_Name
       value: Chaser Normal Variant

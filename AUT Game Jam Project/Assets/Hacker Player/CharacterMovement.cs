@@ -19,10 +19,12 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 velocity;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Update()
@@ -41,7 +43,6 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = velocity;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     public void SetVelocity(Vector2 velocity)
     {

@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoDuration: 15.733
   nexSceneName: Level-1
+  videoPlayer: {fileID: 1179442484}
 --- !u!1 &1178493660
 GameObject:
   m_ObjectHideFlags: 0

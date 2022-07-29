@@ -99,15 +99,13 @@ public class Health : MonoBehaviour
         OnDieEvent.Invoke();
         isDead = true;
 
-        if (TryGetComponent(out AIController controller))
+        if (TryGetComponent(out AIController aicontroller))
         {
-            controller.dontTick = true;
+            aicontroller.dontTick = true;
         }
-        else if (TryGetComponent(out CharacterMovement movement))
+        else if (TryGetComponent(out HackerController hackercontroller))
         {
-            movement.autoAnimation = false;
-            movement.SetVelocity(Vector2.zero);
-            GetComponent<HackerController>().Die();
+            hackercontroller.Die();
         }
         else if (TryGetComponent(out Boss1 boss))
         {
