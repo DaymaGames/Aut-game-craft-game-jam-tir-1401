@@ -29,7 +29,7 @@ public class GeneralBullet : MonoBehaviour
         {
             return;
         }
-
+        
         if(c.transform.root.TryGetComponent(out Health health))
         {
             health.TakeDamage(damage, transform);

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class Health : MonoBehaviour
 {
     public int maxHealth = 100;
+    [PropertyRange(0,"maxHealth")]
     public int currentHealth = 100;
     public bool fullHealthOnAwake = true;
     [Space]

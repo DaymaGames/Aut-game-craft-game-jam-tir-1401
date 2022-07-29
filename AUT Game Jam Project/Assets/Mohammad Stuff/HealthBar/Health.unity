@@ -414,6 +414,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   fullHealthOnAwake: 1
+  isVulnerable: 1
   isDead: 0
   damageForce: 50
   targetGraphics: {fileID: 0}
@@ -453,7 +454,7 @@ GameObject:
   - component: {fileID: 1805198825}
   - component: {fileID: 1805198824}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HealthBar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbarImage: {fileID: 1885943180}
-  playerHealth: {fileID: 1731881267}
+  health: {fileID: 1731881267}
 --- !u!222 &1805198825
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -17,7 +18,8 @@ public class HackerController : MonoBehaviour
     [Header("Reload")]
     [SerializeField] private float reloadTime = 1;
     [SerializeField] private bool reloading = false;
-    [SerializeField] private Image reloadImage;
+    [SerializeField] private TextMeshProUGUI reloadText;
+    [SerializeField] private string reloadPishvand = "Reloading ";
 
     [Space]
 
@@ -36,7 +38,7 @@ public class HackerController : MonoBehaviour
         movement = GetComponent<CharacterMovement>();
         inventory = GetComponent<HackerInventory>();
         health = GetComponent<Health>();
-        reloadImage.gameObject.SetActive(false);
+        reloadText.gameObject.SetActive(false);
         
         if (!mainCam)
             mainCam = Camera.main;
@@ -94,14 +96,26 @@ public class HackerController : MonoBehaviour
     {
         reloading = true;
         float t = 0;
-        reloadImage.gameObject.SetActive(true);
+        reloadText.gameObject.SetActive(true);
         while (t < 1)
         {
             t += Time.deltaTime / duration;
-            reloadImage.fillAmount = 1 - t;
+            
+            if(t < 0.3f)
+            {
+                reloadText.SetText(reloadPishvand + ".");
+            }else if (t > 0.3f && t < 0.6f)
+            {
+                reloadText.SetText(reloadPishvand + "..");
+            }
+            else
+            {
+                reloadText.SetText(reloadPishvand + "...");
+            }
+
             yield return null;
         }
-        reloadImage.gameObject.SetActive(false);
+        reloadText.gameObject.SetActive(false);
         inventory.Reload();
         reloading = false;
     }
@@ -111,7 +125,7 @@ public class HackerController : MonoBehaviour
         if(reloading == true)
         {
             StopCoroutine(DelayReload(reloadTime));
-            reloadImage.gameObject.SetActive(false);
+            reloadText.gameObject.SetActive(false);
             reloading = false;
         }
     }
