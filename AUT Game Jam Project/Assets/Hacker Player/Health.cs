@@ -119,6 +119,11 @@ public class Health : MonoBehaviour
             hboss.isDead = true;
         }
 
+        if(TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         if (animPlayer)
             animPlayer.PlayAnim(AnimationType.Die);
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class Spawner : MonoBehaviour
@@ -10,6 +11,7 @@ public class Spawner : MonoBehaviour
     public GameObject prefab;
     public Transform spawnPoint;
     public TextMeshProUGUI countLeft;
+    public KeyCode key;
 
     private int currentCount = 2;
     private float timer = 0;
@@ -33,6 +35,12 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(key))
+        {
+            print(prefab.name);
+            Spawn();
+        }
+
         if (currentCount == maxCount)
         {
             return;

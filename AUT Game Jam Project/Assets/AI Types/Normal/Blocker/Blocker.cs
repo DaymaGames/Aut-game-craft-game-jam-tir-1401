@@ -2,56 +2,99 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AIController))]
+[RequireComponent(typeof(AIShooter))]
 public class Blocker : MonoBehaviour
 {
-    public bool attackOnlyIfIsFront = true;
+    public float turnDuration = 1;
+    public bool faceTarget = true;
 
-    AIController controller;
-    AIParentClass ai;
-    Transform target;
+    private AIShooter shooter;
+    private AIParentClass mover;
+    private float faceT = 0;
+    private bool facingRight = true;
+
     private void Awake()
     {
-        controller = GetComponent<AIController>();
-        ai = GetComponent<AIParentClass>();
+        shooter = GetComponent<AIShooter>();
+        shooter.autoAttack = false;
+        mover = shooter.aIReferences.ai;
+        mover.faceVelocity = false;
+        facingRight = mover.facingRight;
     }
-    private void Start()
+
+    Vector2 GetTargetPosition()
     {
-        target = controller.target;
+        return shooter.target.position;
     }
+
+    private IEnumerator Start()
+    {
+        while (true)
+        {
+            while (!shooter.target || faceTarget == false)
+                yield return null;
+
+            faceT = turnDuration;
+
+            while (facingRight == true && GetTargetPosition().x < transform.position.x)
+            {
+                faceT -= Time.deltaTime;
+
+                if (faceT <= 0)
+                {
+                    Flip();
+                    break;
+                }
+
+                yield return null;
+            }
+
+            while (facingRight == false && GetTargetPosition().x > transform.position.x)
+            {
+                faceT -= Time.deltaTime;
+
+                if (faceT <= 0)
+                {
+                    Flip();
+                    break;
+                }
+
+                yield return null;
+            }
+
+            yield return null;
+        }
+    }
+
     private void Update()
     {
-        if(attackOnlyIfIsFront == false)
+        if(FacingPlayer() == true)
         {
-            controller.aIReferences.bypassAttacking = false;
-        }
-
-        if (!target)
-        {
-            target = controller.target;
-            return;
-        }
-        if (ai.facingRight)
-        {
-            if (target.position.x > transform.position.x)
-            {
-                controller.aIReferences.bypassAttacking = true;
-            }
-            else
-            {
-                controller.aIReferences.bypassAttacking = false;
-            }
+            shooter.aIReferences.bypassAttacking = false;
         }
         else
         {
-            if (target.position.x < transform.position.x)
-            {
-                controller.aIReferences.bypassAttacking = true;
-            }
-            else
-            {
-                controller.aIReferences.bypassAttacking = false;
-            }
+            shooter.aIReferences.bypassAttacking = true;
         }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Flip2D();
+    }
+
+    bool FacingPlayer()
+    {
+        if(facingRight && GetTargetPosition().x > transform.position.x)
+        {
+            return true;
+        }
+        else if(!facingRight && GetTargetPosition().x < transform.position.x)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

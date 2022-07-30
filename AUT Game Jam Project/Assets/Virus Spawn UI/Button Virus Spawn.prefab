@@ -64,6 +64,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   spawnPoint: {fileID: 0}
   countLeft: {fileID: 8126865372584335518}
+  key: 0
 --- !u!225 &1830847096795546938
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -88,6 +89,7 @@ GameObject:
   - component: {fileID: 1101713904527524289}
   - component: {fileID: 3959510229015761978}
   - component: {fileID: 56470676011314301}
+  - component: {fileID: 7207121045607898622}
   m_Layer: 5
   m_Name: Chaser Virus Icon
   m_TagString: Untagged
@@ -209,6 +211,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7207121045607898622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782233561803256865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659bcfccf57f73640ab75da6ab07fafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 4719600046865259037}
+  keyName: 
 --- !u!1 &8214837118085846941
 GameObject:
   m_ObjectHideFlags: 0

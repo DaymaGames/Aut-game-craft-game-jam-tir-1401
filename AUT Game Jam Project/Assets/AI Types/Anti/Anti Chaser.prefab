@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 350
-  faceVelocity: 1
+  faceVelocity: 0
   facingRight: 1
 --- !u!114 &7919699289474637129
 MonoBehaviour:
@@ -355,6 +355,7 @@ MonoBehaviour:
     bypassAttacking: 0
     runSource: {fileID: 0}
     spawnSource: {fileID: -1898808778976922841}
+    faceTarget: 1
   dontTick: 0
 --- !u!114 &7919699289474637128
 MonoBehaviour:
@@ -369,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  currentHealth: 100
+  currentHealth: 10
   fullHealthOnAwake: 1
   isVulnerable: 1
   isDead: 0

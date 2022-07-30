@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
-  currentHealth: 100
+  currentHealth: 15
   fullHealthOnAwake: 1
   isVulnerable: 1
   isDead: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 200
-  faceVelocity: 1
+  faceVelocity: 0
   facingRight: 1
 --- !u!114 &8188360388752185037
 MonoBehaviour:
@@ -382,6 +382,7 @@ MonoBehaviour:
     bypassAttacking: 0
     runSource: {fileID: 0}
     spawnSource: {fileID: -8403781250045116686}
+    faceTarget: 1
   dontTick: 0
   bulletForce: 20
   bulletPrefab: {fileID: 8717236204797756555, guid: 90972b2ae1a88fc4abc35047d8d2df81, type: 3}

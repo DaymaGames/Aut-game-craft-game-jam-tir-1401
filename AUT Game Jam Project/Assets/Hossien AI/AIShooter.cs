@@ -35,6 +35,8 @@ public class AIShooter : AIController
     void SpawnBullet()
     {
         GeneralBullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+        bullet.shooter = transform;
         
         bullet.ignoreTags.Add(tag);
 
@@ -44,7 +46,7 @@ public class AIShooter : AIController
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletForce;
     }
 }
-public static class ExtenstionForTransform
+public static class ExtenstionMethods
 {
     public static void Look2D(this Transform transform, Transform target, Vector3 forward)
     {
@@ -65,5 +67,13 @@ public static class ExtenstionForTransform
         
         transform.Rotate(Vector3.forward *
             Quaternion.FromToRotation(Vector3.right, forward).eulerAngles.z);
+    }
+    public static void Flip2D(this Transform transform)
+    {
+        transform.Rotate(Vector3.up * 180);
+    }
+    public static void SelfDestroy(this Behaviour behaviour)
+    {
+        Object.Destroy(behaviour.gameObject);
     }
 }

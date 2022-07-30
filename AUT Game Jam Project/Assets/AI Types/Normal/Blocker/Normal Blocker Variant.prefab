@@ -184,6 +184,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160769923996865766, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2664509185654555586, guid: 40181bbac6286ea40b59a6665ad0c3ec, type: 3}
+    - target: {fileID: 2160769923996865766, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
       propertyPath: spawnAnimFinished
       value: 1
       objectReference: {fileID: 0}
@@ -234,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 4253460267875677179, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
       propertyPath: m_Color.g
       value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589475752798439546, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0450cdd2c75ba848a2cd89fbd561278, type: 3}

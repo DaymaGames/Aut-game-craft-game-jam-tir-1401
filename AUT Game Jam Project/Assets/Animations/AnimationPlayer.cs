@@ -63,5 +63,13 @@ public class AnimationPlayer : MonoBehaviour
     {
         transform.root.GetComponent<AIController>().spawnAnimFinished = true;
     }
+    public void CharacterAttackFinish()
+    {
+        transform.root.GetComponent<CharacterMovement>().autoAnimation = true;
+    }
+    public void DisableSprite()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
 }
 public enum AnimationType { Idle,Run,Attack,Die,Suicide }

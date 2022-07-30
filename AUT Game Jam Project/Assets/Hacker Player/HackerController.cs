@@ -156,6 +156,10 @@ public class HackerController : MonoBehaviour
 
         inventory.DecreaseBulletsInMag();
         SpawnBullet(mousePos);
+
+        //play attack anim
+        movement.autoAnimation = false;
+        animPlayer.PlayAnim(AnimationType.Attack);
     }
 
     private void SpawnBullet(Vector2 pos)
@@ -173,7 +177,9 @@ public class HackerController : MonoBehaviour
         bT.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         bT.Rotate(Vector3.forward * -90);
 
-        rb.GetComponent<GeneralBullet>().ignoreTags.Add(ignoreShootTag);
+        GeneralBullet bullet = rb.GetComponent<GeneralBullet>();
+        bullet.ignoreTags.Add(ignoreShootTag);
+        bullet.shooter = transform;
     }
 
     public void Die()

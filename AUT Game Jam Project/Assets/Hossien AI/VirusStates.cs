@@ -23,6 +23,9 @@ public class AIStateReferences
     [Header("Audio")]
     public AudioSource runSource;
     public AudioSource spawnSource;
+
+    [Space]
+    public bool faceTarget = false;
 }
 
 public abstract class AIState
@@ -76,7 +79,10 @@ public class MoveToTargetState : AIState
     {
         target = references.controller.target;
         ai = references.ai;
-        ai.faceVelocity = false;
+
+        if (references.faceTarget)
+            ai.faceVelocity = false;
+
         rb = references.rb;
     }
 
@@ -155,7 +161,8 @@ public class MoveToTargetState : AIState
             }
         }
 
-        HandleFlipping(relative);
+        if (references.faceTarget)
+            HandleFlipping(relative);
 
         return this;
     }

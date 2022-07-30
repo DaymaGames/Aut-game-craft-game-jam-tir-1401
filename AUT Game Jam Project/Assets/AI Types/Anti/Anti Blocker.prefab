@@ -120,6 +120,36 @@ MonoBehaviour:
   attackAnim: Shoot
   dieAnim: Die
   suicideAnim: Suicide
+--- !u!1 &654951297587255233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5589475752798439546}
+  m_Layer: 0
+  m_Name: Bullet Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5589475752798439546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654951297587255233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2160769924589106405}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2160769923996865786
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 200
-  faceVelocity: 1
+  faceVelocity: 0
   facingRight: 1
   nextWaypointDistance: 3
   reachedEndOfPath: 0
@@ -239,7 +269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2160769923996865786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5220ec77d5076c459a97a5f47d8d295, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d03edb04d23054682b23277e35b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
@@ -253,15 +283,21 @@ MonoBehaviour:
     ai: {fileID: 2160769923996865767}
     rb: {fileID: 2160769923996865765}
     animPlayer: {fileID: 1402234015}
-    maxDistanceToTarget: 3.13
-    getBackRange: 0.55
-    getBackForce: 110
+    maxDistanceToTarget: 20
+    getBackRange: 0.1
+    getBackForce: 60
     damage: 15
     attackRate: 0.5
     bypassAttacking: 0
     runSource: {fileID: 1456296082}
     spawnSource: {fileID: 1456296092}
+    faceTarget: 0
   dontTick: 0
+  bulletForce: 20
+  bulletPrefab: {fileID: 8474786221670314865, guid: 2a3063298e73f3e44b55954e5a828cd9, type: 3}
+  bulletSpawnParent: {fileID: 0}
+  bulletSpawnPoint: {fileID: 5589475752798439546}
+  rotateAndLookToTarget: 0
 --- !u!114 &2160769923996865761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,8 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1687f6c39776f14ebf75f96437579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 15
+  maxHealth: 50
+  currentHealth: 50
   fullHealthOnAwake: 1
   isVulnerable: 1
   isDead: 0
@@ -300,7 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c22cb56284dc409efd0e8b0e1b24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackOnlyIfIsFront: 1
+  turnDuration: 1
+  faceTarget: 1
 --- !u!114 &1863702438355974771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +586,8 @@ Transform:
   m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_Children:
   - {fileID: 1402234014}
+  - {fileID: 5589475752798439546}
+  - {fileID: 3292947737323130995}
   m_Father: {fileID: 2160769923996865764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -609,6 +648,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2, y: 0.3}
   m_EdgeRadius: 0
+--- !u!1 &7344497628358335463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3292947737323130995}
+  - component: {fileID: 1118129932847536312}
+  - component: {fileID: 2288840287468381508}
+  m_Layer: 0
+  m_Name: Die Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3292947737323130995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344497628358335463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.4741175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2160769924589106405}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1118129932847536312
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344497628358335463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &2288840287468381508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344497628358335463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b28e6955cdc7640b25758ed08f3126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieTag: OutSide
+  health: {fileID: 2160769923996865761}
+  dieDelay: 0.1
 --- !u!1 &7932321435432095832
 GameObject:
   m_ObjectHideFlags: 0

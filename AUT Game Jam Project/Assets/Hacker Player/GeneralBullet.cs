@@ -9,6 +9,8 @@ public class GeneralBullet : MonoBehaviour
 
     public List<string> ignoreTags = new List<string>();
 
+    [HideInInspector] public Transform shooter;
+
     private void Start()
     {
         StartCoroutine(start());
@@ -25,7 +27,22 @@ public class GeneralBullet : MonoBehaviour
     {
         Collider2D c = collider;
 
-        if (ignoreTags.Contains(c.tag))
+        if(IsBlocker(c.transform) == true && c.transform.root != shooter)
+        {
+            if (CanDamageBlocker(c.transform.root))
+            {
+                c.transform.root.GetComponent<Health>().TakeDamage(damage, transform);
+                Explode();
+            }
+            else
+            {
+                HitBlockerDefense();
+                Explode();
+                return;
+            }
+        }
+
+        if (ignoreTags.Contains(c.tag) || c.CompareTag("OutSide"))
         {
             return;
         }
@@ -34,7 +51,39 @@ public class GeneralBullet : MonoBehaviour
         {
             health.TakeDamage(damage, transform);
         }
+
+        Explode();
+    }
+
+    void Explode()
+    {
         StopAllCoroutines();
-        Destroy(gameObject);
+        this.SelfDestroy();
+    }
+
+    void HitBlockerDefense()
+    {
+        //hit particle
+    }
+
+    bool CanDamageBlocker(Transform blocker)
+    {
+        Vector2 blockerLeftDirection = -blocker.right;
+        Vector2 blockerToBulletDirecton = (transform.position - blocker.position).normalized;
+        float dot = Vector2.Dot(blockerLeftDirection, blockerToBulletDirecton);
+
+        if(dot > 0.3f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool IsBlocker(Transform target)
+    {
+        return target.root.TryGetComponent(out Blocker _);
     }
 }

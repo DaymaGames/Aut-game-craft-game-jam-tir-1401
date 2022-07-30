@@ -260,6 +260,7 @@ MonoBehaviour:
     bypassAttacking: 0
     runSource: {fileID: 0}
     spawnSource: {fileID: 7162282390834202443}
+    faceTarget: 1
   dontTick: 0
 --- !u!114 &6099903717592246526
 MonoBehaviour:
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2147483647
-  currentHealth: 100
+  currentHealth: 2000000000
   fullHealthOnAwake: 1
   isVulnerable: 1
   isDead: 0
@@ -427,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 200
-  faceVelocity: 1
+  faceVelocity: 0
   facingRight: 1
 --- !u!1 &2994801270919226994
 GameObject:

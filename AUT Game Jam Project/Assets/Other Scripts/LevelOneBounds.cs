@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class LevelOneBounds : MonoBehaviour
 {
-    public HackerController player;
+    public Health playerHealth;
     public float delay = 0.1f;
 
-    bool isDead = false;
-    void Die()
+    private void Awake()
     {
-        if (isDead)
-            return;
-
-        isDead = true;
-        player.Die();
-        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        player.GetComponent<Health>().TakeDamage(999999);
+        if(!playerHealth)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
     }
 
-    IEnumerator DelayDie(float delay)
+    void KillPlayer(Health target)
+    {
+        target.TakeDamage(999999);
+    }
+
+    IEnumerator DelayDie(float delay, Health target)
     {
         yield return new WaitForSeconds(delay);
-        Die();
+        KillPlayer(target);
     }
 
     private void OnTriggerExit2D(Collider2D coll)
     {
         if (coll.CompareTag("DieTrigger"))
         {
-            StartCoroutine(DelayDie(delay));
+            StartCoroutine(DelayDie(delay, playerHealth));
         }
     }
     private void OnTriggerEnter2D(Collider2D coll)
