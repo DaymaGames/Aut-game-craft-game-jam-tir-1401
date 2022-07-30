@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Spawner : MonoBehaviour
     public Transform spawnPoint;
     public TextMeshProUGUI countLeft;
     public KeyCode key;
-
+    public Image fillImage;
     private int currentCount = 2;
     private float timer = 0;
 
@@ -22,6 +23,8 @@ public class Spawner : MonoBehaviour
         {
             spawnPoint = GameObject.Find("Virus Spawn Transform").transform;
         }
+
+        fillImage.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -51,10 +54,13 @@ public class Spawner : MonoBehaviour
             currentCount++;
             countLeft.SetText(currentCount.ToString());
             timer = timeToAddEach;
+            fillImage.gameObject.SetActive(false);
         }
         else
         {
             timer -= Time.deltaTime;
+            fillImage.gameObject.SetActive(true);
+            fillImage.fillAmount = 1 - (timer / timeToAddEach);
         }
     }
 

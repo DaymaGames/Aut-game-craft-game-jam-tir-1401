@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class CommandManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class CommandManager : MonoBehaviour
 
     [TextArea]
     public string creditsText;
-    public TMPro.TextMeshProUGUI creditsTextMesh;
+    public TextMeshProUGUI creditsTextMesh;
+
     public void Exit() 
     {
         Application.Quit();

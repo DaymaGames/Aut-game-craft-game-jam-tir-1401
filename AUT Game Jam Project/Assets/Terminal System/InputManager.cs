@@ -49,6 +49,7 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         inputFiled.Select();
+        inputFiled.text = "";
     }
 
     private void Start()

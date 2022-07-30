@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using RTLTMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     public AudioSource source;
     [Space]
     public bool typeSentences = false;
+    [Space]
+    public Image speakerImage;
+    public List<SpriteAndNameMatch> matches = new List<SpriteAndNameMatch>();
 
     public static DialogueManager Instance { get; private set; }
     public static bool ShowingDialogue = false;
@@ -118,5 +122,29 @@ public class DialogueManager : MonoBehaviour
         Vector2 pos = dialogueParent.position;
         pos.y = -dialogueParent.sizeDelta.y - 50;
         dialogueParent.position = pos;
+    }
+
+    private void FixedUpdate()
+    {
+        foreach (var match in matches)
+        {
+            if (match.IsMatch(nameText.OriginalText))
+            {
+                speakerImage.sprite = match.sprite;
+                speakerImage.gameObject.SetActive(true);
+                return;
+            }
+        }
+        speakerImage.gameObject.SetActive(false);
+    }
+}
+[System.Serializable]
+public class SpriteAndNameMatch
+{
+    public string text;
+    public Sprite sprite;
+    public bool IsMatch(string current)
+    {
+        return text == current;
     }
 }

@@ -1321,7 +1321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &297037503
 Transform:
   m_ObjectHideFlags: 0
@@ -3836,14 +3836,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3959510229015761978, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -6015,14 +6007,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123438546680465824, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959510229015761978, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
@@ -9472,14 +9456,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123438546680465824, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830847096795546938, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
-      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959510229015761978, guid: 0dba6495554c8c24d9430b56d91073be, type: 3}
