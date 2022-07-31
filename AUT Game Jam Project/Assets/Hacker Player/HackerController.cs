@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class HackerController : MonoBehaviour
@@ -14,6 +15,9 @@ public class HackerController : MonoBehaviour
     [SerializeField] private Rigidbody2D bulletPrefab;
     [SerializeField] private float shootSpeed = 10;
     [SerializeField] private string ignoreShootTag = "enter";
+    [SerializeField] private bool shootRounded = false;
+    [ShowIf(nameof(shootRounded))] [SerializeField] private float shootDistance = 1.5f;
+    [ShowIf(nameof(shootRounded))] [SerializeField] private Vector2 playerCenterOffset;
 
     [Header("Reload")]
     [SerializeField] private float reloadTime = 1;
@@ -42,6 +46,12 @@ public class HackerController : MonoBehaviour
         
         if (!mainCam)
             mainCam = Camera.main;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere((Vector2)transform.position + playerCenterOffset, 0.2f);
     }
 
     private void Update()
@@ -139,20 +149,7 @@ public class HackerController : MonoBehaviour
 
         Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (movement.facingRight)
-        {
-            if (mousePos.x <= transform.position.x)
-            {
-                return;
-            }
-        }
-        else
-        {
-            if (mousePos.x >= transform.position.x)
-            {
-                return;
-            }
-        }
+        if (!IsMouseInFront(mousePos)) return;
 
         inventory.DecreaseBulletsInMag();
         SpawnBullet(mousePos);
@@ -162,13 +159,60 @@ public class HackerController : MonoBehaviour
         animPlayer.PlayAnim(AnimationType.Attack);
     }
 
-    private void SpawnBullet(Vector2 pos)
+    bool IsMouseInFront(Vector2 mousePos)
     {
-        //instantiating
-        Rigidbody2D rb = Instantiate(bulletPrefab, shootTransform.position, Quaternion.identity);
-        
+        //old way
+        /*
+        if (movement.facingRight)
+        {
+            if (mousePos.x <= transform.position.x)
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (mousePos.x >= transform.position.x)
+            {
+                return false;
+            }
+        }
+
+        return true;
+        */
+
+        Vector2 playerRightDirection = GetrightDirection();
+        Vector2 mouseDirection = mousePos - (Vector2)transform.position;
+        mouseDirection.Normalize();
+        float threshold = -0.7f;
+
+        float dot = Vector2.Dot(playerRightDirection, mouseDirection);
+        return dot > threshold;
+    }
+
+    Vector2 GetrightDirection()
+    {
+        return movement.facingRight ? Vector2.right : Vector2.left;
+    }
+
+    private void SpawnBullet(Vector2 mousePos)
+    {
+        Rigidbody2D rb;
+
+        if (shootRounded == false)
+            rb = Instantiate(bulletPrefab, shootTransform.position, Quaternion.identity);
+        else
+        {
+            Vector2 playerPos = (Vector2)transform.position + playerCenterOffset;
+            Vector2 shootDir = (mousePos - playerPos).normalized;
+            Vector2 spawnPos = playerPos + shootDir * shootDistance;
+
+            rb = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        }
+
         //adding the force to the bullet
-        Vector3 relative = pos - (Vector2)shootTransform.position;
+        Vector2 startPos = shootRounded ? (Vector2)transform.position + playerCenterOffset + (mousePos - (Vector2)transform.position + playerCenterOffset).normalized * shootDistance : (Vector2)shootTransform.position;
+        Vector3 relative = mousePos - startPos;
         rb.velocity = relative.normalized * shootSpeed;
 
         //looking at the target

@@ -1040,6 +1040,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8673581824459203041, guid: d52ab59016a29414391968126e70c5e6, type: 3}
   shootSpeed: 20
   ignoreShootTag: Player
+  shootRounded: 1
+  shootDistance: 3
+  playerCenterOffset: {x: 0, y: 0}
   reloadTime: 5
   reloading: 0
   reloadText: {fileID: 0}
