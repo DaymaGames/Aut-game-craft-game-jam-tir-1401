@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     public RTLTextMeshPro dialogueText;
     [Space]
     public RectTransform dialogueParent;
+    public Image backgroundImage;
+    public float backgroundAlpha = 0.7f;
     public float animationDuration = 1;
     [Space]
     public float dialogueTyperDuration = 0.1f;
@@ -37,6 +39,10 @@ public class DialogueManager : MonoBehaviour
         dialogueParent.DOMoveY(0, animationDuration)
             .OnComplete(()=> DisplayNextSentence())
             .SetEase(Ease.InOutCubic);
+
+        backgroundImage.DOComplete();
+        backgroundImage.gameObject.SetActive(true);
+        backgroundImage.DOFade(backgroundAlpha, animationDuration);
 
         sentences.Clear();
 
@@ -89,6 +95,8 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeSentence(sentence, dialogueTyperDuration));
         else
             dialogueText.text = sentence;
+
+        UpdateSpeakerImage();
     }
 
     IEnumerator TypeSentence(string sentence, float typeDelay = 0)
@@ -108,8 +116,11 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y - 50, animationDuration)
+        dialogueParent.DOMoveY(-dialogueParent.sizeDelta.y * 2, animationDuration)
             .OnComplete(() => ShowingDialogue = false) ;
+
+        backgroundImage.DOComplete();
+        backgroundImage.DOFade(0, animationDuration).OnComplete(()=> { backgroundImage.gameObject.SetActive(false); });
     }
 
     private void Awake()
@@ -120,11 +131,18 @@ public class DialogueManager : MonoBehaviour
         names = new Queue<string>();
 
         Vector2 pos = dialogueParent.position;
-        pos.y = -dialogueParent.sizeDelta.y - 50;
+        pos.y = -dialogueParent.sizeDelta.y * 2;
         dialogueParent.position = pos;
+
+        speakerImage.gameObject.SetActive(false);
+
+        Color c = backgroundImage.color;
+        c.a = 0;
+        backgroundImage.color = c;
+        backgroundImage.gameObject.SetActive(false);
     }
 
-    private void FixedUpdate()
+    private void UpdateSpeakerImage()
     {
         foreach (var match in matches)
         {

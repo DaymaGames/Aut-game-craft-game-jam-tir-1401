@@ -11,6 +11,8 @@ public class GeneralBullet : MonoBehaviour
 
     [HideInInspector] public Transform shooter;
 
+    bool isdead = false;
+
     private void Start()
     {
         StartCoroutine(start());
@@ -25,6 +27,9 @@ public class GeneralBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (isdead)
+            return;
+
         Collider2D c = collider;
 
         if(IsBlocker(c.transform) == true && c.transform.root != shooter)
@@ -58,7 +63,16 @@ public class GeneralBullet : MonoBehaviour
     void Explode()
     {
         StopAllCoroutines();
-        this.SelfDestroy();
+        GetComponent<Collider2D>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        isdead = true;
+        Invoke(nameof(SelfDestroy), 3);
+    }
+
+    void SelfDestroy()
+    {
+        Destroy(gameObject);
     }
 
     void HitBlockerDefense()
