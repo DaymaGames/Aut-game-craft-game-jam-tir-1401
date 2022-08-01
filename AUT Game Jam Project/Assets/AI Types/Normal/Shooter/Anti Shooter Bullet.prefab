@@ -98,13 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d81077795bdee743a34ad70ae615e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   killTimer: 10
   ignoreTags:
   - Map
   - Loot
   - AntiVirus
   - Bullet
+  shooter: {fileID: 0}
 --- !u!50 &3666269377731063897
 Rigidbody2D:
   serializedVersion: 4

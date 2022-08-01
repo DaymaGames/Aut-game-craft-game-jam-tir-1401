@@ -77,7 +77,7 @@ public class TeleportManager : MonoBehaviour
             return;
         }
 
-            if (remainingTime > 0)
+        if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
             coolDownImage.fillAmount = remainingTime / teleportCoolDown;
@@ -193,17 +193,5 @@ public class TeleportManager : MonoBehaviour
     void TurnOffTrail()
     {
         teleportTrail.gameObject.SetActive(false);
-    }
-
-    IEnumerator SetVignetCoroutine(float duration)
-    {
-        float t = 0;
-        while (t < 1)
-        {
-            t += Time.deltaTime / duration;
-
-            yield return null;
-        }
-
     }
 }

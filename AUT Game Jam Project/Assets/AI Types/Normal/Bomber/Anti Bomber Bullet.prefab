@@ -150,13 +150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d81077795bdee743a34ad70ae615e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
   killTimer: 10
   ignoreTags:
   - Map
   - Loot
   - AntiVirus
   - Bullet
+  shooter: {fileID: 0}
 --- !u!61 &4612377215954610276
 BoxCollider2D:
   m_ObjectHideFlags: 0
