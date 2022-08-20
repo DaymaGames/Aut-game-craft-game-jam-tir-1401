@@ -40,7 +40,6 @@ public class Spawner : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            print(prefab.name);
             Spawn();
         }
 
